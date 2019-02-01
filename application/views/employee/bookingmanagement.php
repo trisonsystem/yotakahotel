@@ -11,6 +11,8 @@ if ($lg == 'thailand') {
     $sl = 'EN';
 }
 
+?>
+
 debug($bbill);
 ?>
 <!-- Example DataTables Card-->

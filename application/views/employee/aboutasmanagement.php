@@ -10,6 +10,7 @@ if ($lg == 'thailand') {
 } else {
     $sl = 'EN';
 }
+
 ?>
 
 <!-- Example DataTables Card-->

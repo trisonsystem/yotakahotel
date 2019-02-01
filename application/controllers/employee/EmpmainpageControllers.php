@@ -28,7 +28,7 @@ class EmpmainpageControllers extends BaseController {
         } else {
             $lang = $_COOKIE['lang'];
         }
-        $this->lang->load($lang, $lang);
+        $this->lang->load($lang, $lang);        
     }
 
     public function index() {
@@ -210,11 +210,11 @@ class EmpmainpageControllers extends BaseController {
 
             $cdata['mysession'] = $_SESSION;
             $mp['startpage'] = $this->load->view('layout/emp/startpage', '', TRUE);
-            $mp['menu'] = $this->load->view('layout/emp/menu', $_SESSION, TRUE);
+            $mp['menu'] = $this->load->view('layout/emp/menu', $_SESSION, TRUE);            
             $mp['content'] = $this->load->view('employee/' . $cview, $cdata, TRUE);
             $mp['footer'] = $this->load->view('layout/emp/footer', '', TRUE);
             $mp['endpage'] = $this->load->view('layout/emp/endpage', '', TRUE);
-
+            
             $this->load->view('employee/empmainpage', $mp);
         } else {
             $this->logout();
