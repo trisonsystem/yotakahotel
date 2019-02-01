@@ -258,11 +258,10 @@ if ($lg == 'thailand') {
 
                 <!-- Modal body -->
                 <div class="modal-body font-bg2">
-
-                    <div class="form-group">
+                    <!-- <div class="form-group">
                         <label for="CUSidc"><?php echo $this->lang->line("idcard"); ?> :</label>
                         <input type="text" class="form-control" id="CUSidc" name="CUSidc" required>
-                    </div>
+                    </div> -->
                     <div class="form-group ">
                         <label for="CUStitle"><?php echo $this->lang->line("titlename"); ?> :</label>
                         <select class="form-control" id="CUStitle" name="CUStitle">

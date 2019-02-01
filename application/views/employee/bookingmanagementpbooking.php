@@ -66,7 +66,7 @@ if ($lg == 'thailand') {
                     <tr>
                       <th style="display: none;">Delete</th>
                       <th><?php echo $this->lang->line("no"); ?></th>
-                      <th><?php echo $this->lang->line("branchcode"); ?></th>
+                      <!-- <th><?php echo $this->lang->line("branchcode"); ?></th> -->
                       <th><?php echo $this->lang->line("branchname"); ?></th>
                       <th><?php echo $this->lang->line("descriptth"); ?></th>
                       <th><?php echo $this->lang->line("descripten"); ?></th>
@@ -119,7 +119,7 @@ if ($lg == 'thailand') {
                                       </label>
                                   </div>
                                 </td>
-                                <td><?php echo $value['BRHcode']; ?></td>
+                                <!-- <td><?php echo $value['BRHcode']; ?></td> -->
                                 <td><?php echo $value['BRHdesc'.$sl]; ?></td>
                                 <td width=20%><?php echo $value['PU03descTH'] ?></td>
                                 <td width=20%><?php echo $value['PU03descEN']; ?></td>

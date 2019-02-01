@@ -58,7 +58,7 @@ if ($lg == 'thailand') {
                     <tr>
                         <th style="display: none;">Delete</th>
                         <th><?php echo $this->lang->line("no"); ?></th>
-                        <th><?php echo $this->lang->line("customomercode"); ?></th>
+                        <th><?php // echo $this->lang->line("customomercode"); ?>Username</th>
                         <th><?php echo $this->lang->line("customomername"); ?></th>
                         <th><?php echo $this->lang->line("address"); ?></th>
                         <th><?php echo $this->lang->line("brithday"); ?></th>
@@ -104,7 +104,7 @@ if ($lg == 'thailand') {
                                     </div>
                                 </th>
                                 <td><?php echo $key + 1 ?></td>
-                                <td><?php echo $value['CUScode']; ?></td>
+                                <td><?php echo $value['CUSuname']; ?></td>
                                 <td><?php echo $value['TITLEdesc' . $sl] . '  ' . $value['CUSfname'] . '  ' . $value['CUSlname']; ?></td>
                                 <td width = "20%"><?php echo $value['CUSadr'] . '  ' . $this->lang->line("email") . ': ' . $value['CUSemail'] . '  ' . $this->lang->line("phonenumber") . ': ' . $value['CUSnphone'] ?></td>
                                 <td><?php echo date("Y-m-d", strtotime($value['CUSbday'])); ?></td>

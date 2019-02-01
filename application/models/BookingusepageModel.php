@@ -20,7 +20,7 @@ class BookingusepageModel extends CI_Model
               USC.USCcode,USC.USCdescTH,USC.USCdescEN
               FROM BRH INNER JOIN PU03 ON PU03.PU03brhid = BRH.BRHid
               INNER JOIN USC ON PU03.PU03sta = USC.USCcode WHERE
-              PU03.PU03delete = 0 AND BRH.BRHdelete = 0 AND USC.USCuse = 27';
+              PU03.PU03delete = 0 AND BRH.BRHdelete = 0 AND USC.USCuse = 27 AND PU03.PU03sta = 0';
 
       $query = $this->db->query($sql);
       $row = $query->result_array();
