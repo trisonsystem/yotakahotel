@@ -64,7 +64,8 @@ if ($lg == 'thailand') {
             <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                 <thead>
                     <tr>
-                      <th>Delete</th>
+                      <th style="display: none;">Delete</th>
+                      <th><?php echo $this->lang->line("no"); ?></th>
                       <th><?php echo $this->lang->line("branchcode"); ?></th>
                       <th><?php echo $this->lang->line("branchname"); ?></th>
                       <th><?php echo $this->lang->line("descriptth"); ?></th>
@@ -110,7 +111,8 @@ if ($lg == 'thailand') {
                         ?>
                         <?php foreach ($datafromapi as $key => $value): ?>
                             <tr id="tr<?php echo $value['PU03id'].''; ?>">
-                                <td>
+                                <td><?php echo $key + 1 ?></td>
+                                <td style="display: none;">
                                   <div class="form-check" >
                                       <label class="form-check-label">
                                         <input type="checkbox" id="<?php echo $value['PU03id']; ?>" class="form-check-input" value="<?php echo $value['PU03id']; ?>" name="chk" onchange="myFunction('tr' + this.id, this, this.id)"><?php echo $this->lang->line("select"); ?>
@@ -177,7 +179,7 @@ if ($lg == 'thailand') {
             <form name="from_bookingpicturex"enctype="multipart/form-data" id="from_bookingpicturex">
                 <!-- Modal Header -->
                 <div class="modal-header">
-                    <h4 class="modal-title"><?php echo $this->lang->line("customomerhead"); ?></h4>
+                    <h4 class="modal-title"><?php echo $this->lang->line("insertbpage"); ?></h4>
                     <button type="button" class="close" data-dismiss="modal">&times;</button>
                 </div>
                 <!-- Modal body -->
@@ -232,7 +234,7 @@ if ($lg == 'thailand') {
 
             <!-- Modal Header -->
             <div class="modal-header">
-                <h4 class="modal-title"><?php echo $this->lang->line("delbranch"); ?></h4>
+                <h4 class="modal-title"><?php echo $this->lang->line("deletebpage"); ?></h4>
                 <button type="button" class="close" data-dismiss="modal">×</button>
             </div>
 
@@ -258,7 +260,7 @@ if ($lg == 'thailand') {
 
             <!--Modal Header-->
             <div class="modal-header">
-                <h4 class="modal-title"><?php echo $this->lang->line("customomerheadedit"); ?></h4>
+                <h4 class="modal-title"><?php echo $this->lang->line("editbpage"); ?></h4>
                 <span id="xid" style="color: #ffffff"></span>
                 <button type="button" class="close" data-dismiss="modal">&times;</button>
             </div>
@@ -276,7 +278,7 @@ if ($lg == 'thailand') {
 
             <!--Modal Header-->
             <div class="modal-header">
-                <h4 class="modal-title"><?php echo $this->lang->line("delcustomer"); ?></h4>
+                <h4 class="modal-title"><?php echo $this->lang->line("deletebpage"); ?></h4>
                 <span id="xid1" style="color: #ffffff"></span>
                 <button type="button" class="close" data-dismiss="modal">&times;</button>
             </div>
@@ -294,7 +296,7 @@ if ($lg == 'thailand') {
 
             <!-- Modal Header -->
             <div class="modal-header">
-                <h4 class="modal-title"><?php echo $this->lang->line("delcustomer"); ?></h4>
+                <h4 class="modal-title"><?php echo $this->lang->line("deletebpage"); ?></h4>
                 <button type="button" class="close" data-dismiss="modal">×</button>
             </div>
 

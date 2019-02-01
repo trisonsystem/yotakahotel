@@ -83,7 +83,7 @@ if ($lg == 'thailand') {
         <div class="dash" id="dash"></div>
         <div class="container">
             <div class="form-group">
-                <label for="sel1" style="color:#ffffff">วันที่จอง:</label>
+                <label for="sel1" style="color:#ffffff"><?php echo $this->lang->line("bookingdate"); ?>:</label>
                 <input class="form-control" type="text" id="bdaterange" name="bdaterange" value="<?php date("Y/m/d") ." - " . date("Y/m/d"); ?>" />
             </div>
             <div class="form-group">
@@ -188,9 +188,9 @@ if ($lg == 'thailand') {
     <div class="container-fluid">
         <div class="row">
             <div class="col-sm-4" >
-                <button type="button" class="btn btn-primary btn-block">จอง</button><br>
+                <button type="button" class="btn btn-primary btn-block"><?php echo $this->lang->line("bookings"); ?></button><br>
                 <button type="button" class="btn btn-success btn-block" onclick="test(24)">Checkin</button><br>
-                <button type="button" class="btn btn-warning btn-block">ทำความสะอาด</button><br>
+                <button type="button" class="btn btn-warning btn-block"><?php echo $this->lang->line("cleaning"); ?></button><br>
                 <button type="button" class="btn btn-block">สามารถทำรายการได้</button>
             </div>
             <div class="col-sm-8" >
@@ -198,10 +198,10 @@ if ($lg == 'thailand') {
                 <table class="table table-striped">
                     <thead>
                     <tr>
-                        <th>ลำดับ</th>
-                        <th>ชื่อ</th>
-                        <th>จำนวนห้อง</th>
-                        <th>พิมพ์บิล</th>
+                        <th><?php echo $this->lang->line("no"); ?></th>
+                        <th><?php echo $this->lang->line("fristname"); ?></th>
+                        <th><?php echo $this->lang->line("roomamount"); ?></th>
+                        <th><?php echo $this->lang->line("pirnt"); ?></th>
                     </tr>
                     </thead>
                     <tbody>
@@ -312,7 +312,7 @@ if ($lg == 'thailand') {
 
             <!--Modal Header-->
             <div class="modal-header">
-                <h4 class="modal-title"><?php echo $this->lang->line("personneledit"); ?></h4>
+                <h4 class="modal-title"><?php echo $this->lang->line("customomerhead"); ?></h4>
                 <span id="xid" style="color: #ffffff"></span>
                 <button type="button" class="close" data-dismiss="modal">&times;</button>
             </div>
@@ -330,7 +330,7 @@ if ($lg == 'thailand') {
 
             <!--Modal Header-->
             <div class="modal-header">
-                <h4 class="modal-title">เพิ่มรายการกรณีมีอุปกรณ์ชำรุด</h4>
+                <h4 class="modal-title"><?php echo $this->lang->line("insertequipment"); ?></h4>
                 <span id="xid" style="color: #ffffff"></span>
                 <button type="button" class="close" data-dismiss="modal">&times;</button>
             </div>
@@ -348,7 +348,7 @@ if ($lg == 'thailand') {
 
             <!--Modal Header-->
             <div class="modal-header">
-                <h4 class="modal-title">เพิ่มราย Mini bar</h4>
+                <h4 class="modal-title"><?php echo $this->lang->line("insertminibar"); ?></h4>
                 <span id="xid" style="color: #ffffff"></span>
                 <button type="button" class="close" data-dismiss="modal">&times;</button>
             </div>
@@ -366,7 +366,7 @@ if ($lg == 'thailand') {
 
             <!--Modal Header-->
             <div class="modal-header">
-                <h4 class="modal-title">พิมพ์บิล</h4>
+                <h4 class="modal-title"><?php echo $this->lang->line("pirnt"); ?></h4>
                 <span id="xid" style="color: #ffffff"></span>
                 <button type="button" class="close" data-dismiss="modal">&times;</button>
             </div>

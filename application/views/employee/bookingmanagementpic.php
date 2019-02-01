@@ -68,13 +68,14 @@ if ($lg == 'thailand') {
             <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                 <thead>
                     <tr>
-                      <th>Delete</th>
-                      <th><?php echo $this->lang->line("branchcode"); ?></th>
-                      <th><?php echo $this->lang->line("branchname"); ?></th>
-                      <th><?php echo $this->lang->line("mypic"); ?></th>
-                      <th><?php echo $this->lang->line("note"); ?></th>
-                      <th><?php echo $this->lang->line("editdate"); ?></th>
-                      <th>Action</th>
+                        <th style="display: none;">Delete</th>
+                        <th><?php echo $this->lang->line("no"); ?></th>
+                        <th><?php echo $this->lang->line("branchcode"); ?></th>
+                        <th><?php echo $this->lang->line("branchname"); ?></th>
+                        <th><?php echo $this->lang->line("mypic"); ?></th>
+                        <th><?php echo $this->lang->line("note"); ?></th>
+                        <th><?php echo $this->lang->line("editdate"); ?></th>
+                        <th>Action</th>
                     </tr>
                 </thead>
                 <!-- <tfoot>
@@ -102,7 +103,8 @@ if ($lg == 'thailand') {
                         ?>
                         <?php foreach ($bpicture as $key => $value): ?>
                             <tr id="tr<?php echo $value['PICid'].''; ?>" >
-                                <td>
+                                <td><?php echo $key + 1 ?></td>
+                                <td style="display: none;">
                                   <div class="form-check" >
                                       <label class="form-check-label">
                                         <input type="checkbox" id="<?php echo $value['PICid']; ?>" class="form-check-input" value="<?php echo $value['PICid']; ?>" name="chk" onchange="myFunction('tr' + this.id, this, this.id)"><?php echo $this->lang->line("select"); ?>
@@ -165,7 +167,7 @@ if ($lg == 'thailand') {
             <form name="from_bookingpicture"enctype="multipart/form-data" id="from_bookingpicture">
                 <!-- Modal Header -->
                 <div class="modal-header">
-                    <h4 class="modal-title"><?php echo $this->lang->line("customomerhead"); ?></h4>
+                    <h4 class="modal-title"><?php echo $this->lang->line("insertbpagep"); ?></h4>
                     <button type="button" class="close" data-dismiss="modal">&times;</button>
                 </div>
                 <!-- Modal body -->
@@ -212,7 +214,7 @@ if ($lg == 'thailand') {
 
             <!-- Modal Header -->
             <div class="modal-header">
-                <h4 class="modal-title"><?php echo $this->lang->line("delbranch"); ?></h4>
+                <h4 class="modal-title"><?php echo $this->lang->line("deletebpagep"); ?></h4>
                 <button type="button" class="close" data-dismiss="modal">×</button>
             </div>
 
@@ -238,7 +240,7 @@ if ($lg == 'thailand') {
 
             <!--Modal Header-->
             <div class="modal-header">
-                <h4 class="modal-title"><?php echo $this->lang->line("customomerheadedit"); ?></h4>
+                <h4 class="modal-title"><?php echo $this->lang->line("editbpagep"); ?></h4>
                 <span id="xid" style="color: #ffffff"></span>
                 <button type="button" class="close" data-dismiss="modal">&times;</button>
             </div>
@@ -256,7 +258,7 @@ if ($lg == 'thailand') {
 
             <!--Modal Header-->
             <div class="modal-header">
-                <h4 class="modal-title"><?php echo $this->lang->line("delcustomer"); ?></h4>
+                <h4 class="modal-title"><?php echo $this->lang->line("editbpagep"); ?></h4>
                 <span id="xid1" style="color: #ffffff"></span>
                 <button type="button" class="close" data-dismiss="modal">&times;</button>
             </div>
@@ -274,7 +276,7 @@ if ($lg == 'thailand') {
 
             <!-- Modal Header -->
             <div class="modal-header">
-                <h4 class="modal-title"><?php echo $this->lang->line("delcustomer"); ?></h4>
+                <h4 class="modal-title"><?php echo $this->lang->line("editbpagep"); ?></h4>
                 <button type="button" class="close" data-dismiss="modal">×</button>
             </div>
 

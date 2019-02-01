@@ -60,11 +60,11 @@ if ($lg == 'thailand') {
                 <th style="display: none;">Delete</th>
                 <th><?php echo $this->lang->line("no"); ?></th>
                 <th><?php echo $this->lang->line("branchname"); ?></th>
-                <th>อุปกรณ์</th>
-                <th>จำนวน</th>
-                <th>ราคา</th>
-                <th>ประกัน</th>
-                <th>วันที่ซื้อ</th>
+                <th><?php echo $this->lang->line("roomdetails"); ?></th>
+                <th><?php echo $this->lang->line("quantity"); ?></th>
+                <th><?php echo $this->lang->line("priceunit"); ?></th>
+                <th><?php echo $this->lang->line("warranty"); ?></th>
+                <th><?php echo $this->lang->line("purchasedate"); ?></th>
                 <th>Action</th>
             </tr>
             </thead>
@@ -102,9 +102,9 @@ if ($lg == 'thailand') {
                 <td><?php echo $key + 1 ?></td>
                 <td><?php echo $value['branch'][0]['BRHdesc'.$sl] ?></td>
                 <td><?php echo $value['RASdesc'.$sl] ?></td>
-                <td><?php echo $value['RASquan'] ?></td>
-                <td><?php echo $value['RASprice'] ?></td>
-                <td><?php echo $value['RASwar'] ?></td>
+                <td><?php echo number_format($value['RASquan'], 0, '', '') ?></td>
+                <td><?php echo number_format($value['RASprice'], 2, '.', '') ?></td>
+                <td><?php echo $value['USCdesc'.$sl] ?></td>
                 <td><?php echo $value['RAScreatedDT'] ?></td>
                 <th>
                     <div class="btn-group btn-group-xs">
@@ -159,26 +159,26 @@ if ($lg == 'thailand') {
                         </select>
                     </div>
                     <div class="form-group">
-                        <label for="RASdescTH">ชื่ออุปกรณ์ TH:</label>
+                        <label for="RASdescTH"><?php echo $this->lang->line("devicenameth"); ?>:</label>
                         <input type="text" class="form-control" id="RASdescTH" name="RASdescTH">
                     </div>
                     <div class="form-group">
-                        <label for="RASdescEN">ชื่ออุปกรณ์ EN:</label>
+                        <label for="RASdescEN"><?php echo $this->lang->line("devicenameen"); ?>:</label>
                         <input type="text" class="form-control" id="RASdescEN" name="RASdescEN">
                     </div>
                     <div class="form-group">
-                        <label for="RASquan">จำนวน:</label>
+                        <label for="RASquan"><?php echo $this->lang->line("quantity"); ?>:</label>
                         <input type="text" class="form-control" id="RASquan" name="RASquan">
                     </div>
                     <div class="form-group">
-                        <label for="RASprice">ราคา/ชิ้น:</label>
+                        <label for="RASprice"><?php echo $this->lang->line("priceunit"); ?>:</label>
                         <input type="text" class="form-control" id="RASprice" name="RASprice">
                     </div>
                     <div class="form-group">
-                        <label for="RASwar"><?php echo $this->lang->line("branchname"); ?>:</label>
+                        <label for="RASwar"><?php echo $this->lang->line("warranty"); ?>:</label>
                         <select class="form-control" id="RASwar" name="RASwar">
                             <?php 
-                            if(isset($branch)):
+                            if(isset($warranty)):
                                 foreach($warranty as $wkey => $wvalue):
                             ?>
                                 <option value="<?php echo $wvalue['USCcode']; ?>"><?php echo $wvalue['USCdesc' . $sl]; ?></option>
@@ -259,7 +259,7 @@ if ($lg == 'thailand') {
 
             <!--Modal Header-->
             <div class="modal-header">
-                <h4 class="modal-title"><?php echo $this->lang->line("delpersonnel"); ?></h4>
+                <h4 class="modal-title"><?php echo $this->lang->line("delacc"); ?></h4>
                 <span id="xid1" style="color: #ffffff"></span>
                 <button type="button" class="close" data-dismiss="modal">&times;</button>
             </div>
@@ -277,7 +277,7 @@ if ($lg == 'thailand') {
 
             <!--Modal Header-->
             <div class="modal-header">
-                <h4 class="modal-title"><?php echo $this->lang->line("personneledit"); ?></h4>
+                <h4 class="modal-title"><?php echo $this->lang->line("editacc"); ?></h4>
                 <span id="xid" style="color: #ffffff"></span>
                 <button type="button" class="close" data-dismiss="modal">&times;</button>
             </div>

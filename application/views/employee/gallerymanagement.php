@@ -57,7 +57,8 @@ $branchname = $branch;
       <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
         <thead>
           <tr>
-            <th>Delete</th>
+            <th style="display: none;">Delete</th>
+            <th><?php echo $this->lang->line("no"); ?></th>
             <th><?php echo $this->lang->line("branchname"); ?></th>
             <th><?php echo $this->lang->line("groupno"); ?></th>
             <th><?php echo $this->lang->line("groupnameth"); ?></th>
@@ -87,7 +88,8 @@ $branchname = $branch;
           <?php if (isset($dgallery)): ?>
           <?php foreach ($dgallery as $dkey => $dvalue): ?>
           <tr id="tr<?php echo $dvalue['PU04id'].''; ?>" >
-            <td>
+            <td><?php echo $dkey + 1 ?></td>
+            <td style="display: none;">
               <div class="form-check" >
                   <label class="form-check-label">
                     <input type="checkbox" id="<?php echo $dvalue['PU04id']; ?>" class="form-check-input" value="<?php echo $dvalue['PU04id']; ?>" name="chk" onchange="myFunction('tr' + this.id, this, this.id)"><?php echo $this->lang->line("select"); ?>

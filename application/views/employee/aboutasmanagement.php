@@ -57,7 +57,8 @@ if ($lg == 'thailand') {
       <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
         <thead>
           <tr>
-            <th>Delete</th>
+            <th style="display: none;">Delete</th>
+            <th><?php echo $this->lang->line("no"); ?></th>
             <th><?php echo $this->lang->line("title"); ?></th>
             <th><?php echo $this->lang->line("mypic"); ?></th>
             <th><?php echo $this->lang->line("story"); ?></th>
@@ -84,7 +85,8 @@ if ($lg == 'thailand') {
         <tbody>
           <?php foreach ($allaboutas as $akey => $avalue): ?>
           <tr  id="tr<?php echo $avalue['PU01id'].''; ?>" >
-            <td width="10%">
+            <td><?php echo $akey + 1 ?></td>
+            <td width="10%" style="display: none;">
               <div class="form-check" >
                   <label class="form-check-label">
                     <input type="checkbox" id="<?php echo $avalue['PU01id']; ?>" class="form-check-input" value="<?php echo $avalue['PU01id']; ?>" name="chk" onchange="myFunction('tr' + this.id, this, this.id)"><?php echo $this->lang->line("select"); ?>
@@ -93,7 +95,7 @@ if ($lg == 'thailand') {
             </td>
             <td width="10%"><?php echo $avalue['PU01title'.$sl] ?></td>
             <td width="10%"><?php if(isset($avalue['pic']['PICname'])){echo '<img id="'. $avalue['pic']['PICid'] .'" class="myImg" src="'. base_url(). 'assets/img/uploads/' . $avalue['pic']['PICname'] .'" alt="'. $avalue['pic']['PICnote'] .'" width="120" height="80" onclick="showpic(this)">';} ?></td>
-            <td width="40%"><?php echo $avalue['PU01desc'.$sl] ?></td>
+            <td width="40%"><?php echo substr($avalue['PU01desc'.$sl],0,200) . '...' ?></td>
             <td width="20%">
               Facebook:  <a href="<?php echo $avalue['PU01facebook']; ?>" ><?php echo $avalue['PU01facebook']; ?></a><br />
               Twitter:  <a href="<?php echo $avalue['PU01twitter']; ?>"><?php echo $avalue['PU01twitter']; ?></a><br />
