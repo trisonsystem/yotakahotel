@@ -7,6 +7,21 @@ class BranchController extends CI_Controller {
 
     public function __construct() {
         parent::__construct();
+        $MyLang = $this->SystemControl->CheckYourIPapi();
+        $country = strtolower($MyLang->geoplugin_countryName);
+        
+        if (!isset($_COOKIE['lang'])) {
+            if ($country == 'thailand') {
+                $lang = 'thailand';
+            } else {
+                $lang = 'english';
+            }
+            setcookie('lang', $lang);
+        } else {
+            $lang = $_COOKIE['lang'];
+        }
+        
+        $this->lang->load($lang, $lang);
         $this->load->model('BranchModel');
 
         $this->SystemControl = new SystemControl();

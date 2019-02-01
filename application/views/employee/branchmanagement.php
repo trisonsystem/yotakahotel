@@ -1,7 +1,5 @@
 <?php
-if (!isset($_COOKIE["lang"])) {
-    $lg = $lang;
-} else {
+if (!isset($_COOKIE["lang"])) {   
     $lg = $_COOKIE["lang"];
 }
 
@@ -17,7 +15,7 @@ if ($lg == 'thailand') {
 <!-- Example DataTables Card-->
 <div class="card mb-3">
     <div class="card-header">
-        <i class="fa fa-table"></i> Branch Management
+        <i class="fa fa-table"></i> Branch Management <?php echo $_COOKIE["lang"] ?>
     </div>
     <div class="card-body">
         <?php // debug($datafromapi); ?>
