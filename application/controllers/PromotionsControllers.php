@@ -82,4 +82,9 @@ class PromotionsControllers extends CI_Controller{
             }
         }
     }
+
+    public function get_detail_pomotion(){
+        $showby = $this->PromotionsModel->ShowbyidPromotion($_GET['id']);
+        print_r( json_encode( $showby[0]) );
+    }
 }

@@ -138,6 +138,8 @@ $route['epromotion'] = 'employee/PromotionsController/editPromotions';
 
 $route['showevents/(:any)'] = 'PromotionsControllers/showEvents/$1';
 $route['getevent/(:any)'] = 'PromotionsControllers/getEvents/$1';
+
+$route['get_detail_pomotion'] = 'PromotionsControllers/get_detail_pomotion';
 //  ======================================
 
 //  ============== Customer ==============
