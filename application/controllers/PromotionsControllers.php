@@ -29,6 +29,8 @@ class PromotionsControllers extends CI_Controller{
         // $glr['data'] = $this->PromotionsModel->infoPromotions();
         $glr['footer'] = $this->load->view('layout/footer', '', TRUE);
         $glr['endpage'] = $this->load->view('layout/endpage', '', TRUE);
+
+        $glr['promotions'] = $this->PromotionsModel->infoPromotions();
         $this->load->view('user/promotions', $glr);
 //         $this->load->view('user/promotions');
     }
