@@ -5,8 +5,8 @@ if (!isset($_COOKIE["lang"])) {
 } else {
     $lg = $_COOKIE["lang"];
 }
-debug($_COOKIE["lang"]);
-exit();
+// debug($_COOKIE["lang"]);
+// exit();
 if ($lg == 'thailand') {
     $sl = 'TH';
 } else {
@@ -667,7 +667,6 @@ break;
 case 'delbyidPromotions':
     ?>
                         <!-- Modal body -->
-                        <?php echo $sl ?>
                         <form name="from_dpicture"enctype="multipart/form-data" id="from_branchmanagement">
                           <div class="modal-body">
                             <div class="form-group">
@@ -1178,11 +1177,7 @@ break;
 case 'showbyidAccessories':
     ?>
             <form name="from_eaccessories"enctype="multipart/form-data" id="from_eaccessories">
-                <!-- Modal Header -->
-                <div class="modal-header">
-                    <h4 class="modal-title"><?php echo $this->lang->line("personnelhead"); ?></h4>
-                    <button type="button" class="close" data-dismiss="modal">&times;</button>
-                </div>                
+                           
                 <!-- Modal body -->
                 <div class="modal-body">
                     <div class="form-group">
@@ -1535,7 +1530,7 @@ case 'getRoomToCheckout':
                 <hr style="border: 1px solid #ffffff; margin-top: -10px">                
                 <div class="row" style="margin-top: -15px">
                     <div class="col-sm-4">
-                        <label for="ROMlimit" style="color:#ffffff">คุณ:</label>
+                        <label for="ROMlimit" style="color:#ffffff"><?php echo $this->lang->line("sir"); ?>:</label>
                     </div>
                     <div class="col-sm-8">
                         <label for="ROMlimit" style="color:#ffffff"><?php echo $cout[0]['Customer']['CUSfname'] . '  ' . $cout[0]['Customer']['CUSlname'] ?></label>
@@ -1543,7 +1538,7 @@ case 'getRoomToCheckout':
                 </div>
                 <div class="row">
                     <div class="col-sm-4">
-                        <label for="ROMlimit" style="color:#ffffff">ที่อยู่:</label>
+                        <label for="ROMlimit" style="color:#ffffff"><?php echo $this->lang->line("address"); ?>:</label>
                     </div>
                     <div class="col-sm-8">
                         <label for="ROMlimit" style="color:#ffffff"><?php echo $cout[0]['Customer']['CUSadr'] . '  ' . $cout[0]['Customer']['CUSzipc'] ?></label>
@@ -1551,7 +1546,7 @@ case 'getRoomToCheckout':
                 </div>
                 <div class="row">
                     <div class="col-sm-4">
-                        <label for="ROMlimit" style="color:#ffffff">Email:</label>
+                        <label for="ROMlimit" style="color:#ffffff"><?php echo $this->lang->line("email"); ?>:</label>
                     </div>
                     <div class="col-sm-8">
                         <label for="ROMlimit" style="color:#ffffff"><?php echo $cout[0]['Customer']['CUSemail'] ?></label>
@@ -1559,7 +1554,7 @@ case 'getRoomToCheckout':
                 </div>
                 <div class="row">
                     <div class="col-sm-4">
-                        <label for="ROMlimit" style="color:#ffffff">เบอร์โทรศัพ:</label>
+                        <label for="ROMlimit" style="color:#ffffff"><?php echo $this->lang->line("phonenumber"); ?>:</label>
                     </div>
                     <div class="col-sm-8">
                         <label for="ROMlimit" style="color:#ffffff"><?php echo $cout[0]['Customer']['CUSnphone'] ?></label>
@@ -1568,7 +1563,7 @@ case 'getRoomToCheckout':
                 <hr style="border: 1px solid #ffffff; margin-top: -10px">
                 <div class="row">
                     <div class="col-sm-4">
-                        <label for="ROMlimit" style="color:#ffffff">ตรวจเช็คห้อง:</label>
+                        <label for="ROMlimit" style="color:#ffffff"><?php echo $this->lang->line("checktheroom"); ?>:</label>
                     </div>
                     <div class="col-sm-8">
                     <div class="form-check-inline">
@@ -1592,7 +1587,7 @@ case 'getRoomToCheckout':
                 <div class="row" id="myDIV3" style="display:none; margin-top: -10px">                
                     <div class="col-sm-12">
                         <div class="form-group">
-                            <label for="REDprice" style="color:#ffffff">ราคา:</label>
+                            <label for="REDprice" style="color:#ffffff"><?php echo $this->lang->line("price"); ?>:</label>
                             <input type="text" class="form-control" id="REDprice" name="REDprice" oninput="this.value = this.value.replace(/[^0-9]/g, '').replace(/(\..*)\./g, '$1');" />
                         </div>
                     </div>
@@ -1628,9 +1623,9 @@ case 'getRoomToCheckout':
                 <table class="table table-hover">
                     <thead>
                         <tr>
-                            <th>ลำดับ</th>
-                            <th>อุปกรณ์</th>
-                            <th>จำนวน</th>
+                            <th><?php echo $this->lang->line("no"); ?></th>
+                            <th><?php echo $this->lang->line("devicename"); ?></th>
+                            <th><?php echo $this->lang->line("quantity"); ?></th>
                         </tr>
                     </thead>
                     <tbody>
@@ -1691,10 +1686,10 @@ case 'getRoomToCheckout':
                 <table class="table table-hover">
                     <thead>
                         <tr>
-                            <th>ลำดับ</th>
-                            <th>อุปกรณ์</th>
-                            <th>จำนวน</th>
-                            <th>หน่วย</th>
+                            <th><?php echo $this->lang->line("no"); ?></th>
+                            <th><?php echo $this->lang->line("devicename"); ?></th>
+                            <th><?php echo $this->lang->line("quantity"); ?></th>
+                            <th><?php echo $this->lang->line("unit"); ?></th>
                         </tr>
                     </thead>
                     <tbody>
@@ -1752,14 +1747,14 @@ case 'getRoomToCheckout':
                 <div class="col-sm-6">
                     <div class="form-check-inline">
                         <label class="form-check-label" for="radio1">
-                            <input type="radio" class="form-check-input" id="radio1" name="cusaddress" value="0" onclick="myaddress(0);" checked>ใช้ที่อยู่เดิม
+                            <input type="radio" class="form-check-input" id="radio1" name="cusaddress" value="0" onclick="myaddress(0);" checked><?php echo $this->lang->line("currentaddress"); ?>
                         </label>
                     </div>
                 </div>
                 <div class="col-sm-6">
                     <div class="form-check-inline">
                         <label class="form-check-label" for="radio2">
-                            <input type="radio" class="form-check-input" id="radio2" name="cusaddress" value="1" onclick="myaddress(1);">ที่อยู่ใหม่
+                            <input type="radio" class="form-check-input" id="radio2" name="cusaddress" value="1" onclick="myaddress(1);"><?php echo $this->lang->line("company"); ?>
                         </label>
                     </div>
                 </div>
@@ -1770,7 +1765,7 @@ case 'getRoomToCheckout':
                     <!-- <input type="text" class="form-control" id="BOKid" name="BOKid" value="<?php echo $booking[0]['BOKid'] ?>"> -->
                     <input type="hidden" class="form-control" id="CUSid" name="CUSid" value="<?php echo $customer['CUSid'] ?>">
                     <div class="form-group">
-                        <label for="comment">ที่อยู่:</label>
+                        <label for="comment"><?php echo $this->lang->line("address"); ?>:</label>
                         <?php 
                         $txt = 'คุณ ' . $customer['CUSfname'] . '  ' . $customer['CUSlname'] . "\n" 
                         . $customer['CUSadr'] . "\n" 
@@ -1787,7 +1782,7 @@ case 'getRoomToCheckout':
                         <div class="row">
                             <div class="col-sm-12">
                                 <div class="form-group">
-                                    <label for="ADRname">ชื่อ / นามบริษัท:</label>
+                                    <label for="ADRname"><?php echo $this->lang->line("fristname"); ?> / <?php echo $this->lang->line("company"); ?>:</label>
                                     <input type="text" class="form-control" id="ADRname" name="ADRname">
                                 </div>
                             </div>                                     
@@ -1795,13 +1790,13 @@ case 'getRoomToCheckout':
                         <div class="row">
                             <div class="col-sm-6">
                                 <div class="form-group">
-                                    <label for="ADRtel">เบอร์โทรศัพ:</label>
+                                    <label for="ADRtel"><?php echo $this->lang->line("phonenumber"); ?>:</label>
                                     <input type="text" class="form-control" id="ADRtel" name="ADRtel">
                                 </div>
                             </div>  
                             <div class="col-sm-6">
                                 <div class="form-group">
-                                    <label for="ADRemail">Email:</label>
+                                    <label for="ADRemail"><?php echo $this->lang->line("email"); ?>:</label>
                                     <input type="text" class="form-control" id="ADRemail" name="ADRemail">
                                 </div>
                             </div>       
@@ -1809,7 +1804,7 @@ case 'getRoomToCheckout':
                         <div class="row">
                             <div class="col-sm-12">
                                 <div class="form-group">
-                                    <label for="ADRnote">ที่อยู่:</label>
+                                    <label for="ADRnote"><?php echo $this->lang->line("address"); ?>:</label>
                                     <textarea class="form-control" rows="4" id="ADRnote" name="ADRnote"></textarea>
                                 </div>
                             </div>        
@@ -1822,7 +1817,7 @@ case 'getRoomToCheckout':
             <hr>
             <div class="row">
                 <div class="col-sm-4">
-                    <label for="usr">เลือกห้องที่ต้องการออกบิล:</label>
+                    <label for="usr"><?php echo $this->lang->line("selectroom"); ?>:</label>
                 </div>
                 <div class="col-sm-8">
                 <?php
@@ -1842,7 +1837,7 @@ case 'getRoomToCheckout':
             </div>
             <div class="row">
                 <div class="col-sm-4">
-                    <label for="usr">โค้ดส่วนลด:</label>
+                    <label for="usr"><?php  echo $booking[0]['discode'] ?>:</label>
                 </div>
                 <div class="col-sm-8">                    
                     <div class="row">
@@ -1852,14 +1847,14 @@ case 'getRoomToCheckout':
                             <p id="resmessage"></p>
                         </div>
                         <div class="col-sm-4">
-                            <button type="button" class="btn btn-warning btn-block" onclick="checkpromotion('<?php  echo $booking[0]['BOKstartDT'] ?>', '<?php  echo $booking[0]['BOKendDT'] ?>', '<?php  echo $booking[0]['BOKbrhid'] ?>');">ตรวจสอบ</button>
+                            <button type="button" class="btn btn-warning btn-block" onclick="checkpromotion('<?php  echo $booking[0]['BOKstartDT'] ?>', '<?php  echo $booking[0]['BOKendDT'] ?>', '<?php  echo $booking[0]['BOKbrhid'] ?>');"><?php echo $this->lang->line("check"); ?></button>
                         </div>
                     </div>
                 </div>               
             </div>
             <div class="row">
                 <div class="col-sm-4">
-                    <label for="usr">ส่วนลด / บิล (บาท):</label>
+                    <label for="usr"><?php echo $this->lang->line("disbill"); ?>:</label>
                 </div>
                 <div class="col-sm-8">
                     <input type="text" class="form-control" id="POMdis" name="POMdis" value='0' readonly>
@@ -1867,7 +1862,7 @@ case 'getRoomToCheckout':
             </div>
             <div class="row">
                 <div class="col-sm-4">
-                    <label for="usr">ภาษีมูลค่าเพิ่ม:</label>
+                    <label for="usr"><?php echo $this->lang->line("vat"); ?>:</label>
                 </div>
                 <div class="col-sm-8">
                     <div class="form-check-inline">
@@ -1886,7 +1881,7 @@ case 'getRoomToCheckout':
             <div class="row">
                 <div class="col-sm-4"></div>
                 <div class="col-sm-8">
-                    <button type="button" class="btn btn-primary btn-block" onclick="show_detail_room();">แสดงรายละเอียด</button>
+                    <button type="button" class="btn btn-primary btn-block" onclick="show_detail_room();"><?php echo $this->lang->line("showdetails"); ?></button>
                 </div>
             </div>
             <div class="row">
@@ -1904,12 +1899,12 @@ case 'getRoomToCheckout':
                 <table class="table" id="xtable">
                     <thead>
                     <tr>
-                        <th>ลำดับ</th>
+                        <th><?php echo $this->lang->line("no"); ?></th>
                         <th></th>
-                        <th>รายละเอียด</th>
-                        <th align="center">จำนวน</th>
-                        <th align="center">หน่วย</th>
-                        <th align="center">ราคา</th>
+                        <th><?php echo $this->lang->line("details"); ?></th>
+                        <th align="center"><?php echo $this->lang->line("quantity"); ?></th>
+                        <th align="center"><?php echo $this->lang->line("priceunit"); ?></th>
+                        <th align="center"><?php echo $this->lang->line("price"); ?></th>
                     </tr>
                     </thead>
                     <tbody>
@@ -1951,7 +1946,7 @@ case 'getRoomToCheckout':
                             ?>
                                 <tr>
                                     <td><?php $a = $exkey + 1 ?></td>
-                                    <td <?php if($exkey == 0){ echo "bgcolor='#ccccff'";} ?>><?php if($exkey == 0){ echo "ส่วนเสริม";} ?></td>                            
+                                    <td <?php if($exkey == 0){ echo "bgcolor='#ccccff'";} ?>><?php if($exkey == 0){ echo $this->lang->line("addon");} ?></td>                            
                                     <td bgcolor="#ccccff"><?php echo '(' . $a . ')  ' . $exvalue['REDnote'] ?></td>
                                     <td bgcolor="#ccccff" align="right"><?php echo number_format($exvalue['REDqty'], 2, '.', '') ?></td>
                                     <th align="center" bgcolor="#ccccff">
@@ -1979,7 +1974,7 @@ case 'getRoomToCheckout':
                             ?>
                                 <tr>
                                     <td><?php $b = $mkey + 1 ?></td>
-                                    <td <?php if($mkey == 0){ echo "bgcolor='#ffffb3'";} ?>><?php if($mkey == 0){ echo "สินค้า";} ?></td>                            
+                                    <td <?php if($mkey == 0){ echo "bgcolor='#ffffb3'";} ?>><?php if($mkey == 0){ echo $this->lang->line("product");} ?></td>                            
                                     <td bgcolor="#ffffb3"><?php echo '(' . $b . ')  ' . $mvalue['product'][0]['STKdesc'.$sl] ?></td>
                                     <td bgcolor="#ffffb3" align="right"><?php echo number_format($mvalue['MNSromrisqty'], 2, '.', '') ?></td>
                                     <th align="center" bgcolor="#ffffb3"><?php echo $mvalue['product'][0]['unit'][0]['UNTdesc'.$sl] ?></th>
@@ -1999,7 +1994,7 @@ case 'getRoomToCheckout':
                             ?>
                                 <tr>
                                     <td><?php $c = $akey + 1 ?></td>
-                                    <td <?php if($akey == 0){ echo "bgcolor='#ffe6e6'";} ?>><?php if($akey == 0){ echo "ค่าปรับ";} ?></td>                            
+                                    <td <?php if($akey == 0){ echo "bgcolor='#ffe6e6'";} ?>><?php if($akey == 0){ echo $this->lang->line("fine");} ?></td>                            
                                     <td bgcolor="#ffe6e6"><?php echo '(' . $c . ')  ' . $avalue['unit'][0]['RASdesc'.$sl] ?></td>
                                     <td bgcolor="#ffe6e6" align="right"><?php echo number_format($avalue['RADromrisqty'], 2, '.', '') ?></td>
                                     <th align="center" bgcolor="#ffe6e6">
@@ -2031,7 +2026,7 @@ case 'getRoomToCheckout':
                         <td><?php // echo $sumextrabed ?></td>
                         <td><?php // echo $summinibar ?></td>
                         <td></td>
-                        <td align="right"><b>รวม</b><?php // echo $sumaccessories ?></td>
+                        <td align="right"><b><?php echo $this->lang->line("tot"); ?></b><?php // echo $sumaccessories ?></td>
                         <td align="right">
                         <?php 
                         $tot = $sumroom + $sumextrabed + $summinibar + $sumaccessories;
@@ -2040,15 +2035,15 @@ case 'getRoomToCheckout':
                         </td>
                     </tr>
                     <tr>                        
-                        <td colspan="5" align="right"><b>ส่วนลด</b></td>                        
+                        <td colspan="5" align="right"><b><?php echo $this->lang->line("dis"); ?></b></td>                        
                         <td align="right"><?php echo $POMdis ?></td>
                     </tr>
                     <tr>
-                        <td colspan="5" align="right"><b>ภาษีมูลค่าเพิ่ม</b></td>                        
+                        <td colspan="5" align="right"><b><?php echo $this->lang->line("vat"); ?></b></td>                        
                         <td align="right"><?php $vat = number_format($tot * $VAT / 100 , 2, '.', ''); echo $vat; ?></td>
                     </tr>
                     <tr>
-                        <td colspan="5" align="right"><b>ราคาสุทธิ</b></td>                        
+                        <td colspan="5" align="right"><b><?php echo $this->lang->line("net"); ?></b></td>                        
                         <td align="right">
                         <?php
                         $stot = ($tot + ($tot * $VAT / 100)) - $POMdis;
@@ -2067,27 +2062,27 @@ case 'getRoomToCheckout':
             </div>
             <div class="row">
                 <div class="col-sm-4">
-                    <label for="usr">การแสดงผลของรายการบิล:</label>
+                    <label for="usr"><?php echo $this->lang->line("bdisplay"); ?>:</label>
                 </div>
                 <div class="col-sm-8">
                     <div class="form-check-inline">
                         <label class="form-check-label" for="display1">
-                            <input type="checkbox" class="form-check-input get_value_disp" id="display1" name="display1" value="0">ไม่แสดงรายการ
+                            <input type="checkbox" class="form-check-input get_value_disp" id="display1" name="display1" value="0"><?php echo $this->lang->line("showitems"); ?>
                         </label>
                     </div>
                     <div class="form-check-inline">
                         <label class="form-check-label" for="display2">
-                            <input type="checkbox" class="form-check-input get_value_disp" id="display2" name="display2" value="0">ไม่แสดงรายการส่วนเสริม
+                            <input type="checkbox" class="form-check-input get_value_disp" id="display2" name="display2" value="0"><?php echo $this->lang->line("extraitems"); ?>
                         </label>
                     </div>                    
                     <div class="form-check-inline">
                         <label class="form-check-label" for="display4">
-                            <input type="checkbox" class="form-check-input get_value_disp" id="display4" name="display4" value="0">ไม่แสดงรายการสินค้า
+                            <input type="checkbox" class="form-check-input get_value_disp" id="display4" name="display4" value="0"><?php echo $this->lang->line("showproducts"); ?>
                         </label>
                     </div>
                     <div class="form-check-inline">
                         <label class="form-check-label" for="display5">
-                            <input type="checkbox" class="form-check-input get_value_disp" id="display5" name="display5" value="0">ไม่แสดงรายการค่าปรับ
+                            <input type="checkbox" class="form-check-input get_value_disp" id="display5" name="display5" value="0"><?php echo $this->lang->line("finelist"); ?>
                         </label>
                     </div>
                 </div>

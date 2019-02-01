@@ -12,8 +12,8 @@ if ($lg == 'thailand') {
 }
 // debug($pslide);
 ?>
-<?php echo $startpage; ?>
-<div id="myCarousel" class="carousel slide" data-ride="carousel">
+<?php // echo $startpage; ?>
+<!-- <div id="myCarousel" class="carousel slide" data-ride="carousel">
     <ol class="carousel-indicators" style="visibility: hidden">
       <?php foreach ($xpslide as $key => $value): ?>
         <li data-target="#myCarousel" data-slide-to="<?php echo $key ?>" <?php if($key == 0){echo 'class="active"';} ?>></li>
@@ -39,7 +39,7 @@ if ($lg == 'thailand') {
         <span class="carousel-control-next-icon" aria-hidden="true"></span>
         <span class="sr-only">Next</span>
     </a>
-</div>
+</div> -->
 
 
 <!-- Example DataTables Card-->

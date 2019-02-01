@@ -9,7 +9,7 @@ class AccessoriesModel extends CI_Model{
   }
 
   public function infoAccessories(){
-    $sql = 'SELECT * FROM RAS WHERE RASdelete = 0';
+    $sql = 'SELECT * FROM RAS LEFT JOIN USC ON RAS.RASwar = USC.USCcode WHERE RASdelete = 0 AND USCuse = 30';
 
     $query = $this->db->query($sql);
     $num = $query->num_rows();

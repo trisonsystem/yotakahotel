@@ -148,6 +148,40 @@ $lang['detailsen'] = 'รายละเอียด EN';
 $lang['releasedate'] = 'วันที่เผยแพร่';
 $lang['roomtype'] = 'ประเภทห้อง';
 $lang['discode'] = 'โค้ดส่วนลด';
+$lang['insertbpage'] = 'เพิ่มข้อมูลหน้าจองที่พัก';
+$lang['editbpage'] = 'แก้ไขข้อมูลหน้าจองที่พัก';
+$lang['deletebpage'] = 'แก้ไขข้อมูลหน้าจองที่พัก';
+$lang['insertbpagep'] = 'เพิ่มรูปหน้าจองที่พัก';
+$lang['editbpagep'] = 'แก้ไขรูปหน้าจองที่พัก';
+$lang['deletebpagep'] = 'แก้ไขรูปหน้าจองที่พัก';
+$lang['bookingdate'] = 'วันที่จอง';
+$lang['bookings'] = 'จอง';
+$lang['cleaning'] = 'ทำความสะอาด';
+$lang['transaction'] = 'สามารถทำรายการได้';
+$lang['pirnt'] = 'พิมพ์บิล';
+$lang['insertequipment'] = 'เพิ่มรายการกรณีมีอุปกรณ์ชำรุด';
+$lang['insertminibar'] = 'เพิ่มราย Mini bar';
+$lang['finelist'] = 'ไม่แสดงรายการค่าปรับ';
+$lang['showproducts'] = 'ไม่แสดงรายการสินค้า';
+$lang['extraitems'] = 'ไม่แสดงรายการส่วนเสริม';
+$lang['showitems'] = 'ไม่แสดงรายการ';
+$lang['bdisplay'] = 'การแสดงผลของรายการบิล';
+$lang['net'] = 'ราคาสุทธิ';
+$lang['vat'] = 'ภาษีมูลค่าเพิ่ม';
+$lang['dis'] = 'ส่วนลด';
+$lang['tot'] = 'รวม';
+$lang['fine'] = 'ค่าปรับ';
+$lang['product'] = 'สินค้า';
+$lang['addon'] = 'สินส่วนเสริมค้า';
+$lang['showdetails'] = 'แสดงรายละเอียด';
+$lang['disbill'] = 'ส่วนลด / บิล (บาท)';
+$lang['check'] = 'ตรวจสอบ';
+$lang['selectroom'] = 'เลือกห้องที่ต้องการออกบิล';
+$lang['company'] = 'บริษัท';
+$lang['newaddress'] = 'ที่อยู่ใหม่';
+$lang['currentaddress'] = 'ใช้ที่อยู่ปัจจุบัน';
+$lang['checktheroom'] = 'ตรวจเช็คห้อง';
+$lang['sir'] = 'คุณ';
 //  -------------------------------------------------- * booking
 
 
@@ -229,6 +263,13 @@ $lang['roomnameen'] = 'ชื่อห้อง EN';
 $lang['numberofusers'] = 'จำนวนผู้ใช้งาน';
 $lang['devicenameth'] = 'ชื่ออุปกรณ์ TH';
 $lang['devicenameen'] = 'ชื่ออุปกรณ์ EN';
+$lang['devicename'] = 'ชื่ออุปกรณ์';
 $lang['quantity'] = 'จำนวน';
 $lang['priceunit'] = 'ราคา/หน่วย';
+$lang['unit'] = 'หน่วย';
+$lang['warranty'] = 'ประกัน';
+$lang['purchasedate'] = 'วันที่ซื้อ';
+
+$lang['editacc'] = 'แก้ไขข้อมูลอุปกรณ์';
+$lang['delacc'] = 'ลบข้อมูลอุปกรณ์';
 //  -------------------------------------------------- * Room
