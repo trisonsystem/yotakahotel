@@ -1,6 +1,7 @@
 <?php 
 if (!isset($_COOKIE["lang"])) {
-    
+    $lg = $lang;
+} else {
     $lg = $_COOKIE["lang"];
 }
 

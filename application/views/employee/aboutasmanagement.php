@@ -1,5 +1,7 @@
 <?php
-if (!isset($_COOKIE["lang"])) {    
+if (!isset($_COOKIE["lang"])) {
+    $lg = $lang;
+} else {
     $lg = $_COOKIE["lang"];
 }
 
@@ -8,6 +10,7 @@ if ($lg == 'thailand') {
 } else {
     $sl = 'EN';
 }
+
 ?>
 
 <!-- Example DataTables Card-->

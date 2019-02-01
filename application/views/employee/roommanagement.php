@@ -1,7 +1,8 @@
 <?php
 // $branchname = json_decode($branch, TRUE)['data'];
 if (!isset($_COOKIE["lang"])) {
-   
+    $lg = $lang;
+} else {
     $lg = $_COOKIE["lang"];
 }
 

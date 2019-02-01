@@ -1,10 +1,12 @@
 <?php
-debug($_COOKIE["lang"]);
-exit();
-if (!isset($_COOKIE["lang"])) {   
+
+if (!isset($_COOKIE["lang"])) {
+    $lg = $lang;
+} else {
     $lg = $_COOKIE["lang"];
 }
-
+debug($_COOKIE["lang"]);
+exit();
 if ($lg == 'thailand') {
     $sl = 'TH';
 } else {
