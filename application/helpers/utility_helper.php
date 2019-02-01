@@ -362,9 +362,10 @@ if (!function_exists('sentEmailToCustomer')) {
 }
 
 if(!function_exists('bahtText')){
-    function bahtText(float $amount): string
+    function bahtText(float $amount)
     {
-        [$integer, $fraction] = explode('.', number_format(abs($amount), 2, '.', ''));
+        $integer = explode('.', number_format(abs($amount), 2, '.', ''));
+        $fraction = explode('.', number_format(abs($amount), 2, '.', ''));
     
         $baht = convert($integer);
         $satang = convert($fraction);
@@ -378,7 +379,7 @@ if(!function_exists('bahtText')){
 }
 
 if(!function_exists('convert')){
-    function convert(string $number): string
+    function convert(string $number)
     {
         $values = ['', 'หนึ่ง', 'สอง', 'สาม', 'สี่', 'ห้า', 'หก', 'เจ็ด', 'แปด', 'เก้า'];
         $places = ['', 'สิบ', 'ร้อย', 'พัน', 'หมื่น', 'แสน', 'ล้าน'];
