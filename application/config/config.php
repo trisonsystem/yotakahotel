@@ -30,7 +30,6 @@ if ($_SERVER['SERVER_NAME'] != 'localhost') {
 }else{
 	$config['base_url'] 	= '/yotakahotel/';
 }
-
 /*
 |--------------------------------------------------------------------------
 | Index File

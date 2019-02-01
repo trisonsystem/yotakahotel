@@ -57,8 +57,9 @@ if ($lg == 'thailand') {
         <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
             <thead>
             <tr>
-                <th>Delete</th>
-                <th>สาขา</th>
+                <th style="display: none;">Delete</th>
+                <th><?php echo $this->lang->line("no"); ?></th>
+                <th><?php echo $this->lang->line("branchname"); ?></th>
                 <th>อุปกรณ์</th>
                 <th>จำนวน</th>
                 <th>ราคา</th>
@@ -91,13 +92,14 @@ if ($lg == 'thailand') {
                 foreach($access as $key => $value):
             ?>
             <tr  id="tr<?php echo $value['RASid'].''; ?>">
-                <td>
+                <td style="display: none;">
                     <div class="form-check" >
                         <label class="form-check-label">
                         <input type="checkbox" id="<?php echo $value['RASid']; ?>" class="form-check-input" value="<?php  echo $value['RASid']; ?>" name="chk" onchange="myFunction('tr' + this.id, this, this.id)"><?php  echo $this->lang->line("select"); ?>
                         </label>
                     </div>
                 </td>
+                <td><?php echo $key + 1 ?></td>
                 <td><?php echo $value['branch'][0]['BRHdesc'.$sl] ?></td>
                 <td><?php echo $value['RASdesc'.$sl] ?></td>
                 <td><?php echo $value['RASquan'] ?></td>

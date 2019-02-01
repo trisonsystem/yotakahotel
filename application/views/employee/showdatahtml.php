@@ -1,7 +1,7 @@
 <?php
-if (!isset($_COOKIE["lang"])) {
-    $lg = $lang;
-} else {
+debug($_COOKIE["lang"]);
+exit();
+if (!isset($_COOKIE["lang"])) {   
     $lg = $_COOKIE["lang"];
 }
 
@@ -665,6 +665,7 @@ break;
 case 'delbyidPromotions':
     ?>
                         <!-- Modal body -->
+                        <?php echo $sl ?>
                         <form name="from_dpicture"enctype="multipart/form-data" id="from_branchmanagement">
                           <div class="modal-body">
                             <div class="form-group">

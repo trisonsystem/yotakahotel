@@ -52,10 +52,96 @@ if ($lg == 'thailand') {
     <div class="collapse navbar-collapse " id="navbarResponsive">
 
         <ul class="navbar-nav navbar-sidenav vertical-menu" id="exampleAccordion">
-            <!--  ------------------------------------------------------- Branch Information --------------------------------------------------------------  -->
+
             <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Example Pages">
+                <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseExampleBasic" data-parent="#exampleAccordion">
+                    <i class="fa fa-cog" style="font-size:24px"></i>
+                    <span class="nav-link-text"><?php echo $this->lang->line("basicinfo"); ?></span>
+                </a>
+                <ul class="sidenav-second-level collapse" id="collapseExampleBasic">
+                    <li>
+                        <a href="<?php echo base_url(); ?>empmain/M1001"><?php echo $this->lang->line("M1001"); ?></a>
+                    </li>
+                    <li>
+                        <a href="<?php echo base_url(); ?>empmain/M9001"><?php echo $this->lang->line("M9001"); ?></a>
+                    </li>
+                    <li>
+                        <a href="<?php echo base_url(); ?>empmain/M2001"><?php echo $this->lang->line("M2001"); ?></a>
+                    </li>
+                    <li>
+                        <a href="<?php echo base_url(); ?>empmain/M8001"><?php echo $this->lang->line("M8001"); ?></a>
+                    </li>
+                    <li>
+                        <a href="<?php echo base_url(); ?>empmain/M4001"><?php echo $this->lang->line("M4001"); ?></a>
+                    </li>
+                </ul>
+            </li>
+
+            <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Example Pages">
+                <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseExampleRoomservice" data-parent="#exampleAccordion">
+                    <i class="fa fa-cog" style="font-size:24px"></i>
+                    <span class="nav-link-text"><?php echo $this->lang->line("roominfo"); ?></span>
+                </a>
+                <ul class="sidenav-second-level collapse" id="collapseExampleRoomservice">
+                    <li>
+                        <a href="<?php echo base_url(); ?>empmain/M3001"><?php echo $this->lang->line("M3001"); ?></a>
+                    </li>
+                    <li>
+                        <a href="<?php echo base_url(); ?>empmain/M3002"><?php echo $this->lang->line("M3002"); ?></a>
+                    </li>                   
+                </ul>
+            </li>
+
+            <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Example Pages">
+                <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseExampleMyWeb" data-parent="#exampleAccordion">
+                    <i class="fa fa-cog" style="font-size:24px"></i>
+                    <span class="nav-link-text"><?php echo $this->lang->line("pageinfo"); ?></span>
+                </a>
+                <ul class="sidenav-second-level collapse" id="collapseExampleMyWeb">
+                    <li>
+                        <a href="<?php echo base_url(); ?>empmain/M0001"><?php echo $this->lang->line("M0001"); ?></a>
+                    </li>            
+                    <li>
+                        <a href="<?php echo base_url(); ?>empmain/M6001"><?php echo $this->lang->line("M6001"); ?></a>
+                    </li>   
+                    <li>
+                        <a href="<?php echo base_url(); ?>empmain/M5002"><?php echo $this->lang->line("M5002"); ?></a>
+                    </li>   
+                    <li>
+                        <a href="<?php echo base_url(); ?>empmain/M5001"><?php echo $this->lang->line("M5001"); ?></a>
+                    </li>
+                    <li>
+                        <a href="<?php echo base_url(); ?>empmain/M7001"><?php echo $this->lang->line("M7001"); ?></a>
+                    </li>
+                    <li>
+                        <a href="<?php echo base_url(); ?>empmain/M7002"><?php echo $this->lang->line("M7002"); ?></a>
+                    </li>                    
+                </ul>
+            </li>
+            <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Example Pages">
+                <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseExampleFront" data-parent="#exampleAccordion">
+                    <i class="fa fa-external-link"></i>
+                    <span class="nav-link-text"><?php echo $this->lang->line("frontoffice"); ?></span>
+                </a>
+                <ul class="sidenav-second-level collapse" id="collapseExampleFront">
+                    <li>
+                        <a href="<?php echo base_url(); ?>empmain/M1101"><?php echo $this->lang->line("M1101"); ?></a>
+                    </li>
+                    <li>
+                        <a href="<?php echo base_url(); ?>empmain/M1102"><?php echo $this->lang->line("M1102"); ?></a>
+                    </li>
+                </ul>
+            </li>
+
+
+
+
+
+            
+            <!--  ------------------------------------------------------- Branch Information --------------------------------------------------------------  -->
+            <!-- <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Example Pages">
                 <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseExamplePagesSystem" data-parent="#exampleAccordion">
-                    <i class="fa fa-cog fa-spin" style="font-size:24px"></i>
+                    <i class="fa fa-cog" style="font-size:24px"></i>
                     <span class="nav-link-text">System Information</span>
                 </a>
                 <ul class="sidenav-second-level collapse" id="collapseExamplePagesSystem">
@@ -66,10 +152,10 @@ if ($lg == 'thailand') {
                         <a href="<?php echo base_url(); ?>empmain/M0001">Slide management</a>
                     </li>
                 </ul>
-            </li>
+            </li> -->
 
             <!--  ------------------------------------------------------- Branch Information --------------------------------------------------------------  -->
-            <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Example Pages">
+            <!-- <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Example Pages">
                 <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseExamplePagesBranch" data-parent="#exampleAccordion">
                     <i class="fa fa-bank "></i>
                     <span class="nav-link-text">Branch Information</span>
@@ -79,11 +165,11 @@ if ($lg == 'thailand') {
                         <a href="<?php echo base_url(); ?>empmain/M1001">Branch management</a>
                     </li>
                 </ul>
-            </li>
+            </li> -->
             <!--  ------------------------------------------------------- Branch Information --------------------------------------------------------------  -->
 
             <!--  ------------------------------------------------------- Branch Information --------------------------------------------------------------  -->
-            <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Example Pages">
+            <!-- <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Example Pages">
                 <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseExamplePagesCustomer" data-parent="#exampleAccordion">
                     <i class="fa fa-address-card"></i>
                     <span class="nav-link-text">Customer Information</span>
@@ -93,11 +179,11 @@ if ($lg == 'thailand') {
                         <a href="<?php echo base_url(); ?>empmain/M2001">Customer management</a>
                     </li>
                 </ul>
-            </li>
+            </li> -->
             <!--  ------------------------------------------------------- Branch Information --------------------------------------------------------------  -->
 
             <!--  ------------------------------------------------------- Room Information --------------------------------------------------------------  -->
-            <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Example Pages">
+            <!-- <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Example Pages">
                 <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseExamplePagesRoom" data-parent="#exampleAccordion">
                     <i class="fa fa-bed"></i>
                     <span class="nav-link-text">Room Information</span>
@@ -110,11 +196,11 @@ if ($lg == 'thailand') {
                         <a href="<?php echo base_url(); ?>empmain/M3002">Accessories management</a>
                     </li>
                 </ul>
-            </li>
+            </li> -->
             <!--  ------------------------------------------------------- Room Information --------------------------------------------------------------  -->
 
             <!--  ------------------------------------------------------- Comment Information --------------------------------------------------------------  -->
-            <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Example Pages">
+            <!-- <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Example Pages">
                 <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseExamplePagesComment" data-parent="#exampleAccordion">
                     <i class="fa fa-commenting"></i>
                     <span class="nav-link-text">Comment Information</span>
@@ -124,11 +210,11 @@ if ($lg == 'thailand') {
                         <a href="<?php echo base_url(); ?>empmain/M4001">Comment management</a>
                     </li>
                 </ul>
-            </li>
+            </li> -->
             <!--  ------------------------------------------------------- Comment Information --------------------------------------------------------------  -->
 
             <!--  ------------------------------------------------------- Booking Information --------------------------------------------------------------  -->
-            <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Example Pages">
+            <!-- <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Example Pages">
                 <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseExamplePagesBooking" data-parent="#exampleAccordion">
                     <i class="fa fa-object-group"></i>
                     <span class="nav-link-text">Booking Information</span>
@@ -141,11 +227,11 @@ if ($lg == 'thailand') {
                         <a href="<?php echo base_url(); ?>empmain/M5002">Booking user page</a>
                     </li>
                 </ul>
-            </li>
+            </li> -->
             <!--  ------------------------------------------------------- Booking Information --------------------------------------------------------------  -->
 
             <!--  ------------------------------------------------------- About as Information --------------------------------------------------------------  -->
-            <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Example Pages">
+            <!-- <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Example Pages">
                 <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseExamplePagesAboutas" data-parent="#exampleAccordion">
                     <i class="fa fa-info-circle"></i>
                     <span class="nav-link-text">About as Information</span>
@@ -155,11 +241,11 @@ if ($lg == 'thailand') {
                         <a href="<?php echo base_url(); ?>empmain/M6001">About as user page</a>
                     </li>
                 </ul>
-            </li>
+            </li> -->
             <!--  ------------------------------------------------------- About as Information --------------------------------------------------------------  -->
 
             <!--  ------------------------------------------------------- Gallery Information ---------------------------------------------------------------  -->
-            <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Example Pages">
+            <!-- <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Example Pages">
                 <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseExamplePagesGallery" data-parent="#exampleAccordion">
                     <i class="fa fa-photo"></i>
                     <span class="nav-link-text">Gallery Information</span>
@@ -172,11 +258,11 @@ if ($lg == 'thailand') {
                         <a href="<?php echo base_url(); ?>empmain/M7002">Picture</a>
                     </li>
                 </ul>
-            </li>
+            </li> -->
             <!--  ------------------------------------------------------- Gallery Information ---------------------------------------------------------------  -->
 
             <!--  ------------------------------------------------------- Gallery Information ---------------------------------------------------------------  -->
-            <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Example Pages">
+            <!-- <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Example Pages">
                 <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseExamplePromotions" data-parent="#exampleAccordion">
                     <i class="fa fa-calendar"></i>
                     <span class="nav-link-text">Promotions Information</span>
@@ -186,11 +272,11 @@ if ($lg == 'thailand') {
                         <a href="<?php echo base_url(); ?>empmain/M8001">Promotions management</a>
                     </li>
                 </ul>
-            </li>
+            </li> -->
             <!--  ------------------------------------------------------- Gallery Information ---------------------------------------------------------------  -->
 
             <!--  ------------------------------------------------------- Personnel Information ---------------------------------------------------------------  -->
-            <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Example Pages">
+            <!-- <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Example Pages">
                 <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseExamplePersonnel" data-parent="#exampleAccordion">
                     <i class="fa fa-user-circle"></i>
                     <span class="nav-link-text">Personnel Information</span>
@@ -200,11 +286,11 @@ if ($lg == 'thailand') {
                         <a href="<?php echo base_url(); ?>empmain/M9001">Personnel management</a>
                     </li>
                 </ul>
-            </li>
+            </li> -->
             <!--  ------------------------------------------------------- Personnel Information ---------------------------------------------------------------  -->
 
             <!--  ------------------------------------------------------- Front Office ---------------------------------------------------------------  -->
-            <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Example Pages">
+            <!-- <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Example Pages">
                 <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseExampleFront" data-parent="#exampleAccordion">
                     <i class="fa fa-external-link"></i>
                     <span class="nav-link-text">Front Office</span>
@@ -217,7 +303,7 @@ if ($lg == 'thailand') {
                         <a href="<?php echo base_url(); ?>empmain/M1102">Booking management</a>
                     </li>
                 </ul>
-            </li>
+            </li> -->
             <!--  ------------------------------------------------------- Front Office ---------------------------------------------------------------  -->
         </ul>
 
@@ -428,7 +514,7 @@ if ($lg == 'thailand') {
 
     function SelectLanguage(lg) {
         document.cookie = "lang=";
-
+        
         switch (lg) {
             case 'en' :
                 document.cookie = "lang=english";
