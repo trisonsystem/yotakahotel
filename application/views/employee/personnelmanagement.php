@@ -56,7 +56,7 @@ if ($lg == 'thailand') {
       <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
         <thead>
           <tr>
-            <th>Delete</th>
+            <th style="display: none;">Delete</th>
             <th><?php echo $this->lang->line("no"); ?></th>
             <th><?php echo $this->lang->line("cname"); ?></th>
             <th><?php echo $this->lang->line("address"); ?></th>
@@ -90,7 +90,7 @@ if ($lg == 'thailand') {
                 foreach ($personnel as $key => $value):
             ?>
             <tr id="tr<?php echo $value['PERid'].''; ?>">
-                <td>
+                <td style="display: none;">
                     <div class="form-check" >
                         <label class="form-check-label">
                         <input type="checkbox" id="<?php echo $value['PERid']; ?>" class="form-check-input" value="<?php  echo $value['PERid']; ?>" name="chk" onchange="myFunction('tr' + this.id, this, this.id)"><?php  echo $this->lang->line("select"); ?>

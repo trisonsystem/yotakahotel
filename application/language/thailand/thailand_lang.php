@@ -1,4 +1,29 @@
 <?php
+/*
+ * Emp menu
+ */
+$lang['basicinfo'] = 'จัดการข้อมูลพื้นฐาน';
+$lang['M1001'] = 'ข้อมูลสาขา';
+$lang['M9001'] = 'มูลพนักงาน';
+$lang['M2001'] = 'มูลลูกค้า';
+$lang['M8001'] = 'โปรโมชั่น';
+$lang['M4001'] = 'ความคิดเห็นลูกค้า';
+
+$lang['roominfo'] = 'จ้ดการข้อมูลห้องพัก';
+$lang['M3001'] = 'ข้อมูลห้อง';
+$lang['M3002'] = 'อุปกรณ์ภายในห้อง';
+
+$lang['pageinfo'] = 'จ้ดการข้อมูลหน้าเว็บ';
+$lang['M0001'] = 'สไลด์หน้าแรก';
+$lang['M6001'] = 'หน้าเกี่ยวกับเรา';
+$lang['M5002'] = 'หน้าจองที่พัก';
+$lang['M5001'] = 'รูปภาพหน้าจองที่พัก';
+$lang['M7001'] = 'หน้าแกลลอรี่';
+$lang['M7002'] = 'รูปภาพหน้าแกลลอรี่';
+
+$lang['frontoffice'] = 'แผนกต้อนรับส่วนหน้า';
+$lang['M1101'] = 'จองห้องพัก';
+$lang['M1102'] = 'แก้ไขการจองห้องพัก';
 
 /*
  * Object
@@ -163,6 +188,8 @@ $lang['contentdeletet'] = 'ลบ Content';
 
 //  -------------------------------------------------- * Promotion
 $lang['promotionhead'] = 'เพิ่มข้อมูล Promotion';
+$lang['editpromotionhead'] = 'แก้ไขข้อมูล Promotion';
+$lang['deletepromotionhead'] = 'ลบข้อมูล Promotion';
 $lang['promotionsdescriptionTH'] = 'รายละเอียดโปรโมชั่น TH';
 $lang['promotionsdescriptionEN'] = 'รายละเอียดโปรโมชั่น EN';
 $lang['promotioncode'] = 'โค้ดสำหรับลดราคา';

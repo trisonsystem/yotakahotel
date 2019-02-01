@@ -56,7 +56,8 @@ if ($lg == 'thailand') {
             <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                 <thead>
                     <tr>
-                        <th>Delete</th>
+                        <th style="display: none;">Delete</th>
+                        <th><?php echo $this->lang->line("no"); ?></th>
                         <th><?php echo $this->lang->line("customomercode"); ?></th>
                         <th><?php echo $this->lang->line("customomername"); ?></th>
                         <th><?php echo $this->lang->line("address"); ?></th>
@@ -88,7 +89,7 @@ if ($lg == 'thailand') {
                     foreach ($datafromapi as $key => $value): 
                     ?>
                             <tr id="tr<?php echo $value['CUSid']; ?>" >
-                                <th>
+                                <th style="display: none;">
                                     <div class="form-check" >
                                         <label class="form-check-label">
                                             <?php if ($value['CUSid'] != 1) : ?>
@@ -102,6 +103,7 @@ if ($lg == 'thailand') {
                                         </label>
                                     </div>
                                 </th>
+                                <td><?php echo $key + 1 ?></td>
                                 <td><?php echo $value['CUScode']; ?></td>
                                 <td><?php echo $value['TITLEdesc' . $sl] . '  ' . $value['CUSfname'] . '  ' . $value['CUSlname']; ?></td>
                                 <td width = "20%"><?php echo $value['CUSadr'] . '  ' . $this->lang->line("email") . ': ' . $value['CUSemail'] . '  ' . $this->lang->line("phonenumber") . ': ' . $value['CUSnphone'] ?></td>

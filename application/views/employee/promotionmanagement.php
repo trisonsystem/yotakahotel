@@ -15,6 +15,7 @@ if ($lg == 'thailand') {
 } else {
     $sl = 'EN';
 }
+
 ?>
 
 <!-- Example DataTables Card-->
@@ -61,7 +62,8 @@ if ($lg == 'thailand') {
       <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
         <thead>
           <tr>
-            <th>Delete</th>
+            <th style="display: none;">Delete</th>
+            <th><?php echo $this->lang->line("no"); ?></th>
             <th><?php echo $this->lang->line("promotionsdescriptionTH"); ?></th>
             <th><?php echo $this->lang->line("promotionsdescriptionEN"); ?></th>
             <th><?php echo $this->lang->line("promotioncode"); ?></th>
@@ -94,14 +96,15 @@ if ($lg == 'thailand') {
             if (isset($promotion)) :
                 foreach ($promotion as $key => $value):
             ?>
-            <tr id="tr<?php echo $value['POMid'].''; ?>">
-                <td>
+            <tr id="tr<?php echo $value['POMid'].''; ?>" >
+                <td style="display: none;">
                     <div class="form-check" >
                         <label class="form-check-label">
                         <input type="checkbox" id="<?php echo $value['POMid']; ?>" class="form-check-input" value="<?php echo $value['POMid']; ?>" name="chk" onchange="myFunction('tr' + this.id, this, this.id)"><?php echo $this->lang->line("select"); ?>
                         </label>
                     </div>
                 </td>
+                <td><?php echo $key + 1 ?></td>
                 <td><?php echo $value['POMdescTH'] ?></td>
                 <td><?php echo $value['POMdescEN'] ?></td>
                 <td><?php echo $value['POMpcode'] ?></td>
@@ -267,7 +270,7 @@ if ($lg == 'thailand') {
 
             <!--Modal Header-->
             <div class="modal-header">
-                <h4 class="modal-title"><?php echo $this->lang->line("delcustomer"); ?></h4>
+                <h4 class="modal-title"><?php echo $this->lang->line("deletepromotionhead"); ?></h4>
                 <span id="xid1" style="color: #ffffff"></span>
                 <button type="button" class="close" data-dismiss="modal">&times;</button>
             </div>
@@ -285,7 +288,7 @@ if ($lg == 'thailand') {
 
             <!--Modal Header-->
             <div class="modal-header">
-                <h4 class="modal-title"><?php echo $this->lang->line("contentedit"); ?></h4>
+                <h4 class="modal-title"><?php echo $this->lang->line("editpromotionhead"); ?></h4>
                 <span id="xid" style="color: #ffffff"></span>
                 <button type="button" class="close" data-dismiss="modal">&times;</button>
             </div>

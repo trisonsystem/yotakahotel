@@ -25,10 +25,11 @@ if ($lg == 'thailand') {
             <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                 <thead>
                     <tr>
-                        <th>Delete</th>
+                        <th style="display: none;">Delete</th>
+                        <th><?php echo $this->lang->line("no"); ?></th>
                         <th><?php echo $this->lang->line("branchcode"); ?></th>
                         <th><?php echo $this->lang->line("vatnumber"); ?></th>
-                        <th><?php echo $this->lang->line("branchname" . $sl); ?></th>
+                        <th><?php echo $this->lang->line("branchname"); ?></th>
                         <th><?php echo $this->lang->line("address"); ?></th>
                         <th><?php echo $this->lang->line("establishment"); ?></th>
                         <th>Action</th>
@@ -37,7 +38,7 @@ if ($lg == 'thailand') {
                 <!-- <tfoot>
                     <tr>
                         <th>                   
-                            <!--<button type="button" class="btn btn-warning btn-sm form-control" onclick="open_delgbranch_modal();"> <?php // echo $this->lang->line("delete"); ?> </button>-->
+                            <button type="button" class="btn btn-warning btn-sm form-control" onclick="open_delgbranch_modal();"> <?php // echo $this->lang->line("delete"); ?> </button>
                         </th>
                         <th><?php echo $this->lang->line("branchcode"); ?></th>
                         <th><?php echo $this->lang->line("vatnumber"); ?></th>
@@ -53,7 +54,8 @@ if ($lg == 'thailand') {
                         ?>
                         <?php foreach ($datafromapi as $key => $value): ?>
                             <tr id="tr<?php echo $value['BRHid']; ?>" >
-                                <th>
+                                <td><?php echo $key + 1 ?></td>
+                                <th style="display: none;">
                                     <div class="form-check" >
                                         <label class="form-check-label">
                                             <?php if ($value['BRHid'] != 1) : ?>
@@ -69,7 +71,7 @@ if ($lg == 'thailand') {
                                 </th>
                                 <td><?php echo $value['BRHcode']; ?></td>
                                 <td><?php echo $value['BRHvnum']; ?></td>
-                                <td><?php echo $value['BRHdescTH']; ?></td>
+                                <td><?php echo $value['BRHdescTH'] . ' (' . $value['BRHdescEN'] .')'; ?></td>
                                 <td><?php echo $value['BRHadr']; ?></td>
                                 <td><?php
                                     $sdate = $value['BRHbday'];

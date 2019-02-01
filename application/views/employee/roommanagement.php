@@ -99,6 +99,7 @@ if ($lg == 'thailand') {
             <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                 <thead>
                     <tr>
+                        <th><?php echo $this->lang->line("no"); ?></th>
                         <th><?php echo $this->lang->line("branchname"); ?></th>
                         <th><?php echo $this->lang->line("roomno"); ?></th>
                         <th><?php echo $this->lang->line("roomname"); ?></th>
@@ -127,6 +128,7 @@ if ($lg == 'thailand') {
                         foreach($room as $rkey => $rvalue):
                     ?>
                     <tr>
+                        <td><?php echo $rkey + 1 ?></td>
                         <td><?php echo($rvalue['branch'][0]['BRHdesc'.$sl]) ?></td>
                         <td><?php echo($rvalue['ROMno']) ?></td>
                         <td><?php echo($rvalue['ROMdesc'.$sl]) ?></td>
