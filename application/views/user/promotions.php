@@ -140,7 +140,7 @@
                             $str_html .= '<div class="col-lg-3 col-md-4 col-sm-6 col-xs-6">';
                             $str_html .= '  <div class="box-promotion" id="pmt_id_'.$v['POMid'].'" onclick="get_detail_pomotion('.$v['POMid'].')">';
                             $str_html .= '      <div class="pmt-img">';
-                            $str_html .= '          <img src="assets/img/image'.($k+1).'.jpg">';
+                            $str_html .= '          <img src="assets/img/pic'.($k+1).'.png">';
                             $str_html .= '      </div>';
                             $str_html .= '      <div class="pmt-time">'.convert_date_show($v['POMstartDT']).' - '.convert_date_show($v['POMendDT']).'</div>';
                             $str_html .= '      <div class="pmt-title">'.$v['POMdescTH'].' ('.$v['POMdescEN'].')</div>';
@@ -172,7 +172,7 @@
                 </div>
                 <div class="row">
                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="margin-top: 5px;">
-                        <img src="assets/img/image2.jpg" id="pmt-d-img" style="width: 100%;">
+                        <img src="assets/img/pic3.png" id="pmt-d-img" style="width: 100%;">
                     </div>
                 </div>
                 <div class="row">
