@@ -245,7 +245,7 @@ if ($lg == 'thailand') {
 
 <!-- Regis  -->
 <!-- The Modal -->
-<div class="modal" id="ModalRegis" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" >
+<div class="modal" id="ModalRegis" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" style="z-index: 99999;">
     <div class="modal-dialog" role="document">
         <div class="modal-content font-bg">
 

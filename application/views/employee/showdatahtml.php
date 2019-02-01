@@ -1571,7 +1571,7 @@ case 'getRoomToCheckout':
                             <input type="checkbox" class="form-check-input" id="havehardware" name="havehardware" value="0" onclick="addhardware(<?php echo $cout[0]['BOKid'] ?>);" <?php if($cout[0]['BOKhard'] == 1){ echo "checked";} ?>>มีอุปกรณ์ชำรุด
                         </label>
                     </div>
-                    <div class="form-check-inline">
+                    <div class="form-check-inline" style="display:none;">
                         <label class="form-check-label" for="haveminibar" style="color:#ffffff">
                             <input type="checkbox" class="form-check-input" id="haveminibar" name="haveminibar" value="1" onclick="addminibar(<?php echo $cout[0]['BOKid'] ?>);" <?php if($cout[0]['BOKmini'] == 1){ echo "checked";} ?>>ใช้ Mini bar
                         </label>

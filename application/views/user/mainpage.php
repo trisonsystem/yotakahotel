@@ -270,13 +270,18 @@
                     return false;
                 }
                 
+                var CBKromtype = document.getElementById("CBKromtype").value; 
+
+                if (CBKromtype == '') {
+                    alert("Select room type");
+                    return false;
+                }
+                
                 if (dtstart.localeCompare(dtend) == 0) {
                     alert("Date is compare");
                     return false;
                 }
 
-                var CBKromtype = document.getElementById("CBKromtype").value;                
-                
                 if (CBKromtype != 99) {
                     $.ajax({
                         type: "GET",
