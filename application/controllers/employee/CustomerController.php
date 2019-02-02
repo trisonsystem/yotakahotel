@@ -102,14 +102,14 @@ class CustomerController extends CI_Controller {
         );
 
         ## check param
-        $arrParam = array('CUSidc', 'CUSuname', 'CUSidc', 'CUSemail');
-        foreach ($arrParam as $key) {
-           if(!isset($post[$key])){
-            $arrRetrun = array( "status"=>false, "msg"=>"Parameter Error ".$key);
-            echo json_encode($arrRetrun);
-            return;
-           }
-        }
+        // $arrParam = array('CUSidc', 'CUSuname', 'CUSidc', 'CUSemail');
+        // foreach ($arrParam as $key) {
+        //    if(!isset($post[$key])){
+        //     $arrRetrun = array( "status"=>false, "msg"=>"Parameter Error ".$key);
+        //     echo json_encode($arrRetrun);
+        //     return;
+        //    }
+        // }
         ## --
 
         $rcusidc = $this->SystemModel->CheckSumPassIdcCUS($post['CUSidc'], 0);

@@ -130,7 +130,7 @@ if ($lg == 'thailand') {
                     </div>
                     <div class="form-group">
                         <label for="BRHadr"><?php echo $this->lang->line("address"); ?>:</label>
-                        <textarea class="form-control" rows="3" id="BRHadr" name="BRHadr" required>BRHadr</textarea>
+                        <textarea class="form-control" rows="3" id="BRHadr" name="BRHadr" required></textarea>
                     </div>
                     <div class="form-group">
                         <label for="BRHpic"><?php echo $this->lang->line("logopicture"); ?>:</label>  
@@ -352,7 +352,7 @@ if ($lg == 'thailand') {
                 {
                     // Success so call function to process the form
                     console.log('SUCCESS: ' + data.success);
-                    window.location.reload(true);
+                    // window.location.reload(true);
                 } else
                 {
                     // Handle errors here
