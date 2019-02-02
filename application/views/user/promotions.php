@@ -144,13 +144,14 @@
                 </div>
                 <div class="row" style="margin-top: 20px;">
                     <?php
-                        
+                        $img_name = 1;
                         foreach ($promotions as $k => $v) {
+                            $img_name  = ( $img_name > 5 ) ? 1 : $img_name + 1;
                             $str_html  = "";
                             $str_html .= '<div class="col-lg-3 col-md-4 col-sm-6 col-xs-6">';
-                            $str_html .= '  <div class="box-promotion" id="pmt_id_'.$v['POMid'].'" onclick="get_detail_pomotion('.$v['POMid'].')">';
+                            $str_html .= '  <div class="box-promotion" id="pmt_id_'.$v['POMid'].'" onclick="get_detail_pomotion('.$v['POMid'].','.$img_name.')">';
                             $str_html .= '      <div class="pmt-img">';
-                            $str_html .= '          <img src="assets/img/pic'.($k+1).'.png">';
+                            $str_html .= '          <img src="assets/img/pic'.$img_name.'.png">';
                             $str_html .= '      </div>';
                             $str_html .= '      <div class="pmt-time">'.convert_date_show($v['POMstartDT']).' - '.convert_date_show($v['POMendDT']).'</div>';
                             $str_html .= '      <div class="pmt-title">'.$v['POMdescTH'].' ('.$v['POMdescEN'].')</div>';
@@ -182,7 +183,7 @@
                 </div>
                 <div class="row">
                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="margin-top: 5px;">
-                        <img src="assets/img/pic3.png" id="pmt-d-img" style="width: 100%;">
+                        <img src="assets/img/pic3.png" id="pmt-d-img" style="">
                     </div>
                 </div>
                 <div class="row">
@@ -212,7 +213,7 @@
     <script src="<?php echo base_url(); ?>assets/js/boostrap.min.js"></script>
     <script src="<?php echo base_url(); ?>assets/js/vender/popper.min.js"></script>
     <script type="text/javascript">
-        function get_detail_pomotion( id ){
+        function get_detail_pomotion( id , img_name){
             $.get("get_detail_pomotion", { id : id }, function(res){
                 res = jQuery.parseJSON( res );
                 $("#sp_pmt_time").html( convert_date_show(res.POMstartDT) + " - " + convert_date_show(res.POMendDT) ); 
@@ -222,6 +223,7 @@
                 $.each( res.branchName, function( k, v){
                     str_html += "<div class='branch-list col-lg-12'> - " + v.BRHdescTH + " ("+v.BRHdescEN+")</div>";
                 });
+                $("#pmt-d-img").attr("src","assets/img/pic"+img_name+".png");
                 $('#sp_pmt_detail').html(str_html);
                 $("#box-promotion").hide();
                 $('#box-promotion-detail').show();
@@ -234,8 +236,6 @@
             var strYear     = parseInt( D[0] )+543;
             var strMonth    = parseInt( D[1] );
             var strDay      = D[2];
-            console.log( D[1] );
-
             var strMonthCut = Array("","ม.ค.","ก.พ.","มี.ค.","เม.ย.","พ.ค.","มิ.ย.","ก.ค.","ส.ค.","ก.ย.","ต.ค.","พ.ย.","ธ.ค.");
             var strMonthThai= strMonthCut[strMonth];
             return strDay + " " + strMonthThai + " " + strYear;
