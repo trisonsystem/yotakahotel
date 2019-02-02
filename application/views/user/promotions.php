@@ -112,13 +112,23 @@
         #sp_pmt_time{ color: #999; font-size: 12px; padding: 10px 10px 10px 0px;  }
         #sp_pmt_title{ padding: 10px 10px 10px 0px; font-weight: bold;}
         #sp_pmt_detail{ color: #777; }
+
+        @media (min-width: 1300px){
+            .col-lg-3 {
+                -ms-flex: 0 0 20%;
+                flex: 0 0 20%;
+                max-width: 20%;
+            }
+
+            #pmt-d-img{ width: 1200px !important; }
+        }
     </style>
     </head>
     <body>
         <?php echo $topmenu;  ?>
         
         <div class="main-container">
-            <div class="container">
+            <div class="container-fluid">
                 <div class="row" style="margin-top: 30px; ">
                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                         <img src="assets/img/promotion.png" style="width: 100%;">
@@ -126,7 +136,7 @@
                     </div>
                 </div>
             </div>
-            <div class="container" id="box-promotion" style="transition: 1.0s;">
+            <div class="container-fluid" id="box-promotion" style="transition: 1.0s;">
                 <div class="row" style="margin-top: 20px; border-bottom: 1px solid #EAEAEA; ">
                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                         <h5>โปรโมชั่น (Promotion)</h5>
@@ -159,7 +169,7 @@
 
 
 
-            <div class="container" id="box-promotion-detail" style="display: none; transition: 1.0s;">
+            <div class="container-fluid" id="box-promotion-detail" style="display: none; transition: 1.0s;">
                 <div class="row">
                      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                         <h5 id="pmt-d-title" onclick="back_pomotion()"  style="margin-top: 30px; height: 40px; border-bottom: 1px solid #EAEAEA; cursor: pointer; ">โปรโมชั่น (Promotion) </h5>
