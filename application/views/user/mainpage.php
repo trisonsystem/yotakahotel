@@ -1,5 +1,5 @@
 <?php
-    $baseUrl = $config->config['base_url'];
+    $baseUrl = $this->config->config['base_url'];
 ?>
 <!doctype html>
 <html lang="en">

@@ -1,6 +1,6 @@
 
 <?php 
-	$baseUrl = $config->config['base_url'];
+	$baseUrl = $this->config->config['base_url'];
 exit();
 ?>
 
