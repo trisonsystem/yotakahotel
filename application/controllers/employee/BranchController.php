@@ -7,6 +7,9 @@ class BranchController extends CI_Controller {
 
     public function __construct() {
         parent::__construct();
+
+        $this->SystemControl = new SystemControl();
+
         $MyLang = $this->SystemControl->CheckYourIPapi();
         $country = strtolower($MyLang->geoplugin_countryName);
         
@@ -23,8 +26,6 @@ class BranchController extends CI_Controller {
         
         $this->lang->load($lang, $lang);
         $this->load->model('BranchModel');
-
-        $this->SystemControl = new SystemControl();
     }
 
     public function infoBranch() {
@@ -107,8 +108,17 @@ class BranchController extends CI_Controller {
 
         if ($post) {
 
+            debug($_FILES);
+
             $config['upload_path'] = './assets/img/uploads/';
+            // $config['upload_path'] = '122.155.201.37/yotakahotel/assets/img/uploads/';
             $config['allowed_types'] = 'gif|jpg|png|jpeg';
+
+            $this->load->library('upload', $config);
+            $this->upload->do_upload('BRHpic');
+            echo $this->upload->display_errors();
+
+            exit();
 
             $this->load->library('upload', $config);
 
