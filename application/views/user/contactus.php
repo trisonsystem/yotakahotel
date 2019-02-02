@@ -9,7 +9,7 @@
 
         <?php echo $topmenu; ?>
 
-        <main role="main" class="container" style="margin-top: 30px">
+        <main role="main" class="container-fluid" style="margin-top:45px">
 
           <!-- Alert Message -->
           <div class="row">
@@ -47,8 +47,8 @@
 
             <div class="row">
                 <div class="col-md-8 blog-main">
-                    <h3 class="pb-3 mb-4 font-italic border-bottom">
-                        <?php echo $this->lang->line("contactus"); ?> :: YOTAKA GROUP
+                    <h3 class="pb-3 mb-4 border-bottom">
+                        <?php echo $this->lang->line("contactus"); ?> :: โยทะกา กรุ๊ป
                     </h3>
 
                     <div class="blog-post">
@@ -62,7 +62,7 @@
 
                 <aside class="col-md-4 blog-sidebar" style="margin-top: 45px">
                     <div class="p-3 mb-3 font-bg rounded">
-                        <h4 class="font-italic"><?php echo $this->lang->line("comments"); ?></h4>
+                        <h4 style="text-align:center;"><?php echo $this->lang->line("comments"); ?></h4>
                         <div class="container" style="margin-top: 20px">
 
                             <div class="form-group">

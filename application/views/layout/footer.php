@@ -45,10 +45,10 @@ if ($lg == 'thailand') {
     </div>
 
     <!-- Footer Links -->
-    <div class="container text-center text-md-left font-bg">
+    <div class="text-center text-md-left font-bg">
 
         <!-- Grid row -->
-        <div class="row dark-grey-text" style="padding:10px;">
+        <div class="row dark-grey-text" style="padding:10px;width:80%;margin:auto;">
 
             <!-- Grid column -->
             <div class="col-md-3 col-lg-4 col-xl-3">
@@ -57,7 +57,7 @@ if ($lg == 'thailand') {
 
             </div>
             <!-- Grid column -->
-            <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+            <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 ">
 
                 <!-- Links -->
                 <h6 class="text-uppercase font-weight-bold"><?php echo $this->lang->line("contact"); ?></h6>
@@ -74,7 +74,7 @@ if ($lg == 'thailand') {
 
             </div>
             <!-- Grid column -->
-            <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+            <div class="col-md-2 col-lg-2 col-xl-2 mx-auto ">
 
                 <!-- Links -->
                 <h6 class="text-uppercase font-weight-bold"><?php echo $this->lang->line("about"); ?></h6>
@@ -102,7 +102,7 @@ if ($lg == 'thailand') {
             <!-- Grid column -->
 
             <!-- Grid column -->
-            <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+            <div class="col-md-3 col-lg-2 col-xl-2 mx-auto ">
 
                 <!-- Links -->
                 <h6 class="text-uppercase font-weight-bold"><?php echo $this->lang->line("usefullinks"); ?></h6>

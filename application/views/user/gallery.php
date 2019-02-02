@@ -39,7 +39,7 @@ if ($lg == 'thailand') {
           }
 
           .row {
-              margin: 10px -16px;
+              /*margin: 10px -16px;*/
           }
 
           /* Add padding BETWEEN each column */
@@ -77,7 +77,7 @@ if ($lg == 'thailand') {
           .xbtn {
             border: none;
             outline: none;
-            padding: 12px 16px;
+            padding: 7px 10px;
             background-color: white;
             cursor: pointer;
           }
@@ -87,6 +87,7 @@ if ($lg == 'thailand') {
           }
 
           .xbtn.active {
+            border-radius:3px;
             background-color: #666;
             color: white;
           }
@@ -128,6 +129,10 @@ if ($lg == 'thailand') {
               border-top: none;
           }
 
+          .nav-tabs{
+            margin-top: 15px;
+          }
+
           </style>
     </head>
 
@@ -147,13 +152,12 @@ if ($lg == 'thailand') {
 
 
         <?php if (isset($xdata)): ?>
-        <div class="container">
-          <h2>Toggleable Tabs</h2>
-          <br>
-
+        <div class="container-fluid">
+          <h3>ห้องภาพ</h3>
           <!-- Nav tabs -->
           <ul class="nav nav-tabs " role="tablist">
             <?php foreach ($xdata as $key => $value): ?>
+              <?php if(count($value['pic']) == 0){continue;} ?>
               <li class="nav-item">
                 <a class="nav-link <?php if($key == 0){echo "active";} ?>" href="#menu<?php echo $value['BRHid']; ?>"><?php echo $value['BRHdesc'.$sl]; ?></a>
               </li>
@@ -162,19 +166,19 @@ if ($lg == 'thailand') {
 
           <!-- Tab panes -->
           <div class="tab-content">
-
             <?php foreach ($xdata as $xkey => $xvalue): ?>
-            <div id="menu<?php echo $xvalue['BRHid']; ?>" class="container tab-pane <?php if($xkey == 0){echo "active";} ?>">
+            <div id="menu<?php echo $xvalue['BRHid']; ?>" class="container-fluid tab-pane <?php if($xkey == 0){echo "active";} ?>">
               <div id="myBtnContainer" style="margin-top:20px">
-                  <button class="xbtn active" onclick="filterSelection('all')"> Show all</button>
+                  <button class="xbtn xbtnall active" onclick="filterSelection('all')">ทั้งหมด</button>
                   <?php foreach ($xvalue['pu04'] as $pkey => $pvalue): ?>
-                    <button class="xbtn" onclick="filterSelection('<?php echo $pvalue['PU04id'] ?>')"> <?php echo $pvalue['PU04descTH']; ?></button>
+                    <button class="xbtn xbtn<?php echo $pvalue['PU04id'] ?>" onclick="filterSelection('<?php echo $pvalue['PU04id'] ?>')"> <?php echo $pvalue['PU04descTH']; ?></button>
                   <?php endforeach; ?>
 
                   <section class="gallery-block cards-gallery">
                     <div class="row ">
                       <?php foreach ($xvalue['pic'] as $pkey => $pvalue): ?>
-                        <div class="column <?php echo $pvalue['PU04id'] ?> col-md-4">
+                        <?php if($pvalue['PICname'] == 'no-image.png'){continue;} ?>
+                        <div class="column <?php echo $pvalue['PU04id'] ?> col-md-3">
                           <!-- <div class="col-md-6"> -->
             	                <div class="card border-0 transform-on-hover">
             	                	<a class="lightbox" href="<?php echo base_url(); ?>assets/img/uploads/<?php echo $pvalue['PICname']; ?>">
@@ -298,6 +302,9 @@ if ($lg == 'thailand') {
 
           filterSelection("all")
           function filterSelection(c) {
+            $(".xbtn").removeClass('active');
+            $(".xbtn"+c).addClass('active');
+            
             var x, i;
             x = document.getElementsByClassName("column");
             if (c == "all") c = "";

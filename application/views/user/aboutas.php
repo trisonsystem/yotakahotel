@@ -22,9 +22,9 @@ if ($lg == 'thailand') {
 
         <?php echo $topmenu; ?>
 
-        <main role="main" class="container" style="margin-top: 30px">
+        <main role="main" class="container-fluid" style="margin-top:40px">
             <div class="row">
-                <div class="col-md-8 blog-main">
+                <div class="col-md-9 blog-main">
                   <?php foreach ($aindex as $dkey => $dvalue): ?>
                     <div class="blog-post">
                         <h2 class="blog-post-title"><?php echo $dvalue['PU01title'.$sl]; ?> </h2>
@@ -35,7 +35,7 @@ if ($lg == 'thailand') {
                         <?php if (isset($dvalue['pic'])): ?>
                           <img src="<?php echo base_url(). 'assets/img/uploads/' . $dvalue['pic']['PICname'] ?>" class="img-thumbnail" alt="Cinque Terre" width="350" height="236" style="position: relative;">
                         <?php endif; ?>
-                        <p style="margin-top:30px">
+                        <p style="margin-top:30px;font-size:14px;">
                           <?php echo $dvalue['PU01desc'.$sl]; ?>
                         </p>
 
@@ -43,8 +43,8 @@ if ($lg == 'thailand') {
                     <?php endforeach; ?>
                 </div><!-- /.blog-main -->
 
-                <aside class="col-md-4 blog-sidebar">
-                    <div class="p-3 mb-3 bg-dark text-white rounded">
+                <aside class="col-md-3 blog-sidebar">
+                    <div class="p-3 mb-3 bg-dark text-white rounded" style="height:80vh;">
                         <h4 class="font-italic">About</h4>
                         <ol class="list-unstyled mb-0">
 
