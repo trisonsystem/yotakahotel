@@ -53,25 +53,17 @@
 
         <main role="main">
             <div class="jumbotron font-bg" style="border-radius: 0rem">
-                <h1 class="display-5">WELCOME TO YOTAKA GROUP</h1>
-                <p>" โรงแรมในเครือโยทะกา กรุ๊ปของเรามีทั้งหมด 6 ที่ (รายละเอียดด้านในเว็ปไซต์) มีการตกแต่ง ได้อย่างมีเอกลักษณ์ในตัว มีสไตล์ แตกต่างกันไป ไม่ว่าจะเป็นไทย-ล้านนา ไทย-โมเดิร์น และ Loft เพื่อให้ลูกค้าได้เลือกตามไลฟ์สไตล์ของลูกค้าเอง เราใส่ใจทุกรายละเอียดทั้งด้านการตกแต่งและด้านบริการ เพื่อให้ลูกค้าที่เข้าพักประทับใจ โรงแรมของเราตั้งอยู่ที่อยู่ใจกลางเมืองแต่ให้ความสงบ ร่มรื่นเหมาะแก่การพักผ่อนจริงๆค่ะ และสุดท้ายนี้ ทางโยทะกา กรุ้ปขอขอบคุณลูกค้าที่เข้ามาเยี่ยมชมเว็บไซต์ของเรา และหวังเป็นอย่างยิ่งว่า จะมีโอกาสได้ให้บริการลูกค้าทุกท่านค่ะ "</p>
+                <h2 class="display-5">WELCOME TO YOTAKA GROUP</h2>
+                <p style="font-size:14px;">" โรงแรมในเครือโยทะกา กรุ๊ปของเรามีทั้งหมด 6 ที่ (รายละเอียดด้านในเว็ปไซต์) มีการตกแต่ง ได้อย่างมีเอกลักษณ์ในตัว มีสไตล์ แตกต่างกันไป ไม่ว่าจะเป็นไทย-ล้านนา ไทย-โมเดิร์น และ Loft เพื่อให้ลูกค้าได้เลือกตามไลฟ์สไตล์ของลูกค้าเอง เราใส่ใจทุกรายละเอียดทั้งด้านการตกแต่งและด้านบริการ เพื่อให้ลูกค้าที่เข้าพักประทับใจ โรงแรมของเราตั้งอยู่ที่อยู่ใจกลางเมืองแต่ให้ความสงบ ร่มรื่นเหมาะแก่การพักผ่อนจริงๆค่ะ และสุดท้ายนี้ ทางโยทะกา กรุ้ปขอขอบคุณลูกค้าที่เข้ามาเยี่ยมชมเว็บไซต์ของเรา และหวังเป็นอย่างยิ่งว่า จะมีโอกาสได้ให้บริการลูกค้าทุกท่านค่ะ "</p>
             </div>
         </main>
 
-        <div class="col-md-12" style="text-align: center; margin-bottom: 25px">
-            <h1 class="h1-responsive" style="color: #313A45">OUR SERVICE</h1>
+        <div class="col-md-12" style="text-align: center;">
+            <h2 class="h1-responsive" style="color: #313A45">OUR SERVICE</h2>
         </div>
 
         <div class="container-fluid" style="text-align: center">
-            <!--                        <div class="row" style="margin-bottom: 25px">
-                                        <div class="col-md-2" ></div>
-                                        <div class="col-md-2" ><img src="<?php echo base_url(); ?>assets/img/service1.png" style="width: 100%; height: auto; position: relative;"  ></div>
-                                        <div class="col-md-2" ><img src="<?php echo base_url(); ?>assets/img/service2.png" style="width: 100%; height: auto; position: relative;"  ></div>
-                                        <div class="col-md-2" ><img src="<?php echo base_url(); ?>assets/img/service3.png" style="width: 100%; height: auto; position: relative;"  ></div>
-                                        <div class="col-md-2" ><img src="<?php echo base_url(); ?>assets/img/service4.png" style="width: 100%; height: auto; position: relative;"  ></div>
-                                        <div class="col-md-2" ></div>
-                                    </div>-->
-            <div class="album py-5 bg-white">
+            <div class="album py-3 bg-white">
                 <div class="container">
                     <table>
                         <div class="row">
@@ -120,31 +112,11 @@
                 </div>
             </div>
         </div>
-
         <hr class="style11">
-
-        <?php // echo $navbar; ?>
-
-<!--        <div class="container-fluid carousel-inner img" style="background-image: url('<?php echo base_url(); ?>assets/img/bg.png')">
-            <div class="row"  >
-                <div class="col-sm-12" >
-                    <div class="row" style="margin-top: 50px; margin-bottom: 25px; margin-left: auto; margin-right: auto">
-                        <div class="col-sm-4" >11111<img src="<?php echo base_url(); ?>assets/img/branch1.png" style="width: 100%; height: auto; position: relative;"></div>
-                        <div class="col-sm-4" ><img src="<?php echo base_url(); ?>assets/img/branch2.png" style="width: 100%; height: auto; position: relative;"></div>
-                        <div class="col-sm-4" ><img src="<?php echo base_url(); ?>assets/img/branch3.png" style="width: 100%; height: auto; position: relative;"></div>
-                    </div>
-                    <div class="row" style="margin-top: 50px; margin-bottom: 25px; margin-left: auto; margin-right: auto">
-                        <div class="col-sm-4" ><img src="<?php echo base_url(); ?>assets/img/branch4.png" style="width: 100%; height: auto; position: relative;"></div>
-                        <div class="col-sm-4" ><img src="<?php echo base_url(); ?>assets/img/branch5.png" style="width: 100%; height: auto; position: relative;"></div>
-                        <div class="col-sm-4" ><img src="<?php echo base_url(); ?>assets/img/branch6.png" style="width: 100%; height: auto; position: relative;"></div>
-                    </div>
-                </div>
-            </div>
-        </div>-->
         <section class="gallery-block cards-gallery">
             <div class="container">
                 <div class="heading">
-                    <h1 class="h1-responsive" style="color: #313A45">OUR BRANCH</h1>
+                    <h2 class="h1-responsive" style="color: #313A45">OUR BRANCH</h2>
                 </div>
                 <div class="row">
                     <div class="col-md-6 col-lg-4">

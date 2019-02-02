@@ -20,7 +20,9 @@ if ($lg == 'thailand') {
 
 <header>
     <nav class="navbar navbar-expand-md navbar-dark fixed-top font-bg">
-        <a class="navbar-brand" href="<?php echo base_url(); ?>HomeControllers"><img class="mx-auto d-block" src="<?php echo base_url(); ?>assets/img/logo2.png" width="50px" height="40px"></a>
+        <a class="navbar-brand" href="<?php echo base_url(); ?>HomeControllers">
+            <img class="mx-auto d-block" src="<?php echo base_url(); ?>assets/img/logo1.png" >
+        </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -47,22 +49,17 @@ if ($lg == 'thailand') {
             </ul>
             <form class="form-inline mt-2 mt-md-0"></form>
                 <!--<input class="form-control mr-sm-2" type="text"  placeholder="Search" aria-label="Search">-->
-                <button class="btn my-2 my-sm-0 font-bg" type="button" data-toggle="modal" data-target="#myModalLogin" data-backdrop="static" align="right">
-                    <svg id="i-user" viewBox="0 0 32 32" width="32" height="32" fill="none" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
-                    <path d="M22 11 C22 16 19 20 16 20 13 20 10 16 10 11 10 6 12 3 16 3 20 3 22 6 22 11 Z M4 30 L28 30 C28 21 22 20 16 20 10 20 4 21 4 30 Z" />
-                  </svg>
+                <button class="btn my-2 my-sm-0" type="button" data-toggle="modal" data-target="#myModalLogin" data-backdrop="static" align="right" style="background:transparent;color:#fff;">
+                    <i class="fa fa-user-circle-o fa-2x" aria-hidden="true"></i>
                   <?php
                   if(isset($_SESSION['isLoggedIn'])){
                     echo $_SESSION['fname'] . '  ' . $_SESSION['lname'];
                   }
                   ?>
                 </button>
-                <div class="dropdown dropleft float-right">
-                    <button class="btn my-2 my-sm-0 font-bg" type="button" class="btn btn-dark dropdown-toggle" data-toggle="dropdown">
-                        <svg id="i-settings" viewBox="0 0 32 32" width="32" height="32" fill="none" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
-                        <path d="M13 2 L13 6 11 7 8 4 4 8 7 11 6 13 2 13 2 19 6 19 7 21 4 24 8 28 11 25 13 26 13 30 19 30 19 26 21 25 24 28 28 24 25 21 26 19 30 19 30 13 26 13 25 11 28 8 24 4 21 7 19 6 19 2 Z" />
-                        <circle cx="16" cy="16" r="4" />
-                        </svg>
+                <div class="dropdown dropleft float-right" >
+                    <button class="btn my-2 my-sm-0" type="button" class="btn btn-dark dropdown-toggle" data-toggle="dropdown" style="background:transparent;color:#fff;">
+                        <i class="fa fa-language fa-2x" aria-hidden="true"></i>
                     </button>
                     <div class="dropdown-menu">
                         <h1 class="dropdown-header"><?php echo $this->lang->line("please_select_language"); ?></h1>
@@ -118,7 +115,7 @@ if ($lg == 'thailand') {
             <?php if(!isset($_SESSION['isLoggedIn'])): ?>
             <div class="modal-body font-bg2">
                 <div class="text-center mb-4">
-                    <img class="mb-4" src="<?php echo base_url(); ?>assets/img/logo2.png" alt="" width="172" height="172">
+                    <img class="mb-4" src="<?php echo base_url(); ?>assets/img/logo1.png" alt="" >
                 </div>
 
                 <?php
@@ -158,7 +155,7 @@ if ($lg == 'thailand') {
           <?php else: ?>
             <div class="modal-body font-bg2">
               <div class="form-group" align="center">
-                <img src="<?php echo base_url(); ?>assets/img/logo2.png" class="rounded-circle" alt="Cinque Terre" width="172" height="172">
+                <img src="<?php echo base_url(); ?>assets/img/logo1.png" class="rounded-circle" alt="Cinque Terre" >
               </div>
               <div class="form-group" align="center">
                 <label for="uname"><h1><b>Welcome</b></h1></label><br />

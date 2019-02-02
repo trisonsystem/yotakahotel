@@ -1,6 +1,15 @@
+
+/*======== edit bootstrap============*/
+.jumbotron{
+  padding:10px !important;
+}
+
+/*====================*/
+
+
 /* font bg*/
 .font-bg {
-    background-color: #313A45;
+    background-color: rgba(0, 0, 0, 0.7);
     color: #FFFFFF;
 }
 

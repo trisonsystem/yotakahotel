@@ -24,7 +24,7 @@ if ($lg == 'thailand') {
   position: fixed;
   bottom: 23px;
   right: 28px;
-  width: 280px;
+  /*width: 280px;*/
   z-index: 20;
 }
 </style>
@@ -45,15 +45,15 @@ if ($lg == 'thailand') {
     </div>
 
     <!-- Footer Links -->
-    <div class="container text-center text-md-left mt-5 font-bg">
+    <div class="container text-center text-md-left font-bg">
 
         <!-- Grid row -->
-        <div class="row mt-3 dark-grey-text">
+        <div class="row dark-grey-text" style="padding:10px;">
 
             <!-- Grid column -->
-            <div class="col-md-3 col-lg-4 col-xl-3 mb-4">
+            <div class="col-md-3 col-lg-4 col-xl-3">
 
-                <img src="<?php echo base_url(); ?>assets/img/logo2.png" alt="logo" style="width: 100%; height: auto; position: relative;">
+                <img src="<?php echo base_url(); ?>assets/img/logo_foot.png" alt="logo" style="height: auto; position: relative;">
 
             </div>
             <!-- Grid column -->

@@ -117,7 +117,7 @@ if ($lg == 'thailand') {
                     <div class="col-sm-12 col-md-12">
                       <img src="<?php echo base_url(); ?>assets/img/banner.png" class="img-thumbnail" alt="" style="margin-top: 38px; margin-bottom: 10px; width: 100%">
                     </div>
-                    <div class="col-sm-2 col-md-2 " style="margin-top: 10px;">
+                    <!-- <div class="col-sm-2 col-md-2 " style="margin-top: 10px;"> -->
                         <!-- <div class="card-deck ">
                             <div class="card bg-info text-dark">
                                 <div class="card-body">
@@ -152,16 +152,16 @@ if ($lg == 'thailand') {
                                 </div>
                             </div>
                         </div> -->
-                        <div class="list-group">
-                          <a href="<?php echo base_url(); ?>booking" class="list-group-item list-group-item-action">show all</a>
-                          <?php if (isset($branch)): ?>
-                              <?php foreach ($branch as $branchkey => $branchvalue): ?>
-                              <a href="<?php echo base_url(); ?>bookings/<?php echo $branchvalue['BRHid']; ?>" class="list-group-item list-group-item-action"><?php echo $branchvalue['BRHdesc'.$sl]; ?></a>
-                              <?php endforeach; ?>
-                          <?php endif; ?>                          
-                        </div>
-                    </div>
-                    <div class="col-sm-10 col-md-10">
+                      <!--   <div class="list-group">
+                          <a href="<?php //echo base_url(); ?>booking" class="list-group-item list-group-item-action">show all</a>
+                          <?php //if (isset($branch)): ?>
+                              <?php //foreach ($branch as $branchkey => $branchvalue): ?>
+                              <a href="<?php //echo base_url(); ?>bookings/<?php //echo $branchvalue['BRHid']; ?>" class="list-group-item list-group-item-action"><?php //echo $branchvalue['BRHdesc'.$sl]; ?></a>
+                              <?php //endforeach; ?>
+                          <?php //endif; ?>                          
+                        </div> -->
+                    <!-- </div> -->
+                    <div class="col-sm-12 col-md-12">
                         <?php
                         if (isset($content)) {
                           echo $content;
