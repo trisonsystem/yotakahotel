@@ -78,7 +78,8 @@ class BranchModel extends CI_Model {
     }
 
     public function DeleteBranch($d){
-
+        // debug($d);
+        // exit();
         $data = array(
             'BRHdelete' => '1',
             'BRHdeleteBy' => $d['delPERid']

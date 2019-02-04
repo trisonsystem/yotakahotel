@@ -15,31 +15,33 @@ if ($lg == 'thailand') {
 
 switch ($chk) {
     case 'showBranchByID':
+        // debug($shbranch);
+        // exit();
         ?>
         <!-- Modal body -->
         <form name="from_ebranchmanagement"enctype="multipart/form-data" id="from_branchmanagement">
             <div class="modal-body">
                 <div class="form-group">
-                    <input type="hidden"  class="form-control" id="editBRHid" name="editBRHid" value="<?php echo json_decode($shbranch, true)['data']['BRHid']; ?>">
+                    <input type="hidden"  class="form-control" id="editBRHid" name="editBRHid" value="<?php echo $shbranch['BRHid']; ?>">
                     <label for="editBRHcode"><?php echo $this->lang->line("branchcode"); ?>:</label>
-                    <input type="text"  class="form-control" id="editBRHcode" name="editBRHcode" value="<?php echo json_decode($shbranch, true)['data']['BRHcode']; ?>" required>
+                    <input type="text"  class="form-control" id="editBRHcode" name="editBRHcode" value="<?php echo $shbranch['BRHcode']; ?>" required>
                 </div>
                 <div class="form-group">
                     <label for="editBRHdescEN"><?php echo $this->lang->line("branchnameEN"); ?>:</label>
-                    <input type="text" class="form-control" id="editBRHdescEN" name="editBRHdescEN" value="<?php echo json_decode($shbranch, true)['data']['BRHdescEN']; ?>" required>
+                    <input type="text" class="form-control" id="editBRHdescEN" name="editBRHdescEN" value="<?php echo $shbranch['BRHdescEN']; ?>" required>
                 </div>
                 <div class="form-group">
                     <label for="editBRHdescTH"><?php echo $this->lang->line("branchnameTH"); ?>:</label>
-                    <input type="text" class="form-control" id="editBRHdescTH" name="editBRHdescTH" value="<?php echo json_decode($shbranch, true)['data']['BRHdescTH']; ?>" required>
+                    <input type="text" class="form-control" id="editBRHdescTH" name="editBRHdescTH" value="<?php echo $shbranch['BRHdescTH']; ?>" required>
                 </div>
                 <div class="form-group">
                     <label for="editBRHadr"><?php echo $this->lang->line("address"); ?>:</label>
-                    <textarea class="form-control" rows="3" id="editBRHadr" name="editBRHadr" required><?php echo json_decode($shbranch, true)['data']['BRHadr']; ?></textarea>
+                    <textarea class="form-control" rows="3" id="editBRHadr" name="editBRHadr" required><?php echo $shbranch['BRHadr']; ?></textarea>
                 </div>
 
                 <?php
-                if (strlen(json_decode($shbranch, true)['data']['BRHpic']) > 3) {
-                    $name = json_decode($shbranch, true)['data']['BRHpic'];
+                if (strlen($shbranch['BRHpic']) > 3) {
+                    $name = $shbranch['BRHpic'];
                 } else {
                     $name = 'no-image.png';
                 }
@@ -57,15 +59,15 @@ switch ($chk) {
 
                 <div class="form-group">
                     <label for="editBRHzipc"><?php echo $this->lang->line("zipcode"); ?>:</label>
-                    <input type="text" class="form-control" id="editBRHzipc" name="editBRHzipc" value="<?php echo json_decode($shbranch, true)['data']['BRHzipc']; ?>" onkeypress="return numberOnly(event);" required>
+                    <input type="text" class="form-control" id="editBRHzipc" name="editBRHzipc" value="<?php echo $shbranch['BRHzipc']; ?>" onkeypress="return numberOnly(event);" required>
                 </div>
                 <div class="form-group">
                     <label for="editBRHvnum"><?php echo $this->lang->line("vatnumber"); ?>:</label>
-                    <input type="text" class="form-control" id="editBRHvnum" name="editBRHvnum" value="<?php echo json_decode($shbranch, true)['data']['BRHvnum']; ?>" onkeypress="return numberOnly(event);" required>
+                    <input type="text" class="form-control" id="editBRHvnum" name="editBRHvnum" value="<?php echo $shbranch['BRHvnum']; ?>" onkeypress="return numberOnly(event);" required>
                 </div>
                 <div class="form-group">
                     <?php
-                    $sdate = json_decode($shbranch, true)['data']['BRHbday'];
+                    $sdate = $shbranch['BRHbday'];
                     ?>
                     <label for="editBRHbday"><?php echo $this->lang->line("establishment"); ?>:</label>
                     <!--<input type="text" class="form-control" id="BRHbday" name="BRHbday" value="12/45/3544" >-->
@@ -76,11 +78,11 @@ switch ($chk) {
                 </div>
                 <div class="form-group">
                     <label for="editBRHemail"><?php echo $this->lang->line("email"); ?>:</label>
-                    <input type="text" class="form-control" id="editBRHemail" name="editBRHemail" value="<?php echo json_decode($shbranch, true)['data']['BRHemail']; ?>" required>
+                    <input type="text" class="form-control" id="editBRHemail" name="editBRHemail" value="<?php echo $shbranch['BRHemail']; ?>" required>
                 </div>
                 <div class="form-group">
                     <label for="editBRHnphone"><?php echo $this->lang->line("phonenumber"); ?>:</label>
-                    <input type="text" class="form-control" id="editBRHnphone" name="editBRHnphone" value="<?php echo json_decode($shbranch, true)['data']['BRHnphone']; ?>" onkeypress="return numberOnly(event);" required>
+                    <input type="text" class="form-control" id="editBRHnphone" name="editBRHnphone" value="<?php echo $shbranch['BRHnphone']; ?>" onkeypress="return numberOnly(event);" required>
                 </div>
             </div>
             <!-- Modal footer -->
@@ -100,13 +102,15 @@ switch ($chk) {
         <?php
         break;
     case 'deleteBranchByID':
+            // debug($shbranch);
+            // exit();
         ?>
         <!-- Modal body -->
         <form name="from_dbranchmanagement"enctype="multipart/form-data" id="from_branchmanagement">
             <div class="modal-body">
-                <input type="hidden"  class="form-control" id="delBRHid" name="delBRHid" value="<?php echo json_decode($shbranch, true)['data']['BRHid']; ?>">
+                <input type="hidden"  class="form-control" id="delBRHid" name="delBRHid" value="<?php echo $shbranch['BRHid']; ?>">
                 <input type="hidden"  class="form-control" id="delPERid" name="delPERid" value="<?php echo $mysession['id']; ?>">
-                <?php echo $this->lang->line("confdeletestart") . '   <b>' . json_decode($shbranch, true)['data']['BRHdesc' . $sl] . '</b>   ' . $this->lang->line("confdeleteend") ?>
+                <?php echo $this->lang->line("confdeletestart") . '   <b>' . $shbranch['BRHdesc' . $sl] . '</b>   ' . $this->lang->line("confdeleteend") ?>
 
             </div>
 

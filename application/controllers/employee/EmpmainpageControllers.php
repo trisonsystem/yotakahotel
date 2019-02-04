@@ -223,24 +223,22 @@ class EmpmainpageControllers extends BaseController {
 
     //    **************************************************    Branch to api
     public function showBranchByID($id) {
-        $xapi = gUrl('showbyid/' . $id, 'editbranch/');
+        $this->load->model('BranchModel');
+        // $xapi = gUrl('showbyid/' . $id, 'editbranch/');
         $cdata['chk'] = 'showBranchByID';
-        $cdata['shbranch'] = cUrl($xapi . '?param=true', 'get');
+        $cdata['shbranch'] = $this->BranchModel->aShowbyidBranch($id);
 
         $this->load->view('employee/showdatahtml', $cdata);
     }
 
     public function deleteBranchByID($id) {
-        if ($_SESSION['isLoggedIn'] == TRUE) {
-            $xapi = gUrl('showbyid/' . $id, 'delbranch/');
-            $cdata['chk'] = 'deleteBranchByID';
-            $cdata['shbranch'] = cUrl($xapi . '?param=true', 'get');
-            $cdata['mysession'] = $_SESSION;
+        $this->load->model('BranchModel');
+        // $xapi = gUrl('showbyid/' . $id, 'delbranch/');
+        $cdata['chk'] = 'deleteBranchByID';
+        $cdata['shbranch'] = $this->BranchModel->aShowbyidBranch($id);
+        $cdata['mysession'] = $_SESSION;
 
-            $this->load->view('employee/showdatahtml', $cdata);
-        } else {
-            redirect('empmain/M0001');
-        }
+        $this->load->view('employee/showdatahtml', $cdata);       
     }
   
 //    **************************************************    Customer to api

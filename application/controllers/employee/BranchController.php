@@ -96,19 +96,19 @@ class BranchController extends CI_Controller {
         );
 
         ## check param
-        $arrParam = array('BRHdescTH', 'BRHdescEN', 'BRHadr', 'BRHzipc', 'BRHvnum', 'BRHemail', 'BRHnphone');
-        foreach ($arrParam as $key) {
-           if(!isset($post[$key])){
-            $arrRetrun = array( "status"=>false, "msg"=>"Parameter Error ".$key);
-            echo json_encode($arrRetrun);
-            return;
-           }
-        }
+        // $arrParam = array('BRHdescTH', 'BRHdescEN', 'BRHadr', 'BRHzipc', 'BRHvnum', 'BRHemail', 'BRHnphone');
+        // foreach ($arrParam as $key) {
+        //    if(!isset($post[$key])){
+        //     $arrRetrun = array( "status"=>false, "msg"=>"Parameter Error ".$key);
+        //     echo json_encode($arrRetrun);
+        //     return;
+        //    }
+        // }
         ## --
 
         if ($post) {
 
-            debug($_FILES);
+            // debug($_FILES);
 
             $config['upload_path'] = './assets/img/uploads/';
             // $config['upload_path'] = '122.155.201.37/yotakahotel/assets/img/uploads/';
@@ -116,9 +116,9 @@ class BranchController extends CI_Controller {
 
             $this->load->library('upload', $config);
             $this->upload->do_upload('BRHpic');
-            echo $this->upload->display_errors();
+            // echo $this->upload->display_errors();
 
-            exit();
+            // exit();
 
             $this->load->library('upload', $config);
 
@@ -154,38 +154,40 @@ class BranchController extends CI_Controller {
         );
 
         ## check param
-        $arrParam = array('BRHid', 'BRHdescTH', 'BRHdescEN', 'BRHadr', 'BRHzipc', 'BRHvnum', 'BRHemail', 'BRHnphone');
-        foreach ($arrParam as $key) {
-           if(!isset($post[$key])){
-            $arrRetrun = array( "status"=>false, "msg"=>"Parameter Error ".$key);
-            echo json_encode($arrRetrun);
-            return;
-           }
-        }
+        // $arrParam = array('BRHid', 'BRHdescTH', 'BRHdescEN', 'BRHadr', 'BRHzipc', 'BRHvnum', 'BRHemail', 'BRHnphone');
+        // foreach ($arrParam as $key) {
+        //    if(!isset($post[$key])){
+        //     $arrRetrun = array( "status"=>false, "msg"=>"Parameter Error ".$key);
+        //     echo json_encode($arrRetrun);
+        //     return;
+        //    }
+        // }
         ## --
 
         if ($post) {
-            // $config['upload_path'] = './assets/img/uploads/';
-            // $config['allowed_types'] = 'gif|jpg|png|jpeg';
-            //
-            // $this->load->library('upload', $config);
-            //
-            // if (isset($_FILES['BRHpic']['name']) == '') {
-            //     $pic = $post['eBRHpic'];  //no img
-            // } else {
-            //     if ($this->upload->do_upload('BRHpic')) {
-            //         $img = $this->upload->data();
-            //         $pic = $img['file_name'];
-            //     } else {
-            //         $pic = $post['eCUSpic'];
-            //     }
-            // }
-//
-            // if (isset($post['BRHbday'])) {
-            //     $ddate = $post['BRHbday'];
-            // } else {
-            //     $ddate = $post['BRHbday'];
-            // }
+            $config['upload_path'] = './assets/img/uploads/';
+            $config['allowed_types'] = 'gif|jpg|png|jpeg';
+            
+            $this->load->library('upload', $config);
+
+            // debug($_FILES);
+            
+            if (isset($_FILES['BRHpic']['name']) == '') {
+                $pic = $post['eBRHpic'];  //no img
+            } else {
+                if ($this->upload->do_upload('BRHpic')) {
+                    $img = $this->upload->data();
+                    $pic = $img['file_name'];
+                } else {
+                    $pic = $post['eCUSpic'];
+                }
+            }
+
+            if (isset($post['BRHbday'])) {
+                $ddate = $post['eBRHbday'];
+            } else {
+                $ddate = $post['BRHbday'];
+            }
 
             $newdata = array(
                 'BRHid' => $post['BRHid'],
@@ -193,10 +195,10 @@ class BranchController extends CI_Controller {
                 'BRHdescTH' => $post['BRHdescTH'],
                 'BRHdescEN' => $post['BRHdescEN'],
                 'BRHadr' => $post['BRHadr'],
-                // 'BRHpic' => $post['BRHpic'],
+                'BRHpic' => $pic,
                 'BRHzipc' => $post['BRHzipc'],
                 'BRHvnum' => $post['BRHvnum'],
-                'BRHbday' => $post['BRHbday'],
+                'BRHbday' => $ddate,
                 'BRHemail' => $post['BRHemail'],
                 'BRHnphone' => $post['BRHnphone']
             );
@@ -216,22 +218,24 @@ class BranchController extends CI_Controller {
     }
 
     public function deleteBranch() {
-        $get = $this->input->get();
+        // $get = $this->input->get();
         $post = $this->input->post();
+        // debug($post);
+        // exit();
         $res = array(
             'status' => false,
             'msg' => '',
         );
 
         ## check param
-        $arrParam = array('BRHid');
-        foreach ($arrParam as $key) {
-           if(!isset($post[$key])){
-            $arrRetrun = array( "status"=>false, "msg"=>"Parameter Error ".$key);
-            echo json_encode($arrRetrun);
-            return;
-           }
-        }
+        // $arrParam = array('BRHid');
+        // foreach ($arrParam as $key) {
+        //    if(!isset($post[$key])){
+        //     $arrRetrun = array( "status"=>false, "msg"=>"Parameter Error ".$key);
+        //     echo json_encode($arrRetrun);
+        //     return;
+        //    }
+        // }
         ## --
 
         if ($post) {

@@ -27,7 +27,7 @@ if ($lg == 'thailand') {
                     <tr>
                         <th style="display: none;">Delete</th>
                         <th><?php echo $this->lang->line("no"); ?></th>
-                        <th><?php echo $this->lang->line("branchcode"); ?></th>
+                        <!-- <th><?php echo $this->lang->line("branchcode"); ?></th> -->
                         <th><?php echo $this->lang->line("vatnumber"); ?></th>
                         <th><?php echo $this->lang->line("branchname"); ?></th>
                         <th><?php echo $this->lang->line("address"); ?></th>
@@ -69,7 +69,7 @@ if ($lg == 'thailand') {
                                         </label>
                                     </div>                                                                
                                 </th>
-                                <td><?php echo $value['BRHcode']; ?></td>
+                                <!-- <td><?php echo $value['BRHcode']; ?></td> -->
                                 <td><?php echo $value['BRHvnum']; ?></td>
                                 <td><?php echo $value['BRHdescTH'] . ' (' . $value['BRHdescEN'] .')'; ?></td>
                                 <td><?php echo $value['BRHadr']; ?></td>
@@ -352,7 +352,7 @@ if ($lg == 'thailand') {
                 {
                     // Success so call function to process the form
                     console.log('SUCCESS: ' + data.success);
-                    // window.location.reload(true);
+                    window.location.reload(true);
                 } else
                 {
                     // Handle errors here
@@ -374,18 +374,18 @@ if ($lg == 'thailand') {
     function edit_data() {
         var formData = new FormData();
 
-        formData.append("editBRHpic", $('#editBRHpic')[0].files[0]);
+        formData.append("BRHpic", $('#editBRHpic')[0].files[0]);
 
-        formData.append('editBRHid', $('#editBRHid').val());
-        formData.append('editBRHcode', $('#editBRHcode').val());
-        formData.append('editBRHdescTH', $('#editBRHdescTH').val());
-        formData.append('editBRHdescEN', $('#editBRHdescEN').val());
-        formData.append('editBRHadr', $('#editBRHadr').val());
-        formData.append('editBRHzipc', $('#editBRHzipc').val());
-        formData.append('editBRHvnum', $('#editBRHvnum').val());
-        formData.append('editBRHbday', $('#editBRHbday').val());
-        formData.append('editBRHemail', $('#editBRHemail').val());
-        formData.append('editBRHnphone', $('#editBRHnphone').val());
+        formData.append('BRHid', $('#editBRHid').val());
+        formData.append('BRHcode', $('#editBRHcode').val());
+        formData.append('BRHdescTH', $('#editBRHdescTH').val());
+        formData.append('BRHdescEN', $('#editBRHdescEN').val());
+        formData.append('BRHadr', $('#editBRHadr').val());
+        formData.append('BRHzipc', $('#editBRHzipc').val());
+        formData.append('BRHvnum', $('#editBRHvnum').val());
+        formData.append('BRHbday', $('#editBRHbday').val());
+        formData.append('BRHemail', $('#editBRHemail').val());
+        formData.append('BRHnphone', $('#editBRHnphone').val());
 
         formData.append('eBRHpic', $('#eBRHpic').val());
         formData.append('eBRHbday', $('#eBRHbday').val());
@@ -427,7 +427,7 @@ if ($lg == 'thailand') {
 
     function del_data() {
         var formData = new FormData();
-        formData.append('delBRHid', $('#delBRHid').val());
+        formData.append('BRHid', $('#delBRHid').val());
         formData.append('delPERid', $('#delPERid').val());
 
         $.ajax({
