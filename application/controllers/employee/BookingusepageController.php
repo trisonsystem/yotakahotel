@@ -65,9 +65,9 @@ class BookingusepageController extends BaseController {
             // $url = base_url(uri_string());
             // $myapib = 'infobranch?param=true';
             // $bdata = gUrl($myapib, 'showpbookingbyid/');
-
+            $this->load->model('BranchModel');
             $cdata['mysession'] = $_SESSION;
-            $cdata['branch'] = cUrl($this->config->item('apiBranch'), 'get');
+            $cdata['branch'] = $this->BranchModel->SeInfoBranch();
             $cdata['chk'] = 'showbyidPageBooking';
             $cdata['status'] = $this->SystemModel->Usecase('27');
             $cdata['shpagebooking'] = $showby;
@@ -109,9 +109,9 @@ class BookingusepageController extends BaseController {
             // $url = base_url(uri_string());
             // $myapib = 'infobranch?param=true';
             // $bdata = gUrl($myapib, 'delbookingusepagebyid/');
-
+            $this->load->model('BranchModel');
             $cdata['mysession'] = $_SESSION;
-            $cdata['branch'] = cUrl($this->config->item('apiBranch'), 'get');
+            $cdata['branch'] = $this->BranchModel->SeInfoBranch();
             $cdata['chk'] = 'delbyidBookingUsePage';
             $cdata['shpagebooking'] = $showby;
 

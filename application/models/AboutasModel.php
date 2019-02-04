@@ -152,7 +152,7 @@ class AboutasModel extends CI_Model{
       'PU01twitter' => $d['editPU01twitter'],
       'PU01editedDT' => date('Y-m-d H:i:s')
     );
-
+    
     $this->db->where('PU01id', $d['editPU01id']);
     $this->db->update('PU01', $data);
     return $this->EditAboutaspid($d['xpic']);

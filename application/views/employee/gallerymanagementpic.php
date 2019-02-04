@@ -60,6 +60,7 @@ $branchname = $branch;
             <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
               <thead>
                 <tr>
+                    <!-- <th width="15%"><?php echo $this->lang->line("no"); ?></th> -->
                   <th width="15%"><?php echo $this->lang->line("branchname"); ?></th>
                   <th width="15%"><?php echo $this->lang->line("groupname"); ?></th>
                   <th><?php echo $this->lang->line("mypic"); ?></th>
@@ -78,6 +79,7 @@ $branchname = $branch;
               <tbody>
                 <?php foreach ($dgallery as $key => $value): ?>
                   <tr>
+                    <!-- <td><?php echo $key + 1 ?></td> -->
                     <td width="15%"><?php echo $value['brh']['BRHdesc'.$sl]; ?></td>
                     <td width="15%"><?php echo $value['PU04descTH']; ?></td>
                     <td>

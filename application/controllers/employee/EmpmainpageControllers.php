@@ -57,7 +57,7 @@ class EmpmainpageControllers extends BaseController {
                 $this->load->model('MainpageModel');
                 $cview = 'mage_mainpage_slideshow';
                 $cdata['pslide'] = $this->MainpageModel->InfoSlide();
-                $cdata['xpslide'] = $this->MainpageModel->xInfoSlide();
+                // $cdata['xpslide'] = $this->MainpageModel->xInfoSlide();
                 $cdata['xdate'] = $this->SystemModel->MaxDateTime('BRH');
                 $cdata['startpage'] = $this->load->view('layout/startpage', '', TRUE);
                 $cdata['endpage'] = $this->load->view('layout/endpage', '', TRUE);

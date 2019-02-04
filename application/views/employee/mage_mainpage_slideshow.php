@@ -89,7 +89,7 @@ if ($lg == 'thailand') {
             <th><?php echo $this->lang->line("no"); ?></th>
             <th><?php echo $this->lang->line("mypic"); ?></th>
             <th><?php echo $this->lang->line("note"); ?></th>
-            <th><?php echo $this->lang->line("status"); ?></th>
+            <!-- <th><?php echo $this->lang->line("status"); ?></th> -->
             <th>Action</th>
           </tr>
         </thead>
@@ -108,7 +108,7 @@ if ($lg == 'thailand') {
               <td><?php echo $dkey+1 ?></td>
               <td><?php echo '<img id="'. $dvalue['PICid'] .'" class="myImg" src="'. base_url(). 'assets/img/slide/' . $dvalue['PICname'] .'" alt="'. $dvalue['PICnote'] .'" width="120" height="80" onclick="showpic(this)">'; ?></td>
               <td><?php echo $dvalue['PICnote']; ?></td>
-              <td><?php echo $dvalue['USCdesc'.$sl]; ?></td>
+              <!-- <td><?php echo $dvalue['USCdesc'.$sl]; ?></td> -->
               <td>
                 <?php if ($dvalue['PICdelete'] == 0): ?>
                     <button type="button" class="btn btn-warning btn-sm form-control" onclick="onclickDelete(<?php echo $dvalue['PICid']; ?>);">

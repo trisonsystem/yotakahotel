@@ -116,7 +116,7 @@ class AboutasController extends BaseController{
         'PICsid' => $post['editPU01perid'],
         'PICname' => $pic,
       );
-
+      
       if ($this->AboutasModel->EditAboutas($post)) {
         $this->session->set_flashdata('success', 'All the data is correct. Data is complete.');
       }else {

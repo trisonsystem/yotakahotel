@@ -314,8 +314,9 @@ case 'delbyidPicture':
 <?php
 break;
 case 'showbyidPageBooking':
-    $branchname = json_decode($branch, true)['data'];
-        // debug($status);
+    $branchname = $branch;
+        // debug($branchname);
+        // echo $shpagebooking['PU03brhid'] . '==' . $branchvalue['BRHid'];
     ?>
             <!-- Modal body -->
             <form name="from_pbooking"enctype="multipart/form-data" id="from_pbooking">
@@ -331,7 +332,7 @@ case 'showbyidPageBooking':
                     <select class="form-control" id="editPU03brhid" name="editPU03brhid">
                       <?php foreach ($branchname as $branchkey => $branchvalue) : ?>
                       <option value="<?php echo $branchvalue['BRHid']; ?>"
-                        <?php if ($shpagebooking['PU03id'] == $branchvalue['BRHid']) {
+                        <?php if ($shpagebooking['PU03brhid'] == $branchvalue['BRHid']) {
                             echo 'selected';
                         } ?>
                         >
@@ -389,8 +390,8 @@ case 'delbyidBookingUsePage':
             <form name="from_dpicture"enctype="multipart/form-data" id="from_branchmanagement">
               <div class="modal-body">
                 <div class="form-group">
-                  <input type="text" class="form-control" id="delPU03perid" name="delPU03perid" value="<?php echo $mysession['id']; ?>" >
-                  <input type="text" class="form-control" id="delPU03id" name="delPU03id" value="<?php echo $shpagebooking['PU03id']; ?>" >
+                  <input type="hidden" class="form-control" id="delPU03perid" name="delPU03perid" value="<?php echo $mysession['id']; ?>" >
+                  <input type="hidden" class="form-control" id="delPU03id" name="delPU03id" value="<?php echo $shpagebooking['PU03id']; ?>" >
                 </div>
                 <div align="center">
                   <?php echo $this->lang->line("confdeletestart") . '   <b>' . $shpagebooking['PU03desc' . $sl] . '   </b>' . $this->lang->line("confdeleteend") ?>

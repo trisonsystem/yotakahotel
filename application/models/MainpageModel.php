@@ -9,7 +9,7 @@ class MainpageModel extends CI_Model{
   public function InfoSlide(){
     $sql = 'SELECT PIC.*, USC.USCdescTH, USC.USCdescEN FROM PIC INNER JOIN USC ON PIC.PICdelete = USC.USCcode
             WHERE PIC.PICidtab = "980004" AND PIC.PICtype = 1
-            AND USC.USCuse = 10';
+            AND USC.USCuse = 10  AND PIC.PICdelete = 0';
 
     $query = $this->db->query($sql);
     $row = $query->result_array();
