@@ -127,9 +127,9 @@ if ($lg == 'thailand') {
                     <li>
                         <a href="<?php echo base_url(); ?>empmain/M1101"><?php echo $this->lang->line("M1101"); ?></a>
                     </li>
-                    <li>
+                    <!-- <li>
                         <a href="<?php echo base_url(); ?>empmain/M1102"><?php echo $this->lang->line("M1102"); ?></a>
-                    </li>
+                    </li> -->
                 </ul>
             </li>
 
