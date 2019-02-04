@@ -557,7 +557,7 @@ if ($lg == 'thailand') {
                 {
                     // Success so call function to process the form
                     console.log('SUCCESS: ' + data.success);
-                    // window.location.reload(true);
+                    window.location.reload(true);
                 } else {
                     // Handle errors here
                     console.log('ERRORS: ' + data.error);

@@ -196,7 +196,7 @@ if ($lg == 'thailand') {
                 <?php  // debug($mysession); ?>
                     <div class="form-group">
                         <input type="hidden" class="form-control" id="ROMcreatedBy" name="ROMcreatedBy" value="<?php echo $mysession['id'] ?>">
-                        <label for="ROMbrhid"><?php echo $this->lang->line("titlename"); ?>:</label>                        
+                        <label for="ROMbrhid"><?php echo $this->lang->line("branchname"); ?>:</label>                        
                         <select class="form-control" id="ROMbrhid" name="ROMbrhid" onchange="getAccessories(this.value);">
                             <option value="909090" hidden></option>
                             <?php 
