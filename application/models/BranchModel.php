@@ -51,7 +51,7 @@ class BranchModel extends CI_Model {
             'BRHdeleteBy' => '00',
             'BRHdeleteDT' => date('Y-m-d H:i:s')
         );
-
+        
         $this->db->insert('BRH', $data);
         return $this->db->insert_id();
     }

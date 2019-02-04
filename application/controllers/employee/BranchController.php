@@ -94,7 +94,7 @@ class BranchController extends CI_Controller {
             'msg' => '',
             'data' => ''
         );
-
+        
         ## check param
         // $arrParam = array('BRHdescTH', 'BRHdescEN', 'BRHadr', 'BRHzipc', 'BRHvnum', 'BRHemail', 'BRHnphone');
         // foreach ($arrParam as $key) {
