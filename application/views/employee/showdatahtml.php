@@ -123,7 +123,8 @@ switch ($chk) {
         <?php
         break;
     case 'showCustomerByID':        
-        $cus = $shcustomer[0]
+        $cus = $shcustomer[0];
+        // debug($cus);
         ?>
         <form name="from_ecustomerhmanagement"enctype="multipart/form-data" id="from_ecustomerhmanagement">
             <!-- Modal body -->
@@ -148,11 +149,11 @@ switch ($chk) {
                     <label for="editCUStitle"><?php echo $this->lang->line("titlename"); ?>:</label>
                     <select class="form-control" id="editCUStitle" name="editCUStitle" required>
                         <?php foreach ($titlename as $titlekey => $titlevalue) : ?><option value="<?php echo $titlevalue['USCcode']; ?>" <?php
-                                                                                                                                        if ($dtitlename['USCcode'] == $titlevalue['USCcode']) {
-                                                                                                                                            echo 'selected';
-                                                                                                                                        }
-                                                                                                                                        ?>>
-                                        <?php echo $titlevalue['USCdesc' . $sl]; ?>
+                                    if ($cus['CUStitle'] == $titlevalue['USCcode']) {
+                                        echo 'selected';
+                                    }
+                                    ?>>
+                                    <?php echo $titlevalue['USCdesc' . $sl]; ?>
                             </option>
                         <?php endforeach; ?>
                     </select>
@@ -777,7 +778,7 @@ case 'filterDepartment':
         ?>
       <option value="<?php echo $pvalue['DPOid']; ?>"><?php echo $pvalue['DPOdesc' . $sl]; ?></option>      
       <?php 
-        endforeach;
+            endforeach;
         endif;
         ?>
       </select>

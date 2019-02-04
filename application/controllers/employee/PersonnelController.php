@@ -35,7 +35,7 @@ class PersonnelController extends BaseController{
         if($get){
           if (isset($get['param'])) {
             $showby = $this->PersonnelModel->FilterDepartment($id);
-            
+           
             if ($showby) {
               $cdata['chk'] = 'filterDepartment';
               $cdata['position'] = $showby;

@@ -166,7 +166,7 @@ if ($lg == 'thailand') {
                   <div class="form-group">
                     <label for="sel1"><?php echo $this->lang->line("promotionsstartdate") . ' - ' . $this->lang->line("promotionsenddate"); ?>:</label>
                     <input class="form-control" type="text" id="bdaterange" name="bdaterange" value="<?php date("Y/m/d") ." - " . date("Y/m/d"); ?>" />
-                    <input type="text" class="form-control" id="POMperid" name="POMperid" value="<?php echo $mysession['id'] ?>">
+                    <input type="hidden" class="form-control" id="POMperid" name="POMperid" value="<?php echo $mysession['id'] ?>">
                   </div>
                   <div class="form-group">
                     <label for="POMdescTH"><?php echo $this->lang->line("promotionsdescriptionTH"); ?>:</label>
@@ -432,7 +432,7 @@ if ($lg == 'thailand') {
                 {
                     // Success so call function to process the form
                     console.log('SUCCESS: ' + data.success);
-                    // window.location.reload(true);
+                    window.location.reload(true);
                 } else {
                     // Handle errors here
                     console.log('ERRORS: ' + data.error);
@@ -511,7 +511,7 @@ if ($lg == 'thailand') {
             {
                 // Success so call function to process the form
                 console.log('SUCCESS: ' + data.success);
-                // window.location.reload(true);
+                window.location.reload(true);
             } else {
                 // Handle errors here
                 console.log('ERRORS: ' + data.error);

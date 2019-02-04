@@ -259,7 +259,7 @@ class EmpmainpageControllers extends BaseController {
         // $this->form_validation->set_rules('CUSnphone', 'CUSnphone', 'required|integer');
         // $this->form_validation->set_rules('CUSbrhid', 'CUSbrhid', 'required');
         $countEmail = $this->SystemModel->CheckSumCUS($post['CUSemail']);
-
+        
         if ($post) {
             if ($_SESSION['isLoggedIn'] == TRUE) {
 
@@ -283,11 +283,12 @@ class EmpmainpageControllers extends BaseController {
                     'CUSbrhid' => $PERsession['brhid'], //session
                     'CUScreatedBy' => $PERsession['code'], //session
                 );
-
+                
                 if ($countEmail == 0) {
                     // $xapi = gUrl('/scustomer', '/savecustomer');
-                    $mypost = cUrl($this->config->item('apiScustomer'), 'post', $data);
-
+                    // $mypost = cUrl($this->config->item('apiScustomer'), 'post', $data);
+                    $this->load->model('CustomerModel');
+                    $this->CustomerModel->saveCustomer($data);
                     $this->session->set_flashdata('success', 'All the data is correct. Data is complete.');
                 } else {
                     $this->session->set_flashdata('error', 'Please check your email. Can not record your email.');

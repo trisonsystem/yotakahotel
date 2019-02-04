@@ -401,7 +401,7 @@ if ($lg == 'thailand') {
             url: "<?php echo base_url(); ?>bydepartment/" + value + "?param=true",
             success: function (data) {
                 document.getElementById("myDIV").style.display = "none";
-                document.getElementById("xmyDIV").style.display = "none";
+                // document.getElementById("xmyDIV").style.display = "none";
                 $("#bydepartment").html(data);
                 $("#xbydepartment").html(data);
             },

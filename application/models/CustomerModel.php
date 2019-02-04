@@ -38,12 +38,12 @@ class CustomerModel extends CI_Model {
 
     public function saveCustomer($d) {
         $runid = $this->SystemControl->RunCode('CUS', '01');
-        if ($d['CUSregonweb'] == 1) {
-          $data = [];
-          foreach ($d as $key => $value) {
-            $data[$key] = $value;
-          }
-        }else {
+        // if ($d['CUSregonweb'] == 1) {
+        //   $data = [];
+        //   foreach ($d as $key => $value) {
+        //     $data[$key] = $value;
+        //   }
+        // }else {
           $data = array(
               'CUScode' => $runid,
               'CUSidc' => $d['CUSidc'],
@@ -67,8 +67,8 @@ class CustomerModel extends CI_Model {
               'CUSdeleteBy' => '00',
               'CUSdeleteDT' => date('Y-m-d H:i:s')
           );
-        }
-
+        // }
+        
         return $this->db->insert('CUS', $data);
     }
 
