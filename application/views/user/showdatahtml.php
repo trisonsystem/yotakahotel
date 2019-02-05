@@ -44,11 +44,11 @@ switch ($chk) {
                             </div>
                         </section>
                         <hr>
-                        สิ่งอำนวยความสะดวกในโรงแรม
                     </div>
                     <div class="col-9">
                         <h5 class="h5-responsive product-name">
-                            <strong><a href="#" id="<?php echo $bvalue['BRHid']; ?>" onclick="showdetail(this.id);"><?php echo $bvalue['BRHdesc'.$sl]; ?></a></strong>
+                            <!-- <strong><a href="#" id="<?php echo $bvalue['BRHid']; ?>" onclick="showdetail(this.id);"><?php echo $bvalue['BRHdesc'.$sl]; ?></a></strong> -->
+                            <strong><?php echo $bvalue['BRHdesc'.$sl]; ?></strong>
                         </h5>
                         <h6 class="h6-responsive">
                             <span class="green-text">

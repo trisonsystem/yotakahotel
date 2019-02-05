@@ -153,7 +153,7 @@ if ($lg == 'thailand') {
 
         <?php if (isset($xdata)): ?>
         <div class="container-fluid">
-          <h3>ห้องภาพ</h3>
+          <h3><?php echo $this->lang->line("gallery"); ?></h3>
           <!-- Nav tabs -->
           <ul class="nav nav-tabs " role="tablist">
             <?php foreach ($xdata as $key => $value): ?>
@@ -163,15 +163,15 @@ if ($lg == 'thailand') {
               </li>
             <?php endforeach; ?>
           </ul>
-
+          <?php // debug($xdata); ?>
           <!-- Tab panes -->
           <div class="tab-content">
             <?php foreach ($xdata as $xkey => $xvalue): ?>
             <div id="menu<?php echo $xvalue['BRHid']; ?>" class="container-fluid tab-pane <?php if($xkey == 0){echo "active";} ?>">
               <div id="myBtnContainer" style="margin-top:20px">
-                  <button class="xbtn xbtnall active" onclick="filterSelection('all')">ทั้งหมด</button>
+                  <button class="xbtn xbtnall active" onclick="filterSelection('all')">All</button>
                   <?php foreach ($xvalue['pu04'] as $pkey => $pvalue): ?>
-                    <button class="xbtn xbtn<?php echo $pvalue['PU04id'] ?>" onclick="filterSelection('<?php echo $pvalue['PU04id'] ?>')"> <?php echo $pvalue['PU04descTH']; ?></button>
+                    <button class="xbtn xbtn<?php echo $pvalue['PU04id'] ?>" onclick="filterSelection('<?php echo $pvalue['PU04id'] ?>')"> <?php echo $pvalue['PU04desc'.$sl]; ?></button>
                   <?php endforeach; ?>
 
                   <section class="gallery-block cards-gallery">

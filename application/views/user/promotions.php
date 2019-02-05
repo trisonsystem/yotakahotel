@@ -139,23 +139,27 @@
             <div class="container-fluid" id="box-promotion" style="transition: 1.0s;">
                 <div class="row" style="margin-top: 20px; border-bottom: 1px solid #EAEAEA; ">
                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                        <h5>โปรโมชั่น (Promotion)</h5>
+                        <h5><?php echo $this->lang->line("M8001");?></h5>
                     </div>
                 </div>
                 <div class="row" style="margin-top: 20px;">
                     <?php
                         $img_name = 1;
+                        switch ($sl) {
+                            case 'TH': $l = 0; break;
+                            case 'EN': $l = 1; break;
+                        }
                         foreach ($promotions as $k => $v) {
                             $img_name  = ( $img_name > 5 ) ? 1 : $img_name + 1;
                             $str_html  = "";
                             $str_html .= '<div class="col-lg-3 col-md-4 col-sm-6 col-xs-6">';
-                            $str_html .= '  <div class="box-promotion" id="pmt_id_'.$v['POMid'].'" onclick="get_detail_pomotion('.$v['POMid'].','.$img_name.')">';
+                            $str_html .= '  <div class="box-promotion" id="pmt_id_'.$v['POMid'].'" onclick="get_detail_pomotion('.$v['POMid'].','.$img_name.','.$l.')">';
                             $str_html .= '      <div class="pmt-img">';
                             $str_html .= '          <img src="assets/img/pic'.$img_name.'.png">';
                             $str_html .= '      </div>';
-                            $str_html .= '      <div class="pmt-time">'.convert_date_show($v['POMstartDT']).' - '.convert_date_show($v['POMendDT']).'</div>';
+                            $str_html .= '      <div class="pmt-time">'.convert_date_show($v['POMstartDT'], $sl).' - '.convert_date_show($v['POMendDT'], $sl).'</div>';
                             $str_html .= '      <div class="pmt-title">'.$v['POMdescTH'].' ('.$v['POMdescEN'].')</div>';
-                            $str_html .= '      <div class="pmt-btn-detail"><a class="btn-detail">รายละเอียด</a></div>';
+                            $str_html .= '      <div class="pmt-btn-detail"><a class="btn-detail">'.$this->lang->line("details").'</a></div>';
                             $str_html .= '  </div>';
                             $str_html .= '</div>';
                             echo $str_html;
@@ -165,20 +169,15 @@
             </div>
 
 
-
-
-
-
-
             <div class="container-fluid" id="box-promotion-detail" style="display: none; transition: 1.0s;">
                 <div class="row">
                      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                        <h5 id="pmt-d-title" onclick="back_pomotion()"  style="margin-top: 30px; height: 40px; border-bottom: 1px solid #EAEAEA; cursor: pointer; ">โปรโมชั่น (Promotion) </h5>
+                        <h5 id="pmt-d-title" onclick="back_pomotion()"  style="margin-top: 30px; height: 40px; border-bottom: 1px solid #EAEAEA; cursor: pointer; "><?php echo $this->lang->line("M8001");?> </h5>
                     </div>
                 </div>
                 <div class="row"  style="margin-top: 30px;">
                      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                        <h5 id="pmt-d-title"> รายละเอียดโปรโมชั่น (Promotion Detail) </h5>
+                        <h5 id="pmt-d-title"><?php echo $this->lang->line("promotionsdescriptionTH");?> </h5>
                     </div>
                 </div>
                 <div class="row">
@@ -197,8 +196,14 @@
                     </div>
                 </div>
                 <div class="row">
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"  style="margin-top: 20px;">
+                        <h5><?php echo $this->lang->line("discode");?></h5>
+                        <span id="sp_pmt_code"></span>
+                    </div>
+                </div>
+                <div class="row">
                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="margin-top: 20px;">
-                        <h5>สาขาที่เข้าร่วม</h5>
+                        <h5><?php echo $this->lang->line("branchname");?></h5>
                         <span id="sp_pmt_detail"></span>
                     </div>
                 </div>
@@ -213,12 +218,14 @@
     <script src="<?php echo base_url(); ?>assets/js/boostrap.min.js"></script>
     <script src="<?php echo base_url(); ?>assets/js/vender/popper.min.js"></script>
     <script type="text/javascript">
-        function get_detail_pomotion( id , img_name){
+        function get_detail_pomotion( id , img_name, sl){
             $.get("get_detail_pomotion", { id : id }, function(res){
                 res = jQuery.parseJSON( res );
-                $("#sp_pmt_time").html( convert_date_show(res.POMstartDT) + " - " + convert_date_show(res.POMendDT) ); 
+                console.log(sl);
+                
+                $("#sp_pmt_time").html( convert_date_show(res.POMstartDT, sl) + " - " + convert_date_show(res.POMendDT, sl) ); 
                 $("#sp_pmt_title").html( res.POMdescTH + "<br>" + res.POMdescEN );
-
+                $("#sp_pmt_code").html( res.POMpcode);
                 var str_html = "";
                 $.each( res.branchName, function( k, v){
                     str_html += "<div class='branch-list col-lg-12'> - " + v.BRHdescTH + " ("+v.BRHdescEN+")</div>";
@@ -231,12 +238,17 @@
             });
         }
 
-        function convert_date_show( strDate ){
+        function convert_date_show( strDate, lang ){
             var D = strDate.split("-");
             var strYear     = parseInt( D[0] )+543;
             var strMonth    = parseInt( D[1] );
             var strDay      = D[2];
-            var strMonthCut = Array("","ม.ค.","ก.พ.","มี.ค.","เม.ย.","พ.ค.","มิ.ย.","ก.ค.","ส.ค.","ก.ย.","ต.ค.","พ.ย.","ธ.ค.");
+            if (lang = 'TH') {
+                var strMonthCut = Array("","ม.ค.","ก.พ.","มี.ค.","เม.ย.","พ.ค.","มิ.ย.","ก.ค.","ส.ค.","ก.ย.","ต.ค.","พ.ย.","ธ.ค.");
+            }
+            if (lang = 'EN') {
+                var strMonthCut = Array("","JAN","FEB","MAR","APR","MAY","JUN","JUL","AUG","SEP","OCT","NOV","DEC");
+            }
             var strMonthThai= strMonthCut[strMonth];
             return strDay + " " + strMonthThai + " " + strYear;
         }
@@ -247,15 +259,21 @@
         }
     </script>
 
-<?php 
-function convert_date_show( $strDate ){
+<?php
+
+function convert_date_show( $strDate , $lang){
     $strYear = date("Y",strtotime($strDate))+543;
     $strMonth= date("n",strtotime($strDate));
     $strDay= date("j",strtotime($strDate));
     $strHour= date("H",strtotime($strDate));
     $strMinute= date("i",strtotime($strDate));
     $strSeconds= date("s",strtotime($strDate));
-    $strMonthCut = Array("","ม.ค.","ก.พ.","มี.ค.","เม.ย.","พ.ค.","มิ.ย.","ก.ค.","ส.ค.","ก.ย.","ต.ค.","พ.ย.","ธ.ค.");
+    if ($lang == 'TH') {
+        $strMonthCut = Array("","ม.ค.","ก.พ.","มี.ค.","เม.ย.","พ.ค.","มิ.ย.","ก.ค.","ส.ค.","ก.ย.","ต.ค.","พ.ย.","ธ.ค.");
+    }
+    if ($lang == 'EN') {
+        $strMonthCut = Array("","JAN","FEB","MAR","APR","MAY","JUN","JUL","AUG","SEP","OCT","NOV","DEC");
+    }
     $strMonthThai=$strMonthCut[$strMonth];
     return "$strDay $strMonthThai $strYear";
 }
