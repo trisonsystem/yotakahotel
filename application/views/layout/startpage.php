@@ -11,7 +11,7 @@
 
 <!-- Bootstrap core CSS -->
 <link href="<?php echo base_url(); ?>assets/css/bootstrap.min.css" rel="stylesheet">
-<link href="<?php echo base_url(); ?>assets/yotaka_style.css" rel="stylesheet">
+<!-- <link href="<?php echo base_url(); ?>assets/yotaka_style.css" rel="stylesheet"> -->
 <!-- Custom styles for this template -->
 <link href="<?php echo base_url(); ?>assets/jumbotron.css" rel="stylesheet">
 
@@ -23,3 +23,5 @@
 <script src="<?php echo base_url(); ?>assets/js/popper.min.js"></script>
 <link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/baguetteBox.min.css" />
 <link href="<?php echo base_url(); ?>assets/css/cards-gallery.css" rel="stylesheet">
+<link rel="stylesheet" href="<?php echo base_url(); ?>assets/yotaka_style.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">

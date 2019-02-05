@@ -5,6 +5,7 @@ class AboutasControllers extends CI_Controller{
         parent::__construct();
         $this->load->model('AboutasModel');
         $this->SystemControl = new SystemControl();
+        $this->load->helper('cookie');
 
         $MyLang = $this->SystemControl->CheckYourIPapi();
         $country = strtolower($MyLang->geoplugin_countryName);

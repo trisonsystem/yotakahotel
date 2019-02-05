@@ -27,27 +27,27 @@ class HomeControllers extends CI_Controller {
     }
 
     public function index() {
-        $MyLang = $this->SystemControl->CheckYourIPapi();
-        $country = strtolower($MyLang->geoplugin_countryName);
-        if (!isset($_COOKIE['lang'])) {
-            if ($country == 'thailand') {
-                $lang = 'thailand';
-            } else {
-                $lang = 'english';
-            }
-            setcookie('lang', $lang);
-        } else {
-            $lang = $_COOKIE['lang'];
-        }
+        // $MyLang = $this->SystemControl->CheckYourIPapi();
+        // $country = strtolower($MyLang->geoplugin_countryName);
+        // if (!isset($_COOKIE['lang'])) {
+        //     if ($country == 'thailand') {
+        //         $lang = 'thailand';
+        //     } else {
+        //         $lang = 'english';
+        //     }
+        //     setcookie('lang', $lang);
+        // } else {
+        //     $lang = $_COOKIE['lang'];
+        // }
 
 //        redirect('subindex', 'auto');
 
-        $this->lang->load($lang, $lang);
+        // $this->lang->load($lang, $lang);
         $this->load->model('BranchModel');
 
         $xdata['title'] = $this->SystemModel->Usecase('13');
-        $xdata['lang'] = $lang;
-        $xdata['mysession'] = $_SESSION;
+        // $xdata['lang'] = $lang;
+        // $xdata['mysession'] = $_SESSION;
 
         $ydata['slpic'] = $this->MainpageModel->showSlide();
         $ydata['branch'] = $this->BranchModel->SeInfoBranch();     

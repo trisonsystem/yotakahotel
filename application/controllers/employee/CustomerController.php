@@ -9,6 +9,7 @@ class CustomerController extends CI_Controller {
         parent::__construct();
         $this->load->model('CustomerModel');
         $this->load->model('SystemModel');
+        $this->load->helper('cookie');
     }
 
 //    no api

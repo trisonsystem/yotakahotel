@@ -1,14 +1,11 @@
 <?php
-if (!isset($_COOKIE["lang"])) {
-    $lg = $lang;
-} else {
+if (isset($_COOKIE["lang"])) {
     $lg = $_COOKIE["lang"];
-}
-
-if ($lg == 'thailand') {
-    $sl = 'TH';
-} else {
-    $sl = 'EN';
+    if ($lg == 'thailand') {
+        $sl = 'TH';
+    } else {
+        $sl = 'EN';
+    }
 }
 
 ?>
@@ -95,13 +92,13 @@ if ($lg == 'thailand') {
 <div id="mySidenav" class="sidenav" style="z-index: 200;">
     <a href="javascript:void(0)" class="closebtn" onclick="closeNav()" style="margin-top: 60px">&times;</a>
     <div align="center" style="margin-top: 60px">
-    <h1 style="color:#ffffff">สำรองห้องพัก</h1>
+    <h1 style="color:#ffffff"><?php echo $this->lang->line("reservation"); ?></h1>
     </div>
     <div class="row" style="margin-top: 10px">
         <div class="col-sm-1" ></div>
         <div class="col-sm-10" >
             <div class="form-group">
-                <label for="sel1" style="color:#ffffff">สาขา:</label>
+                <label for="sel1" style="color:#ffffff"><?php echo $this->lang->line("branchname"); ?>:</label>
                 <select class="form-control" id="CBKbrhid" name="CBKbrhid" onchange="selectbybranch(this.value)">
                     <option selected hidden></option>
                     <?php foreach ($branch as $branchkey => $branchvalue): ?>
@@ -116,7 +113,7 @@ if ($lg == 'thailand') {
         <div class="col-sm-1" ></div>
         <div class="col-sm-10" >
             <div class="form-group">
-                <label for="sel1" style="color:#ffffff">ห้อง:</label>                                
+                <label for="sel1" style="color:#ffffff"><?php echo $this->lang->line("roomtype"); ?>:</label>                                
                 <select class="form-control" id="sel99"> </select>
                 <div class="optionrtype" id="optionrtype">
 
@@ -129,7 +126,7 @@ if ($lg == 'thailand') {
         <div class="col-sm-1" ></div>
         <div class="col-sm-10" >
             <div class="form-group">
-                <label for="sel1" style="color:#ffffff">วันที่จอง</label>
+                <label for="sel1" style="color:#ffffff"><?php echo $this->lang->line("bookingdate"); ?>:</label>
                 <input class="form-control" type="text" id="CBKbdaterange" name="CBKbdaterange" value="<?php date("Y/m/d") ." - " . date("Y/m/d"); ?>" />
             </div>
         </div>
@@ -139,7 +136,7 @@ if ($lg == 'thailand') {
         <div class="col-sm-1" ></div>
         <div class="col-sm-10" >
             <div class="form-group">
-                <label for="sel1" style="color:#ffffff"> โค้ดส่วนลด</label>
+                <label for="sel1" style="color:#ffffff"><?php echo $this->lang->line("discode"); ?>:</label>
                 <input class="form-control" type="text" id="CBKdode" name="CBKdode" value="" />
             </div>
         </div>
@@ -165,7 +162,7 @@ if ($lg == 'thailand') {
     
 </div>
 
-<button class="open-button" onclick="openNav()">สำรองห้องพัก</button>
+<button class="open-button" onclick="openNav()"><?php echo $this->lang->line("reservation"); ?></button>
 <!-- data-toggle="modal" data-target="#myBookingModal" -->
 
 

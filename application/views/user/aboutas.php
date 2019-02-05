@@ -25,6 +25,27 @@ if ($lg == 'thailand') {
         <main role="main" class="container-fluid" style="margin-top:40px">
             <div class="row">
                 <div class="col-md-9 blog-main">
+                <button class="btn my-2 my-sm-0" type="button" data-toggle="modal" data-target="#myModalLogin" data-backdrop="static" align="right" style="background:transparent;color:#fff;">
+                    <i class="fa fa-user-circle-o fa-2x" aria-hidden="true"></i>
+                  <?php
+                  if(isset($_SESSION['isLoggedIn'])){
+                    echo $_SESSION['fname'] . '  ' . $_SESSION['lname'];
+                  }
+                  ?>
+                </button>
+                <div class="dropdown dropleft float-right" >
+                    <button class="btn my-2 my-sm-0" type="button" class="btn btn-dark dropdown-toggle" data-toggle="dropdown" style="background:transparent;color:#fff;">
+                        <i class="fa fa-language fa-2x" aria-hidden="true"></i>
+                    </button>
+                    <div class="dropdown-menu">
+                        <h1 class="dropdown-header"><?php echo $this->lang->line("please_select_language"); ?></h1>
+                        <a class="dropdown-item" href="#" onclick="SelectLanguage('en');"><?php echo $this->lang->line("english"); ?></a>
+                        <a class="dropdown-item" href="#" onclick="SelectLanguage('th');"><?php echo $this->lang->line("thailand"); ?></a>
+                        <a class="dropdown-item disabled" href="#"><?php echo $this->lang->line("chinese"); ?></a>
+                        <a class="dropdown-item disabled" href="#"><?php echo $this->lang->line("japanese"); ?></a>
+                    </div>
+                </div>
+                
                   <?php foreach ($aindex as $dkey => $dvalue): ?>
                     <div class="blog-post">
                         <h2 class="blog-post-title"><?php echo $dvalue['PU01title'.$sl]; ?> </h2>

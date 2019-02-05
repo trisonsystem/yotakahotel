@@ -249,7 +249,7 @@ $lang['price'] = 'Price';
 $lang['roomno'] = 'Room no.';
 $lang['roomname'] = 'Room name';
 $lang['roomnature'] = 'Nature';
-$lang['roomtype'] = 'Room type';
+// $lang['roomtype'] = 'Room type';
 $lang['roomdetails'] = 'Room details';
 $lang['roominsert'] = 'Insert room';
 $lang['roomedit'] = 'Edit room';
@@ -271,4 +271,5 @@ $lang['warranty'] = 'Warranty';
 $lang['purchasedate'] = 'Purchase date';
 $lang['editacc'] = 'Edit Device ';
 $lang['delacc'] = 'Delete Device';
+$lang['reservation'] = 'Reservation';
 //  -------------------------------------------------- * Room

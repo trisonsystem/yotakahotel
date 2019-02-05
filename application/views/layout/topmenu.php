@@ -1,17 +1,12 @@
 <?php
-if (!isset($_COOKIE["lang"])) {
-    $lg = $lang;
-} else {
+if (isset($_COOKIE["lang"])) {
     $lg = $_COOKIE["lang"];
+    if ($lg == 'thailand') {
+        $sl = 'TH';
+    } else {
+        $sl = 'EN';
+    }
 }
-
-if ($lg == 'thailand') {
-    $sl = 'TH';
-} else {
-    $sl = 'EN';
-}
-//  debug($_SESSION);
-// exit();
 ?>
 
 <style>
@@ -47,7 +42,7 @@ if ($lg == 'thailand') {
                     <a class="nav-link active " href="<?php echo base_url(); ?>contactus" ><?php echo $this->lang->line("contactus"); ?></a>
                 </li>
             </ul>
-            <form class="form-inline mt-2 mt-md-0"></form>
+            <!-- <form class="form-inline mt-2 mt-md-0"></form> -->
                 <!--<input class="form-control mr-sm-2" type="text"  placeholder="Search" aria-label="Search">-->
                 <button class="btn my-2 my-sm-0" type="button" data-toggle="modal" data-target="#myModalLogin" data-backdrop="static" align="right" style="background:transparent;color:#fff;">
                     <i class="fa fa-user-circle-o fa-2x" aria-hidden="true"></i>

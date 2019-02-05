@@ -1,15 +1,12 @@
 
 <?php
-if (!isset($_COOKIE["lang"])) {
-    $lg = $lang;
-} else {
+if (isset($_COOKIE["lang"])) {
     $lg = $_COOKIE["lang"];
-}
-
-if ($lg == 'thailand') {
-    $sl = 'TH';
-} else {
-    $sl = 'EN';
+    if ($lg == 'thailand') {
+        $sl = 'TH';
+    } else {
+        $sl = 'EN';
+    }
 }
 
 ?>

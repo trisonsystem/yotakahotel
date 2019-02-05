@@ -249,7 +249,7 @@ $lang['price'] = 'ราคา';
 $lang['roomno'] = 'เลขที่ห้อง';
 $lang['roomname'] = 'ชื่อห้อง';
 $lang['roomnature'] = 'ลักษณะห้อง';
-$lang['roomtype'] = 'ประเภทห้อง';
+// $lang['roomtype'] = 'ประเภทห้อง';
 $lang['roomdetails'] = 'อุปกรณ์ภายในห้อง';
 $lang['roominsert'] = 'เพิ่มข้อมูลห้อง';
 $lang['roomedit'] = 'แก้ไขมูลห้อง';
@@ -272,4 +272,5 @@ $lang['purchasedate'] = 'วันที่ซื้อ';
 
 $lang['editacc'] = 'แก้ไขข้อมูลอุปกรณ์';
 $lang['delacc'] = 'ลบข้อมูลอุปกรณ์';
+$lang['reservation'] = 'สำรองห้องพัก';
 //  -------------------------------------------------- * Room
