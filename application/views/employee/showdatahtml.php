@@ -15,8 +15,15 @@ if ($lg == 'thailand') {
 
 switch ($chk) {
     case 'showBranchByID':
-        // debug($shbranch);
-        // exit();
+        // $ci =& get_instance();
+        // $ci->load->helper('cookie');
+        // $ci->lang->load($_COOKIE['lang'], $_COOKIE['lang']);
+        // echo $ci->lang->line("branchcode");
+        // echo "<br>";
+        // echo $this->lang->line("branchcode");
+        echo $_COOKIE['lang'];
+        exit();
+        
         ?>
         <!-- Modal body -->
         <form name="from_ebranchmanagement"enctype="multipart/form-data" id="from_branchmanagement">

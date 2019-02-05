@@ -10,7 +10,8 @@ if ($lg == 'thailand') {
 } else {
     $sl = 'EN';
 }
-
+// $ci =& get_instance();
+// $ci->lang->load($_COOKIE['lang'], $_COOKIE['lang']);
 //echo '<pre>';
 //print_r($_SESSION);
 //
@@ -52,6 +53,8 @@ if ($lg == 'thailand') {
     <div class="collapse navbar-collapse " id="navbarResponsive">
 
         <ul class="navbar-nav navbar-sidenav vertical-menu" id="exampleAccordion">
+
+        <?php echo $this->lang->line("testt"); ?>
 
             <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Example Pages">
                 <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseExampleBasic" data-parent="#exampleAccordion">
@@ -407,6 +410,12 @@ if ($lg == 'thailand') {
                                     </div>
                                 </form>-->
                 <div class="btn-group">
+
+
+                <button type="button" class="btn btn-warning" onclick="setlanguage(0);">TH</button>
+                <button type="button" class="btn btn-danger" onclick="setlanguage(1);">EN</button>
+
+
                     <button type="button" class="btn btn-warning">
                         <i class="fa fa-user"></i> &nbsp;&nbsp; <?php echo $_SESSION['fname'] . '  ' . $_SESSION['lname']; ?> &nbsp;&nbsp;
                     </button>
@@ -525,5 +534,19 @@ if ($lg == 'thailand') {
         }
 
         location.reload();
+    }
+
+    function setlanguage(lg){
+        $.ajax({
+            type: "GET",
+            url: "<?php echo base_url(); ?>setlanguage/" + lg,
+            success: function (data) {
+                // window.location.reload(true);
+            },
+            error: function (err) {
+                console.log(err);
+                console.log('ccccccccccccc');
+            } 
+        });
     }
 </script>

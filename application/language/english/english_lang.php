@@ -3,27 +3,27 @@
  * Emp menu
  */
 $lang['basicinfo'] = 'Basic information';
-$lang['M1001'] = 'ข้อมูลสาขา';
-$lang['M9001'] = 'มูลพนักงาน';
-$lang['M2001'] = 'มูลลูกค้า';
-$lang['M8001'] = 'โปรโมชั่น';
-$lang['M4001'] = 'ความคิดเห็นลูกค้า';
+$lang['M1001'] = 'Branch information';
+$lang['M9001'] = 'Staff information';
+$lang['M2001'] = 'Customer information';
+$lang['M8001'] = 'Promotion';
+$lang['M4001'] = 'Customer reviews';
 
 $lang['roominfo'] = 'Room information';
-$lang['M3001'] = 'ข้อมูลห้อง';
-$lang['M3002'] = 'อุปกรณ์ภายในห้อง';
+$lang['M3001'] = 'Room information';
+$lang['M3002'] = 'Room equipment';
 
 $lang['pageinfo'] = 'Page information';
-$lang['M0001'] = 'สไลด์หน้าแรก';
-$lang['M6001'] = 'หน้าเกี่ยวกับเรา';
-$lang['M5002'] = 'หน้าจองที่พัก';
-$lang['M5001'] = 'รูปภาพหน้าจองที่พัก';
-$lang['M7001'] = 'หน้าแกลลอรี่';
-$lang['M7002'] = 'รูปภาพหน้าแกลลอรี่';
+$lang['M0001'] = 'Slide Page';
+$lang['M6001'] = 'About us Page';
+$lang['M5002'] = 'booking Page';
+$lang['M5001'] = 'Picture (booking Page)';
+$lang['M7001'] = 'Gallery page';
+$lang['M7002'] = 'Gallery (Gallery page)';
 
 $lang['frontoffice'] = 'Front Office';
-$lang['M1101'] = 'จองห้องพัก';
-$lang['M1102'] = 'แก้ไขการจองห้องพัก';
+$lang['M1101'] = 'Booking';
+$lang['M1102'] = 'Booking (Edit)';
 /*
  * Object
  */

@@ -28,7 +28,9 @@ class EmpmainpageControllers extends BaseController {
         } else {
             $lang = $_COOKIE['lang'];
         }
-        $this->lang->load($lang, $lang);        
+        $this->lang->load($lang, $lang);  
+        // echo $this->lang->line("M1001");
+        // exit();
     }
 
     public function index() {

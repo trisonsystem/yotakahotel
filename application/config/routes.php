@@ -54,6 +54,9 @@ $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
 
 //  ============== User =================
+$route['setlanguage/(:any)'] = 'ssystem/SetLanguage/myLanguage/$1';
+$route['setlanguageg'] = 'ssystem/SetLanguage/get';
+
 $route['index'] = 'HomeControllers/index';
 
 $route['contactus'] = 'ContactusControllers';
