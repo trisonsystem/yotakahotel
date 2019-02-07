@@ -108,7 +108,7 @@ class BranchController extends CI_Controller {
 
         if ($post) {
 
-            // debug($_FILES);
+            debug($_FILES);
 
             $config['upload_path'] = './assets/img/uploads/';
             // $config['upload_path'] = '122.155.201.37/yotakahotel/assets/img/uploads/';
@@ -129,7 +129,8 @@ class BranchController extends CI_Controller {
             } else {
                 $post['BRHpic'] = 'no-image.png';
             }
-
+            debug($post);
+            exit();
             if ($lid = $this->BranchModel->RegisterBranch($post)) {
                 $res['status'] = true;
                 $res['data'] = $lid;
