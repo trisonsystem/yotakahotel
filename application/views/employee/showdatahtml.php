@@ -21,8 +21,8 @@ switch ($chk) {
         // echo $ci->lang->line("branchcode");
         // echo "<br>";
         // echo $this->lang->line("branchcode");
-        echo $_COOKIE['lang'];
-        exit();
+        // echo $_COOKIE['lang'];
+        // exit();
         
         ?>
         <!-- Modal body -->
