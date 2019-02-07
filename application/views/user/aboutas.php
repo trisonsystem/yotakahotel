@@ -22,6 +22,13 @@ if ($lg == 'thailand') {
         @media (min-width: 500px){
             .col-3{ width: 100px !important; }
         }
+
+        .list-group-item.active {
+            z-index: 2;
+            color: #fff;
+            background-color: #565656;
+            border-color: #565656;
+        }
         </style>
     </head>
     <body>
