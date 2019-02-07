@@ -72,20 +72,13 @@ class MainpageController extends BaseController {
   public function saveSlideShow(){
     $post = $this->input->post();
     // debug($post);
-    debug($_FILES);
+    // debug($_FILES);
 
       if ($post) {
         $config['upload_path'] = './assets/img/slide';
         $config['allowed_types'] = 'gif|jpg|png|jpeg';
         $this->load->library('upload', $config);
 
-        // if ($this->upload->do_upload('PICpic')) {
-        //     $img = $this->upload->data();
-        //     $post['PICpic'] = $img['file_name'];
-        //     // echo $this->upload->display_errors();
-        // }else {
-        //     $post['PICpic'] = 'no-image.png';
-        // }
         if ($this->upload->do_upload('PICpic')) {
 //                        $this->upload->do_upload($_FILES['BRHpic']['name']);
             $img = $this->upload->data();
@@ -93,8 +86,8 @@ class MainpageController extends BaseController {
         } else {
             $post['PICpic'] = 'no-image.png';
         }
-        debug($post);
-        exit();
+        // debug($post);
+        // exit();
         if ($this->MainpageModel->saveSlideShow($post)) {
             $this->session->set_flashdata('success', 'All the data is correct. Data is complete.');
         }else {
