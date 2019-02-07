@@ -79,11 +79,18 @@ class MainpageController extends BaseController {
         $config['allowed_types'] = 'gif|jpg|png|jpeg';
         $this->load->library('upload', $config);
 
+        // if ($this->upload->do_upload('PICpic')) {
+        //     $img = $this->upload->data();
+        //     $post['PICpic'] = $img['file_name'];
+        //     // echo $this->upload->display_errors();
+        // }else {
+        //     $post['PICpic'] = 'no-image.png';
+        // }
         if ($this->upload->do_upload('PICpic')) {
+//                        $this->upload->do_upload($_FILES['BRHpic']['name']);
             $img = $this->upload->data();
             $post['PICpic'] = $img['file_name'];
-            echo $this->upload->display_errors();
-        }else {
+        } else {
             $post['PICpic'] = 'no-image.png';
         }
         debug($post);
