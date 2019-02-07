@@ -73,6 +73,7 @@ class MainpageController extends BaseController {
     $post = $this->input->post();
     // debug($post);
     debug($_FILES);
+    
     // exit();
       if ($post) {
         $config['upload_path'] = './assets/img/slide/';
