@@ -17,6 +17,12 @@ if ($lg == 'thailand') {
 
     <head>
         <?php echo $startpage; ?>
+        <style type="text/css">
+            
+        @media (min-width: 500px){
+            .col-3{ width: 100px !important; }
+        }
+        </style>
     </head>
     <body>
 
@@ -24,15 +30,22 @@ if ($lg == 'thailand') {
 
         <main role="main" class="container-fluid" style="margin-top:40px">
             <div class="row">
-                <div class="col-md-9 blog-main">
-                <button class="btn my-2 my-sm-0" type="button" data-toggle="modal" data-target="#myModalLogin" data-backdrop="static" align="right" style="background:transparent;color:#fff;">
-                    <i class="fa fa-user-circle-o fa-2x" aria-hidden="true"></i>
-                  <?php
-                    if (isset($_SESSION['isLoggedIn'])) {
-                        echo $_SESSION['fname'] . '  ' . $_SESSION['lname'];
-                    }
-                    ?>
-                </button>
+                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                    <div class="list-group">
+                          <?php $str_html  = "";
+                                krsort($amenu);
+                                foreach ($amenu as $akey => $avalue) : ; 
+                                $menu      = ( $aindex[0]['PU01title' . $sl] == $avalue['PU01title' . $sl] ) ? " active" : "";
+                                $str_html .= '<a class="list-group-item list-group-item-action '.$menu.'" href="'.base_url().'showbookingbid/'.$avalue['PU01id'].'">'.$avalue['PU01title' . $sl].'</a>';
+
+                                endforeach;
+
+                                echo $str_html; 
+                            ?>
+                    </div>
+                </div>
+                
+                <div class="col-lg-9 col-md-9 col-sm-9 col-xs-9 blog-main">
                 <div class="dropdown dropleft float-right" >
                     <button class="btn my-2 my-sm-0" type="button" class="btn btn-dark dropdown-toggle" data-toggle="dropdown" style="background:transparent;color:#fff;">
                         <i class="fa fa-language fa-2x" aria-hidden="true"></i>
@@ -62,49 +75,52 @@ if ($lg == 'thailand') {
 
                     </div>
                     <?php endforeach; ?>
+
+
+                    <button class="btn my-2 my-sm-0" type="button" data-toggle="modal" data-target="#myModalLogin" data-backdrop="static" align="right" style="background:transparent;color:#fff;">
+                    <i class="fa fa-user-circle-o fa-2x" aria-hidden="true"></i>
+                  <?php
+                    if (isset($_SESSION['isLoggedIn'])) {
+                        echo $_SESSION['fname'] . '  ' . $_SESSION['lname'];
+                    }
+                    ?>
+                </button>
+
                 </div><!-- /.blog-main -->
 
-                <aside class="col-md-3 blog-sidebar">
-                    <div class="p-3 mb-3 bg-dark text-white rounded" style="height:80vh;">
-                        <h4 class="font-italic">About</h4>
-                        <ol class="list-unstyled mb-0">
-
-                            <?php foreach ($amenu as $akey => $avalue) : ?>
-                              <!-- <li><a href="<?php echo base_url() . 'showbookingbid/' . $avalue['PU01id'] ?>" style="text-decoration: none"><?php echo date("Y F d", strtotime($avalue['PU01createdDT'])); ?></a></li> -->
-                              <li><a href="<?php echo base_url() . 'showbookingbid/' . $avalue['PU01id'] ?>" style="text-decoration: none"><?php echo $avalue['PU01title' . $sl]; ?></a></li>
-                            <?php endforeach; ?>
-                        </ol>
-                    </div>
-
-                    <div class="p-3">
-                        <h4 class="font-italic ">Elsewhere</h4>
-                        <ol class="list-unstyled">
-                          <?php foreach ($aindex as $aikey => $aivalue) : ?>
-                            <?php if ($aivalue['PU01youtube'] != '') : ?>
-                              <li><a href="<?php echo $aivalue['PU01youtube']; ?>" target="_blank">Youtube</a></li>
-                            <?php endif; ?>
-                            <?php if ($aivalue['PU01line'] != '') : ?>
-                              <li><a href="<?php if (isset($aivalue['PU01line'])) {
-                                                echo $aivalue['PU01line'];
-                                            } ?>" target="_blank">Line</a></li>
-                            <?php endif; ?>
-                            <?php if ($aivalue['PU01twitter'] != '') : ?>
-                              <li><a href="<?php if (isset($aivalue['PU01twitter'])) {
-                                                echo $aivalue['PU01twitter'];
-                                            } ?>" target="_blank">Twitter</a></li>
-                            <?php endif; ?>
-                            <?php if ($aivalue['PU01facebook'] != '') : ?>
-                              <li><a href="<?php if (isset($aivalue['PU01facebook'])) {
-                                                echo $aivalue['PU01facebook'];
-                                            } ?>" target="_blank">Facebook</a></li>
-                            <?php endif; ?>
-                          <?php endforeach; ?>
-                        </ol>
-                    </div>
-                </aside><!-- /.blog-sidebar -->
-
             </div><!-- /.row -->
-
+            <div class="row">
+                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3"></div>
+                  <?php foreach ($aindex as $aikey => $aivalue) : ?>
+                    <?php if ($aivalue['PU01youtube'] != '') : ?>
+                        <div class="col-lg-1 col-md-1 col-sm-2 col-xs-3 col-3">
+                            <a href="<?php echo $aivalue['PU01youtube']; ?>" target="_blank">Youtube</a>
+                        </div>
+                    <?php endif; ?>
+                    <?php if ($aivalue['PU01line'] != '') : ?>
+                        <div class="col-lg-1 col-md-1 col-sm-2 col-xs-3 col-3">
+                            <a href="<?php if (isset($aivalue['PU01line'])) {
+                                        echo $aivalue['PU01line'];
+                                    } ?>" target="_blank">Line</a>
+                        </div>
+                    <?php endif; ?>
+                    <?php if ($aivalue['PU01twitter'] != '') : ?>
+                          <div class="col-lg-1 col-md-1 col-sm-2 col-xs-3 col-3">
+                            <a href="<?php if (isset($aivalue['PU01twitter'])) {
+                                        echo $aivalue['PU01twitter'];
+                                    } ?>" target="_blank">Twitter</a>
+                        </div>
+                    <?php endif; ?>
+                    <?php if ($aivalue['PU01facebook'] != '') : ?>
+                            <div class="col-lg-1 col-md-1 col-sm-2 col-xs-3 col-3">
+                                <a href="<?php if (isset($aivalue['PU01facebook'])) {
+                                        echo $aivalue['PU01facebook'];
+                                    } ?>" target="_blank">Facebook</a>
+                            </div>
+                    <?php endif; ?>
+                  <?php endforeach; ?>
+    
+            </div>
         </main><!-- /.container -->
 
         <?php echo $footer; ?>
