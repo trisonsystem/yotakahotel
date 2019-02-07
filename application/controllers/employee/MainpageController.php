@@ -73,8 +73,7 @@ class MainpageController extends BaseController {
     $post = $this->input->post();
     // debug($post);
     debug($_FILES);
-    
-    // exit();
+
       if ($post) {
         $config['upload_path'] = './assets/img/slide/';
         $config['allowed_types'] = 'gif|jpg|png|jpeg';
@@ -83,7 +82,7 @@ class MainpageController extends BaseController {
         if ($this->upload->do_upload('PICpic')) {
             $img = $this->upload->data();
             $post['PICpic'] = $img['file_name'];
-            // echo $this->upload->display_errors();
+            echo $this->upload->display_errors();
         }else {
             $post['PICpic'] = 'no-image.png';
         }
