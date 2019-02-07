@@ -221,7 +221,6 @@
         function get_detail_pomotion( id , img_name, sl){
             $.get("get_detail_pomotion", { id : id }, function(res){
                 res = jQuery.parseJSON( res );
-                console.log(sl);
                 
                 $("#sp_pmt_time").html( convert_date_show(res.POMstartDT, sl) + " - " + convert_date_show(res.POMendDT, sl) ); 
                 $("#sp_pmt_title").html( res.POMdescTH + "<br>" + res.POMdescEN );
