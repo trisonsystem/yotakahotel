@@ -86,7 +86,8 @@ class MainpageController extends BaseController {
         }else {
             $post['PICpic'] = 'no-image.png';
         }
-        
+        debug($post);
+        exit();
         if ($this->MainpageModel->saveSlideShow($post)) {
             $this->session->set_flashdata('success', 'All the data is correct. Data is complete.');
         }else {

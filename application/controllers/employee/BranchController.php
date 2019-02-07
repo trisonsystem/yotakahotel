@@ -114,8 +114,8 @@ class BranchController extends CI_Controller {
             // $config['upload_path'] = '122.155.201.37/yotakahotel/assets/img/uploads/';
             $config['allowed_types'] = 'gif|jpg|png|jpeg';
 
-            $this->load->library('upload', $config);
-            $this->upload->do_upload('BRHpic');
+            // $this->load->library('upload', $config);
+            // $this->upload->do_upload('BRHpic');
             // echo $this->upload->display_errors();
 
             // exit();
