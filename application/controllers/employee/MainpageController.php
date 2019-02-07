@@ -75,7 +75,7 @@ class MainpageController extends BaseController {
     debug($_FILES);
 
       if ($post) {
-        $config['upload_path'] = './assets/img/slide/';
+        $config['upload_path'] = './assets/img/uploads/';
         $config['allowed_types'] = 'gif|jpg|png|jpeg';
         $this->load->library('upload', $config);
 
