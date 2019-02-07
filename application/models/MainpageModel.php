@@ -72,7 +72,8 @@ class MainpageModel extends CI_Model{
       'PICdeleteBy' => $d['PICperid'],
       'PICdeleteDT' => date('Y-m-d H:i:s')
     );
-
+    // debug($d);
+    // exit();
     return $this->db->insert('PIC', $data);
   }
 
