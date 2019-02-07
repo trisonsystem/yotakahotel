@@ -5,7 +5,8 @@ if (!defined('BASEPATH'))
 
 require APPPATH . '/libraries/BaseController.php';
 
-class BookingController extends BaseController{
+class BookingController extends BaseController
+{
 
     public function __construct()
     {
@@ -33,7 +34,8 @@ class BookingController extends BaseController{
         // $this->pdf->fontpath = 'fonts/';
     }
 
-    public function getRoomByCustomer($id){
+    public function getRoomByCustomer($id)
+    {
         $cdata['croom'] = $this->BookingModel->getBookingByCustomerID($id);
         if (count($cdata['croom']) > 0) {
             $cdata['mysession'] = $_SESSION;
@@ -41,11 +43,12 @@ class BookingController extends BaseController{
             $cdata['bookingstatus'] = $this->SystemModel->Usecase('19');
             $this->load->view('employee/showdatahtml', $cdata);
         } else {
-            echo("<h1>No data accessories fom room</h1>");
+            echo ("<h1>No data accessories fom room</h1>");
         }
     }
 
-    public function getRoomByID($id){
+    public function getRoomByID($id)
+    {
         $cdata['room'] = $this->BookingModel->GetRoomByID($id);
         if (count($cdata['room']) > 0) {
             $cdata['mysession'] = $_SESSION;
@@ -53,23 +56,25 @@ class BookingController extends BaseController{
             $cdata['chk'] = 'getRoomByID';
             $this->load->view('employee/showdatahtml', $cdata);
         } else {
-            echo("<h1>No data accessories fom room</h1>");
+            echo ("<h1>No data accessories fom room</h1>");
         }
     }
 
-    public function searchidcbyCustomer($idc){        
+    public function searchidcbyCustomer($idc)
+    {
         $count = $this->BookingModel->SearchidcbyCustomer($idc);
-        
+
         print_r($count['COUNTidc']);
         return $count['COUNTidc'];
     }
 
-    public function showbyidCustomer($idc){
+    public function showbyidCustomer($idc)
+    {
         $get = $this->input->get();
 
         if ($get) {
             if (isset($get['param'])) {
-                $showby = $this->BookingModel->ShowbyidCustomer($idc); 
+                $showby = $this->BookingModel->ShowbyidCustomer($idc);
                 if ($showby) {
                     $this->load->model('SystemModel');
 
@@ -77,94 +82,100 @@ class BookingController extends BaseController{
                     $cdata['mysession'] = $_SESSION;
                     $cdata['chk'] = 'showbyidCustomer';
                     $cdata['bycusid'] = $showby;
-        
+
                     $this->load->view('employee/showdatahtml', $cdata);
                 }
             }
-          }
+        }
     }
 
-    public function editCustomer(){
+    public function editCustomer()
+    {
         $post = $this->input->post();
-                
+
         if ($post) {
             if ($this->BookingModel->EditCustomer($post)) {
                 $this->session->set_flashdata('success', 'All the data is correct. Data is complete.');
-            }else {
+            } else {
                 $this->session->set_flashdata('error', 'Please check your data. Can not record your data.');
             }
-        }else {
+        } else {
             $this->session->set_flashdata('error', 'Please check your data. Can not record your data.');
         }
     }
 
-    public function saveBookingFrontOffice(){
+    public function saveBookingFrontOffice()
+    {
         $post = $this->input->post();
-        
+
         if ($post) {
             if ($this->BookingModel->SaveBookingFrontOffice($post)) {
                 $this->session->set_flashdata('success', 'All the data is correct. Data is complete.');
-            }else {
+            } else {
                 $this->session->set_flashdata('error', 'Please check your data. Can not record your data.');
             }
-        }else {
+        } else {
             $this->session->set_flashdata('error', 'Please check your data. Can not record your data.');
         }
     }
 
-    public function saveBookingFrontOfficeSta0(){
+    public function saveBookingFrontOfficeSta0()
+    {
         $post = $this->input->post();
-        
+
         if ($post) {
             if ($this->BookingModel->SaveBookingFrontOfficeSta0($post)) {
                 $this->session->set_flashdata('success', 'All the data is correct. Data is complete.');
-            }else {
+            } else {
                 $this->session->set_flashdata('error', 'Please check your data. Can not record your data.');
             }
-        }else {
+        } else {
             $this->session->set_flashdata('error', 'Please check your data. Can not record your data.');
         }
     }
 
-    public function getRoomToCheckout($id){        
+    public function getRoomToCheckout($id)
+    {
         $cdata['cout'] = $this->BookingModel->getRoomToCheckout($id);
-        
+
         if (count($cdata['cout']) > 0) {
             $cdata['mysession'] = $_SESSION;
             $cdata['chk'] = 'getRoomToCheckout';
             $cdata['bookingstatus'] = $this->SystemModel->Usecase('19');
             $this->load->view('employee/showdatahtml', $cdata);
         } else {
-            echo("<h1>No data accessories fom room</h1>");
+            echo ("<h1>No data accessories fom room</h1>");
         }
     }
 
-    public function showShowhardware($id){
+    public function showShowhardware($id)
+    {
         $bok = $this->BookingModel->getBookingByBookingID($id);
         $cdata['mysession'] = $_SESSION;
-                
+
         if ($bok[0]['BOKhard'] == 0) {
-            $cdata['bok'] = $bok;    
+            $cdata['bok'] = $bok;
             $cdata['c'] = 0;
         } else {
             $cdata['bok'] = $this->BookingModel->getBookingByBookingID2($id);
-            $cdata['c'] = 1;           
-        }                
-        
+            $cdata['c'] = 1;
+        }
+
         $cdata['chk'] = 'showShowhardware';
         $this->load->view('employee/showdatahtml', $cdata);
     }
 
-    public function saveEquipment(){
+    public function saveEquipment()
+    {
         $post = $this->input->post();
-        
+
         $to_remove = array("RADbokid");
         $arrfilter = array_diff_key($post, array_flip($to_remove));
         $chk = $this->BookingModel->checkEquipment($post['RADbokid']);
-        
+
         foreach ($arrfilter as $key => $value) {
             $getras = $this->BookingModel->accessories(substr($key, 5));
-            if(substr($key, 0, 5) == 'RADid'){
+            if (substr($key, 0, 5) == 'RADid') {
                 $data = array(
                     'RADbokid' => $post['RADbokid'],
                     'RADromrisid' => substr($key, 5),
@@ -175,11 +186,11 @@ class BookingController extends BaseController{
                     'RADdeleteBy' => '',
                     'RADdeleteDT' => date('Y-m-d H:i:s')
                 );
-                
-                if($data['RADromrisqty'] > 0){
+
+                if ($data['RADromrisqty'] > 0) {
                     if ($this->BookingModel->SaveEquipment($data)) {
                         $this->session->set_flashdata('success', 'All the data is correct. Data is complete.');
-                    }else {
+                    } else {
                         $this->session->set_flashdata('error', 'Please check your data. Can not record your data.');
                     }
                 }
@@ -187,46 +198,48 @@ class BookingController extends BaseController{
         }
     }
 
-    public function showMinibar($id){
+    public function showMinibar($id)
+    {
         $bok = $this->BookingModel->getBookingByBookingID($id);
-        $cdata['mysession'] = $_SESSION;  
+        $cdata['mysession'] = $_SESSION;
         $cdata['bok'] = $bok;
 
-        if ($bok[0]['BOKmini'] == 0) {            
+        if ($bok[0]['BOKmini'] == 0) {
             $cdata['item'] = $this->BookingModel->getItemMiniBar($bok[0]['BOKromid']);
             $cdata['c'] = 0;
         } else {
             $cdata['item'] = $this->BookingModel->getItemMiniBar2($bok[0]['BOKromid'], $bok[0]['BOKid']);
             // $cdata['qty'] = $this->BookingModel->getSellQuotation($bok[0]['BOKid'], $value['item'][0]['STKid']);
-            
-            $cdata['c'] = 1;     
+
+            $cdata['c'] = 1;
         }
-        
+
         $cdata['chk'] = 'showMinibar';
         $this->load->view('employee/showdatahtml', $cdata);
     }
 
-    public function saveMinibar(){
+    public function saveMinibar()
+    {
         $post = $this->input->post();
-       
+
         $to_remove = array("RADbokid", "BOKromid", 'PERid');
         $arrfilter = array_diff_key($post, array_flip($to_remove));
         $chk = $this->BookingModel->checkMinibar($post['RADbokid']);
-        
-        foreach ($arrfilter as $key => $value) { 
-                     
+
+        foreach ($arrfilter as $key => $value) {
+
             $getmnb = $this->BookingModel->getItemByMNBid($post['BOKromid'], substr($key, 5));
-            
-            if(substr($key, 0, 5) == 'STKid'){
+
+            if (substr($key, 0, 5) == 'STKid') {
                 $data = array(
-                'MNSbokid' => $post['RADbokid'],
-                'MNSstkid' => substr($key, 5),
-                'MNSromrisqty' => $value,
-                'MNSromrisprice' => $getmnb[0]['MNBprice'],
-                'MNSromristot' => $getmnb[0]['MNBprice'] * $value,
-                'MNSdelete' => 0,
-                'MNSdeleteBy' => $post['PERid'],
-                'MNSdeleteDT' => date('Y-m-d H:i:s')
+                    'MNSbokid' => $post['RADbokid'],
+                    'MNSstkid' => substr($key, 5),
+                    'MNSromrisqty' => $value,
+                    'MNSromrisprice' => $getmnb[0]['MNBprice'],
+                    'MNSromristot' => $getmnb[0]['MNBprice'] * $value,
+                    'MNSdelete' => 0,
+                    'MNSdeleteBy' => $post['PERid'],
+                    'MNSdeleteDT' => date('Y-m-d H:i:s')
                 );
 
                 $data2 = array(
@@ -241,59 +254,63 @@ class BookingController extends BaseController{
                     'MNBdeleteBy' => $post['PERid'],
                     'MNBdeleteDT' => date('Y-m-d H:i:s')
                 );
-                
-                if($data['MNSromrisqty'] > 0){
+
+                if ($data['MNSromrisqty'] > 0) {
                     if ($this->BookingModel->SaveMiniBar($data)) {
                         $this->BookingModel->SaveMiniBarWayOut($data2);
                         $this->session->set_flashdata('success', 'All the data is correct. Data is complete.');
-                    }else {
+                    } else {
                         $this->session->set_flashdata('error', 'Please check your data. Can not record your data.');
                     }
                 }
 
             }
         }
-       
+
     }
 
-    public function saveBookingFrontOfficeSta1(){
+    public function saveBookingFrontOfficeSta1()
+    {
         $post = $this->input->post();
-        
+
         if ($post) {
             if ($c = $this->BookingModel->SaveBookingFrontOfficeSta01($post)) {
                 $this->session->set_flashdata('success', 'All the data is correct. Data is complete.');
                 echo $c;
-            }else {
+            } else {
                 $this->session->set_flashdata('error', 'Please check your data. Can not record your data.');
             }
-        }else {
+        } else {
             $this->session->set_flashdata('error', 'Please check your data. Can not record your data.');
         }
     }
 
-    public function saveBookingFrontOfficeSta2($id){        
-        if ($id) {           
+    public function saveBookingFrontOfficeSta2($id)
+    {
+        if ($id) {
             if ($this->BookingModel->SaveBookingFrontOfficeSta02($id, $_SESSION['id'])) {
                 $this->session->set_flashdata('success', 'All the data is correct. Data is complete.');
-            }else {
+            } else {
                 $this->session->set_flashdata('error', 'Please check your data. Can not record your data.');
             }
-            
+
         }
     }
 
-    public function showBillCheckOut($cid){        
+    public function showBillCheckOut($cid)
+    {
         $cdata['mysession'] = $_SESSION;
         $cdata['booking'] = $this->BookingModel->getBookingShowOnBill($cid);
         $cdata['customer'] = $this->BookingModel->Customer($cid);
         // $cdata['chkintot'] = round(abs(strtotime($cdata['booking'][0]['BOKstartDT']) - strtotime($cdata['booking'][0]['BOKendDT']))/60/60/24);
         // $cdata['list'] = $this->BookingModel->getListBill($cdata['booking'][0]['BOKid']);
         $cdata['chk'] = 'showBillCheckOut';
-        
+
         $this->load->view('employee/showdatahtml', $cdata);
     }
 
-    public function getDetailRoomBill(){
+    public function getDetailRoomBill()
+    {
         $get = $this->input->get();
         // debug($get);
         // exit();
@@ -307,17 +324,18 @@ class BookingController extends BaseController{
                 $cdata['bycusid'] = $showby;
                 $cdata['POMdis'] = $get['POMdis'];
                 $cdata['VAT'] = $get['VAT'];
-    
+
                 $this->load->view('employee/showdatahtml', $cdata);
             }
         }
     }
 
-    public function chkPromotion(){
+    public function chkPromotion()
+    {
         $get = $this->input->get();
-        
-        if ($get) {            
-            $chk = $this->BookingModel->searchFromPromotionCode($get);  
+
+        if ($get) {
+            $chk = $this->BookingModel->searchFromPromotionCode($get);
 
             $data = array(
                 'POMid' => $chk[0]['POMid'],
@@ -327,14 +345,15 @@ class BookingController extends BaseController{
         }
     }
 
-    public function printBookingPDF($id){
+    public function printBookingPDF($id)
+    {
         $get = $this->input->get();
         $cdata['vs'] = $this->BookingModel->loadVoucherReceipt($id);
         // debug($cdata['vs']);
         // exit();
-        $arr = implode(" ",$get) . ',';
+        $arr = implode(" ", $get) . ',';
         $cdata['chk'] = 'printBookingPDF';
-        $cdata['settingp'] = explode(',',$arr,-1);
+        $cdata['settingp'] = explode(',', $arr, -1);
         
         // debug($arr);
         // debug($cdata['settingp']);
@@ -354,11 +373,11 @@ class BookingController extends BaseController{
          
         // กำหนดข้อมูลที่จะแสดงในส่วนของ header และ footer
         // $pdf->SetHeaderData(PDF_HEADER_LOGO, PDF_HEADER_LOGO_WIDTH, PDF_HEADER_TITLE.' 001', PDF_HEADER_STRING, array(0,64,255), array(0,64,128));
-        $pdf->setFooterData(array(0,64,0), array(0,64,128));
+        $pdf->setFooterData(array(0, 64, 0), array(0, 64, 128));
          
         // กำหนดรูปแบบของฟอนท์และขนาดฟอนท์ที่ใช้ใน header และ footer
-        $pdf->setHeaderFont(Array(PDF_FONT_NAME_MAIN, '', PDF_FONT_SIZE_MAIN));
-        $pdf->setFooterFont(Array(PDF_FONT_NAME_DATA, '', PDF_FONT_SIZE_DATA));
+        $pdf->setHeaderFont(array(PDF_FONT_NAME_MAIN, '', PDF_FONT_SIZE_MAIN));
+        $pdf->setFooterFont(array(PDF_FONT_NAME_DATA, '', PDF_FONT_SIZE_DATA));
          
         // กำหนดค่าเริ่มต้นของฟอนท์แบบ monospaced 
         $pdf->SetDefaultMonospacedFont(PDF_FONT_MONOSPACED);
@@ -369,7 +388,7 @@ class BookingController extends BaseController{
         $pdf->SetFooterMargin(PDF_MARGIN_FOOTER);
          
         // กำหนดการแบ่งหน้าอัตโนมัติ
-        $pdf->SetAutoPageBreak(TRUE, PDF_MARGIN_BOTTOM);
+        $pdf->SetAutoPageBreak(true, PDF_MARGIN_BOTTOM);
          
         // กำหนดรูปแบบการปรับขนาดของรูปภาพ 
         $pdf->setImageScale(PDF_IMAGE_SCALE_RATIO);
@@ -403,33 +422,35 @@ class BookingController extends BaseController{
         $pdf->Output($cdata['vs'][0]['VOCcode'] . '.pdf', 'I');
     }
 
-    public function saveVoucherBooking(){
+    public function saveVoucherBooking()
+    {
         $post = $this->input->post();
         // debug($post);
         // exit();
         if ($post) {
             $re = $this->BookingModel->SaveVoucherBooking($post);
-            if ($re) {                
+            if ($re) {
                 $this->session->set_flashdata('success', 'All the data is correct. Data is complete.');
                 echo $re;
-            }else {
+            } else {
                 $this->session->set_flashdata('error', 'Please check your data. Can not record your data.');
             }
-        }else {
+        } else {
             $this->session->set_flashdata('error', 'Please check your data. Can not record your data.');
         }
     }
 
-    public function saveBookingByCustomer(){
+    public function saveBookingByCustomer()
+    {
         $get = $this->input->get();
-        
-        $sd = substr($get['CBKbdaterange'],0,10);
-        $ed = substr($get['CBKbdaterange'],13,10);
-        
+
+        $sd = substr($get['CBKbdaterange'], 0, 10);
+        $ed = substr($get['CBKbdaterange'], 13, 10);
+
         $room = $this->BookingModel->selectRoom($get['CBKbrhid'], $get['CBKromtype']);
         // debug($_SESSION);
         // exit();
-       
+
         $data = array(
             'BOKfrom' => 0,
             'BOKpomid' => $get['CBKpomid'],
@@ -453,7 +474,8 @@ class BookingController extends BaseController{
         echo $bokid;
     }
 
-    public function printBookingCUSPDF($id){
+    public function printBookingCUSPDF($id)
+    {
         // debug($id);
         $cdata['chk'] = 'printBookingCUSPDF';
         $cdata['vs'] = $this->BookingModel->getBookingByBookingID3($id);
@@ -474,11 +496,11 @@ class BookingController extends BaseController{
          
         // กำหนดข้อมูลที่จะแสดงในส่วนของ header และ footer
         // $pdf->SetHeaderData(PDF_HEADER_LOGO, PDF_HEADER_LOGO_WIDTH, PDF_HEADER_TITLE.' 001', PDF_HEADER_STRING, array(0,64,255), array(0,64,128));
-        $pdf->setFooterData(array(0,64,0), array(0,64,128));
+        $pdf->setFooterData(array(0, 64, 0), array(0, 64, 128));
          
         // กำหนดรูปแบบของฟอนท์และขนาดฟอนท์ที่ใช้ใน header และ footer
-        $pdf->setHeaderFont(Array(PDF_FONT_NAME_MAIN, '', PDF_FONT_SIZE_MAIN));
-        $pdf->setFooterFont(Array(PDF_FONT_NAME_DATA, '', PDF_FONT_SIZE_DATA));
+        $pdf->setHeaderFont(array(PDF_FONT_NAME_MAIN, '', PDF_FONT_SIZE_MAIN));
+        $pdf->setFooterFont(array(PDF_FONT_NAME_DATA, '', PDF_FONT_SIZE_DATA));
          
         // กำหนดค่าเริ่มต้นของฟอนท์แบบ monospaced 
         $pdf->SetDefaultMonospacedFont(PDF_FONT_MONOSPACED);
@@ -489,7 +511,7 @@ class BookingController extends BaseController{
         $pdf->SetFooterMargin(PDF_MARGIN_FOOTER);
          
         // กำหนดการแบ่งหน้าอัตโนมัติ
-        $pdf->SetAutoPageBreak(TRUE, PDF_MARGIN_BOTTOM);
+        $pdf->SetAutoPageBreak(true, PDF_MARGIN_BOTTOM);
          
         // กำหนดรูปแบบการปรับขนาดของรูปภาพ 
         $pdf->setImageScale(PDF_IMAGE_SCALE_RATIO);
@@ -520,10 +542,11 @@ class BookingController extends BaseController{
         // ---------------------------------------------------------
         // จบการทำงานและแสดงไฟล์ pdf
         // การกำหนดในส่วนนี้ สามารถปรับรูปแบบต่างๆ ได้ เช่นให้บันทึกเป้นไฟล์ หรือให้แสดง pdf เลย ดูวิธีใช้งานที่คู่มือของ tcpdf เพิ่มเติม
-        $pdf->Output($cdata['vs'][0]['Room'][0]['ROMno'].'.pdf', 'I');
+        $pdf->Output($cdata['vs'][0]['Room'][0]['ROMno'] . '.pdf', 'I');
     }
 
-    public function moveRoom($id){
+    public function moveRoom($id)
+    {
         $get = $this->input->get();
     }
 
