@@ -72,7 +72,7 @@ class MainpageController extends BaseController {
   public function saveSlideShow(){
     $post = $this->input->post();
     // debug($post);
-    // debug($_FILES);
+    debug($_FILES);
     // exit();
       if ($post) {
         $config['upload_path'] = './assets/img/slide/';
