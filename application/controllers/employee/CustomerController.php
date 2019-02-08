@@ -10,6 +10,17 @@ class CustomerController extends CI_Controller {
         $this->load->model('CustomerModel');
         $this->load->model('SystemModel');
         $this->load->helper('cookie');
+        if (!isset($_COOKIE['lang'])) {
+            if ($country == 'thailand') {
+                $lang = 'thailand';
+            } else {
+                $lang = 'english';
+            }
+            setcookie('lang', $lang);
+        } else {
+            $lang = $_COOKIE['lang'];
+        }
+        $this->lang->load($lang, $lang);
     }
 
 //    no api
