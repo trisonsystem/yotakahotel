@@ -14,17 +14,17 @@ class CommentController extends CI_Controller {
 
         $MyLang = $this->SystemControl->CheckYourIPapi();
         $country = strtolower($MyLang->geoplugin_countryName);
-        // if (!isset($_COOKIE['lang'])) {
-        //     if ($country == 'thailand') {
-        //         $lang = 'thailand';
-        //     } else {
-        //         $lang = 'english';
-        //     }
-        //     setcookie('lang', $lang);
-        // } else {
-            // $lang = $_COOKIE['lang'];
-        // }
-        // $this->lang->load($lang, $lang);
+        if (!isset($_COOKIE['lang'])) {
+            if ($country == 'thailand') {
+                $lang = 'thailand';
+            } else {
+                $lang = 'english';
+            }
+            setcookie('lang', $lang);
+        } else {
+            $lang = $_COOKIE['lang'];
+        }
+        $this->lang->load($lang, $lang);
     }
 
 
