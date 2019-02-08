@@ -1753,7 +1753,7 @@ case 'getRoomToCheckout':
 <?php
         break;
     case 'showBillCheckOut':
-    // debug($customer);
+    // debug($booking);
 ?>
         <div class="container">
             <div class="row" style="margin-top: 15px">
@@ -1850,7 +1850,7 @@ case 'getRoomToCheckout':
             </div>
             <div class="row">
                 <div class="col-sm-4">
-                    <label for="usr"><?php  echo $booking[0]['discode'] ?>:</label>
+                    <label for="usr"><?php echo $this->lang->line("discode"); ?>:</label>
                 </div>
                 <div class="col-sm-8">                    
                     <div class="row">

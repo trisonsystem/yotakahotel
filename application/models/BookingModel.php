@@ -784,8 +784,8 @@ class BookingModel extends CI_Model{
         return $row;
     }
 
-    public function infoCustomerBill(){
-        $sql = 'SELECT BOKcusid, COUNT(BOKcusid) AS BOKromcount FROM BOK WHERE BOKdelete = 0 AND BOKsta = 2 AND BOKbillout = 0 GROUP BY BOKcusid ORDER BY BOKcreatedDT DESC';
+    public function infoCustomerBill($bid){
+        $sql = 'SELECT BOKcusid, COUNT(BOKcusid) AS BOKromcount FROM BOK WHERE BOKdelete = 0 AND BOKsta = 2 AND BOKbillout = 0 AND BOKbrhid = '.$bid.' GROUP BY BOKcusid ORDER BY BOKcreatedDT DESC';
         $query = $this->db->query($sql);
         $num = $query->num_rows();
 

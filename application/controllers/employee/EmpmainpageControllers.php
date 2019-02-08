@@ -190,7 +190,7 @@ class EmpmainpageControllers extends BaseController {
                 
                 $cdata['titlename'] = $this->SystemModel->Usecase('13');
                 $cdata['rooms'] = $this->BookingModel->getRoomsByBranchID($_SESSION['brhid']);
-                $cdata['cusbill'] = $this->BookingModel->infoCustomerBill();
+                $cdata['cusbill'] = $this->BookingModel->infoCustomerBill($_SESSION['brhid']);
                 // debug($cdata['cusbill']);
                 // exit();
                 
